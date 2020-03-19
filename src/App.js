@@ -1,23 +1,38 @@
 import React from "react";
 
+import { Router, Route, Switch } from "react-router";
+import {
+  Nav,
+  ProductList,
+  ProductItem,
+  Cart,
+  ProductNotFound
+} from "./Components";
+
 function App() {
+  const ThemeContext = React.createContext("store");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value="store">
+      <Router>
+        <div className="App">
+          <Nav />
+          <Switch>
+            <Route path="/">
+              <ProductList />
+            </Route>
+            <Route path="/:product_id">
+              <ProductItem />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+            <Route path="/404">
+              <ProductNotFound />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </ThemeContext.Provider>
   );
 }
 
