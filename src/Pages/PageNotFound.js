@@ -1,5 +1,12 @@
 import React from "react";
 
+import { Nav } from "./../Components/Nav";
+
 export const PageNotFound = () => {
-  return <div> {"youre on the page not found page son"} </div>;
+  return (
+    <div>
+      <Nav />
+      {"youre on the page not found page son"}
+    </div>
+  );
 };
