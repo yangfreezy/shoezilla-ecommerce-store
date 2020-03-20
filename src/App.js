@@ -1,6 +1,6 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import {
   Cart,
   Main,
@@ -11,8 +11,20 @@ import {
   PurchaseConfirmation
 } from "./Pages";
 
+import { getMensShoes } from "./API";
+
 export const App = () => {
   const ThemeContext = React.createContext("store");
+  const [shoes, setShoes] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    if (!shoes.length) {
+      let shoeData = getMensShoes();
+      setShoes(shoeData);
+    }
+  }, [shoes]);
+
   return (
     <ThemeContext.Provider value="store">
       <Router>
