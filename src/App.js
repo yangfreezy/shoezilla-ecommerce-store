@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Router, Route, Switch } from "react-router";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   Cart,
   Main,
@@ -11,39 +11,31 @@ import {
   PurchaseConfirmation
 } from "./Pages";
 
-function App() {
+export const App = () => {
   const ThemeContext = React.createContext("store");
   return (
     <ThemeContext.Provider value="store">
       <Router>
         <div className="App">
           <Switch>
-            <Route path="/">
-              <Main />
-            </Route>
-            <Route path="/:product_id">
-              <ProductPage />
-            </Route>
-            <Route path="/cart">
-              <Cart />
-            </Route>
-            <Route path="/purchase">
-              <Purchase />
-            </Route>
-            <Route path="/purchase-confirmation">
-              <PurchaseConfirmation />
-            </Route>
-            <Route path="/purchase-complete">
-              <PurchaseComplete />
-            </Route>
-            <Route path="/404">
-              <PageNotFound />
-            </Route>
+            <Route path="/" exact component={Main} />
+            <Route path="/product/:product_id" exact component={ProductPage} />
+            <Route path="/cart" exact component={Cart} />
+            <Route path="/purchase" exact component={Purchase} />
+            <Route
+              path="/purchase-confirmation"
+              exact
+              component={PurchaseConfirmation}
+            />
+            <Route
+              path="/purchase-complete"
+              exact
+              component={PurchaseComplete}
+            />
+            <Route path="/:404" exact component={PageNotFound} />
           </Switch>
         </div>
       </Router>
     </ThemeContext.Provider>
   );
-}
-
-export default App;
+};
