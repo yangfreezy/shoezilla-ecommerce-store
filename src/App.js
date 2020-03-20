@@ -2,12 +2,14 @@ import React from "react";
 
 import { Router, Route, Switch } from "react-router";
 import {
-  Nav,
-  ProductList,
-  ProductItem,
   Cart,
-  ProductNotFound
-} from "./Components";
+  Main,
+  PageNotFound,
+  ProductPage,
+  Purchase,
+  PurchaseComplete,
+  PurchaseConfirmation
+} from "./Pages";
 
 function App() {
   const ThemeContext = React.createContext("store");
@@ -15,19 +17,27 @@ function App() {
     <ThemeContext.Provider value="store">
       <Router>
         <div className="App">
-          <Nav />
           <Switch>
             <Route path="/">
-              <ProductList />
+              <Main />
             </Route>
             <Route path="/:product_id">
-              <ProductItem />
+              <ProductPage />
             </Route>
             <Route path="/cart">
               <Cart />
             </Route>
+            <Route path="/purchase">
+              <Purchase />
+            </Route>
+            <Route path="/purchase-confirmation">
+              <PurchaseConfirmation />
+            </Route>
+            <Route path="/purchase-complete">
+              <PurchaseComplete />
+            </Route>
             <Route path="/404">
-              <ProductNotFound />
+              <PageNotFound />
             </Route>
           </Switch>
         </div>
