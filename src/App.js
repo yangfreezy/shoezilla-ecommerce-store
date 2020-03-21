@@ -10,11 +10,10 @@ import {
   PurchaseComplete,
   PurchaseConfirmation
 } from "./Pages";
-
 import { getMensShoes } from "./API";
+import { StoreContext } from "./Context";
 
 export const App = () => {
-  const ThemeContext = React.createContext("store");
   const [shoes, setShoes] = useState([]);
   const [requestAttempts, setRequestAttempts] = useState(0);
   const [cart, setCart] = useState([]);
@@ -22,15 +21,17 @@ export const App = () => {
   useEffect(() => {
     if (!shoes.length) {
       if (requestAttempts < 5) {
-        let shoeData = getMensShoes();
-        setShoes(shoeData);
-        setRequestAttempts(requestAttempts + 1);
+        (async () => {
+          let shoeData = await getMensShoes();
+          setShoes(shoeData);
+          setRequestAttempts(requestAttempts + 1);
+        })();
       }
     }
   }, [shoes, requestAttempts]);
 
   return (
-    <ThemeContext.Provider value="store">
+    <StoreContext.Provider value={{ shoes, cart, setCart }}>
       <Router>
         <div className="App">
           <Switch>
@@ -52,6 +53,6 @@ export const App = () => {
           </Switch>
         </div>
       </Router>
-    </ThemeContext.Provider>
+    </StoreContext.Provider>
   );
 };
