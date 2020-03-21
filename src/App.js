@@ -10,37 +10,25 @@ import {
   PurchaseComplete,
   PurchaseConfirmation
 } from "./Pages";
-import { getMensShoes } from "./API";
 import { StoreContext } from "./Context";
+import { getCache, getShoeData } from "./Helpers";
 
 import "./App.css";
 
 export const App = () => {
-  const [shoes, setShoes] = useState(
-    JSON.parse(localStorage.getItem("shoes")) || []
-  );
-  const [shoeIdCache, setShoeIdCache] = useState(
-    JSON.parse(localStorage.getItem("shoeIdCache")) || {}
-  );
+  const [shoes, setShoes] = useState(getCache("shoes") || []);
+  const [shoeIdCache, setShoeIdCache] = useState(getCache("shoeIdCache") || {});
   const [requestAttempts, setRequestAttempts] = useState(0);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
     if (!shoes.length) {
-      if (requestAttempts < 5) {
-        (async () => {
-          let shoeData = await getMensShoes();
-          localStorage.setItem("shoes", JSON.stringify(shoeData));
-          setShoes(shoeData);
-          setRequestAttempts(requestAttempts + 1);
-          const mappedIdCache = shoeData.reduce((cache, shoe) => {
-            cache[shoe.productId] = shoe;
-            return cache;
-          }, {});
-          localStorage.setItem("shoeIdCache", JSON.stringify(mappedIdCache));
-          setShoeIdCache(mappedIdCache);
-        })();
-      }
+      getShoeData(
+        setShoes,
+        setShoeIdCache,
+        requestAttempts,
+        setRequestAttempts
+      );
     }
   }, [shoes, requestAttempts]);
 
