@@ -16,14 +16,18 @@ import { getMensShoes } from "./API";
 export const App = () => {
   const ThemeContext = React.createContext("store");
   const [shoes, setShoes] = useState([]);
+  const [requestAttempts, setRequestAttempts] = useState(0);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
     if (!shoes.length) {
-      let shoeData = getMensShoes();
-      setShoes(shoeData);
+      if (requestAttempts < 5) {
+        let shoeData = getMensShoes();
+        setShoes(shoeData);
+        setRequestAttempts(requestAttempts + 1);
+      }
     }
-  }, [shoes]);
+  }, [shoes, requestAttempts]);
 
   return (
     <ThemeContext.Provider value="store">

@@ -36,7 +36,7 @@ export const getMensShoes = async () => {
         }
       }
     );
-    return res.body.results;
+    return res.data.results;
   } catch (err) {
     console.error(err);
   }

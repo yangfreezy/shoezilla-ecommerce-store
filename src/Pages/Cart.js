@@ -1,5 +1,12 @@
 import React from "react";
 
+import { Nav } from "./../Components/Nav";
+
 export const Cart = () => {
-  return <div> {"youre on the cart page son"} </div>;
+  return (
+    <div>
+      <Nav />
+      {"youre on the cart page son"}
+    </div>
+  );
 };

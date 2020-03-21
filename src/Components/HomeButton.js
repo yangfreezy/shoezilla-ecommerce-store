@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import shoeIcon from "./../Assets/shoe-icon.png";
@@ -10,4 +10,8 @@ const Icon = styled.img.attrs({
   width: 24px;
   height: 24px;
 `;
-export const HomeButton = () => <Icon />;
+export const HomeButton = () => (
+  <Link to="/">
+    <Icon />
+  </Link>
+);

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { HomeButton, CartIcon, MainLogo } from ".";
@@ -14,15 +13,9 @@ const NavBar = styled.div`
 export const Nav = () => {
   return (
     <NavBar>
-      <Link to="/">
-        <HomeButton />
-      </Link>
-      <Link to="/">
-        <MainLogo />
-      </Link>
-      <Link to="/cart">
-        <CartIcon />
-      </Link>
+      <HomeButton />
+      <MainLogo />
+      <CartIcon />
     </NavBar>
   );
 };
