@@ -1,8 +1,7 @@
 import { Cart } from "./Cart";
 import { Main } from "./Main";
-import { PageNotFound } from "./PageNotFound";
-import { ProductNotFound } from "./ProductNotFound";
-import { ProductPage } from "./ProductPage";
+import { NotFound } from "./NotFound";
+import { Product } from "./Product";
 import { Purchase } from "./Purchase";
 import { PurchaseComplete } from "./PurchaseComplete";
 import { PurchaseConfirmation } from "./PurchaseConfirmation";
@@ -10,9 +9,8 @@ import { PurchaseConfirmation } from "./PurchaseConfirmation";
 export {
   Cart,
   Main,
-  PageNotFound,
-  ProductNotFound,
-  ProductPage,
+  NotFound,
+  Product,
   Purchase,
   PurchaseComplete,
   PurchaseConfirmation

@@ -12,8 +12,8 @@ const StyledName = styled.div`
   text-align: center;
   font-weight: 900;
   margin: 10px 10px 10px 10px;
-  color: black;
   max-width: 200px;
+  color: #282828;
 `;
 export const ProductListName = ({ name, id }) => {
   return (

@@ -9,6 +9,7 @@ import { ProductItemMain } from "./ProductItemMain";
 import { ProductList } from "./ProductList";
 import { ProductListBrandName } from "./ProductListBrandName";
 import { ProductListItem } from "./ProductListItem";
+import { ProductListItemNote } from "./ProductListItemNote";
 import { ProductListName } from "./ProductListName";
 import { ProductListPrice } from "./ProductListPrice";
 import { ProductListThumbnail } from "./ProductListThumbnail";
@@ -25,6 +26,7 @@ export {
   ProductList,
   ProductListBrandName,
   ProductListItem,
+  ProductListItemNote,
   ProductListName,
   ProductListPrice,
   ProductListThumbnail

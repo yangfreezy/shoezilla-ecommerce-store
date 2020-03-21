@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav, ProductItemMain } from "./../Components";
 
-export const ProductPage = () => {
+export const Product = () => {
   return (
     <div>
       <Nav />

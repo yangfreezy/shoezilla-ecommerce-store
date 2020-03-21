@@ -8,7 +8,6 @@ const StyledName = styled.div`
   text-align: center;
   font-weight: normal;
   margin: 10px 10px 10px 10px;
-  color: black;
 `;
 export const ProductListBrandName = ({ brandName }) => {
   return <StyledName> {brandName} </StyledName>;

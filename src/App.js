@@ -4,14 +4,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   Cart,
   Main,
-  PageNotFound,
-  ProductPage,
+  NotFound,
+  Product,
   Purchase,
   PurchaseComplete,
   PurchaseConfirmation
 } from "./Pages";
 import { getMensShoes } from "./API";
 import { StoreContext } from "./Context";
+
+import "./App.css";
 
 export const App = () => {
   const [shoes, setShoes] = useState(
@@ -48,7 +50,7 @@ export const App = () => {
         <div className="App">
           <Switch>
             <Route path="/" exact component={Main} />
-            <Route path="/product/:id" exact component={ProductPage} />
+            <Route path="/product/:id" exact component={Product} />
             <Route path="/cart" exact component={Cart} />
             <Route path="/purchase" exact component={Purchase} />
             <Route
@@ -61,7 +63,7 @@ export const App = () => {
               exact
               component={PurchaseComplete}
             />
-            <Route path="/:404" exact component={PageNotFound} />
+            <Route path="/:404" exact component={NotFound} />
           </Switch>
         </div>
       </Router>

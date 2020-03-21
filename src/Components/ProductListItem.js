@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import {
+  ProductListItemNote,
   ProductListName,
   ProductListBrandName,
   ProductListPrice,
@@ -27,6 +28,7 @@ export const ProductListItem = ({ product }) => {
         id={product.productId}
       />
       <ProductListPrice price={product.price} />
+      {product.isNew && <ProductListItemNote note="New" />}
     </StyledListItem>
   );
 };
