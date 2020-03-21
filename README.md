@@ -26,14 +26,6 @@ PURCHASE COMPLETED
 
 - Displays that the order has been received
 
-404 PAGE
-
-- Displays a 404 message
-
-PRODUCT NOT FOUND PAGE
-
-- Says product not found
-
 FOOTER:
 
 - Add footer with links to: About us page, Contact Page,
