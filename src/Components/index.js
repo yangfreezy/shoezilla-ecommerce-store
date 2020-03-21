@@ -5,7 +5,11 @@ import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
 import { ProductItem } from "./ProductItem";
 import { ProductList } from "./ProductList";
-import { ProductNotFound } from "./ProductNotFound";
+import { ProductListBrandName } from "./ProductListBrandName";
+import { ProductListItem } from "./ProductListItem";
+import { ProductListName } from "./ProductListName";
+import { ProductListPrice } from "./ProductListPrice";
+import { ProductListThumbnail } from "./ProductListThumbnail";
 
 export {
   Cart,
@@ -15,5 +19,9 @@ export {
   Nav,
   ProductItem,
   ProductList,
-  ProductNotFound
+  ProductListBrandName,
+  ProductListItem,
+  ProductListName,
+  ProductListPrice,
+  ProductListThumbnail
 };

@@ -14,7 +14,9 @@ import { getMensShoes } from "./API";
 import { StoreContext } from "./Context";
 
 export const App = () => {
-  const [shoes, setShoes] = useState([]);
+  const [shoes, setShoes] = useState(
+    JSON.parse(localStorage.getItem("shoes")) || []
+  );
   const [requestAttempts, setRequestAttempts] = useState(0);
   const [cart, setCart] = useState([]);
 
@@ -23,6 +25,7 @@ export const App = () => {
       if (requestAttempts < 5) {
         (async () => {
           let shoeData = await getMensShoes();
+          localStorage.setItem("shoes", JSON.stringify(shoeData));
           setShoes(shoeData);
           setRequestAttempts(requestAttempts + 1);
         })();

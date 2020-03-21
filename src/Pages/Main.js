@@ -1,13 +1,21 @@
-import React from "react";
+import React, { Fragment } from "react";
+import styled from "styled-components";
 
 import { Nav, ProductList } from "./../Components/";
 
+const StyledPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const Main = () => {
   return (
-    <div>
+    <Fragment>
       <Nav />
-      {"youre on the main page son"}
-      <ProductList />
-    </div>
+      <StyledPage>
+        <ProductList />
+      </StyledPage>
+    </Fragment>
   );
 };
