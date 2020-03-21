@@ -28,5 +28,4 @@ PURCHASE COMPLETED
 
 FOOTER:
 
-- Add footer with links to: About us page, Contact Page,
-- Add fake address
+- Add footer with links to: About page, contact info, address
