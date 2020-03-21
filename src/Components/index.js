@@ -1,5 +1,6 @@
 import { Cart } from "./Cart";
 import { CartIcon } from "./CartIcon";
+import { Footer } from "./Footer";
 import { HomeButton } from "./HomeButton";
 import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
@@ -14,6 +15,7 @@ import { ProductListThumbnail } from "./ProductListThumbnail";
 export {
   Cart,
   CartIcon,
+  Footer,
   HomeButton,
   MainLogo,
   Nav,
