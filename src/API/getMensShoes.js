@@ -4,7 +4,7 @@ export const getMensShoes = async () => {
   let res;
   try {
     res = await axios(
-      "https://zappos1.p.rapidapi.com/products/list?sort=productRating%252Fdesc&page=1&limit=56",
+      "https://zappos1.p.rapidapi.com/products/list?sort=productRating%252Fdesc&page=1&limit=200",
       {
         method: "POST",
         headers: {
