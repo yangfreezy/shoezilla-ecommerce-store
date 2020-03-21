@@ -1,4 +1,11 @@
-import { getCache, insertCache, mapShoesToCache } from "./cache";
-import { getShoeData } from "./getShoeData";
+import { getCache, insertCache, mapShoes } from "./cache";
+import { getAllShoeData } from "./getAllShoeData";
+import { addShoeDetailsToCache } from "./addShoeDetailsToCache";
 
-export { getCache, insertCache, mapShoesToCache, getShoeData };
+export {
+  getCache,
+  insertCache,
+  mapShoes,
+  getAllShoeData,
+  addShoeDetailsToCache
+};

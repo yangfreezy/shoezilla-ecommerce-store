@@ -4,10 +4,8 @@ STORIES:
 
 PRODUCT VIEW
 
-- Use cart state object like this { [shoeId] : 0}
 - Add as much detail as possible from the shoe
 - Add back button when viewing single product view
-- Add button for quantity increase / decrease, update cart state
 
 CART
 

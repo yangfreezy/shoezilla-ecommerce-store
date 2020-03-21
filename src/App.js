@@ -11,7 +11,7 @@ import {
   PurchaseConfirmation
 } from "./Pages";
 import { StoreContext } from "./Context";
-import { getCache, getShoeData } from "./Helpers";
+import { getCache, getAllShoeData } from "./Helpers";
 
 import "./App.css";
 
@@ -23,7 +23,7 @@ export const App = () => {
 
   useEffect(() => {
     if (!shoes.length) {
-      getShoeData(
+      getAllShoeData(
         setShoes,
         setShoeIdCache,
         requestAttempts,
@@ -33,7 +33,9 @@ export const App = () => {
   }, [shoes, requestAttempts]);
 
   return (
-    <StoreContext.Provider value={{ shoes, cart, shoeIdCache, setCart }}>
+    <StoreContext.Provider
+      value={{ shoes, cart, setCart, shoeIdCache, setShoeIdCache }}
+    >
       <Router>
         <div className="App">
           <Switch>

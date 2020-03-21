@@ -1,7 +1,7 @@
 import { getMensShoes } from "./../API";
-import { mapShoesToCache, insertCache } from ".";
+import { mapShoes, insertCache } from ".";
 
-export const getShoeData = (
+export const getAllShoeData = (
   setShoes,
   setShoeIdCache,
   requestAttempts,
@@ -12,7 +12,7 @@ export const getShoeData = (
       setRequestAttempts(requestAttempts + 1);
       let shoeData = await getMensShoes();
       setShoes(shoeData);
-      const idCache = mapShoesToCache(shoeData);
+      const idCache = mapShoes(shoeData);
       setShoeIdCache(idCache);
       insertCache("shoes", shoeData);
       insertCache("shoeIdCache", idCache);

@@ -1,3 +1,4 @@
 import { getMensShoes } from "./getMensShoes";
+import { getShoeDetails } from "./getShoeDetails";
 
-export { getMensShoes };
+export { getMensShoes, getShoeDetails };

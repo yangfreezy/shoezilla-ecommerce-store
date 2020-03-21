@@ -6,6 +6,7 @@ import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
 import { ProductItemImage } from "./ProductItemImage";
 import { ProductItemMain } from "./ProductItemMain";
+import { ProductItemName } from "./ProductItemName";
 import { ProductList } from "./ProductList";
 import { ProductListBrandName } from "./ProductListBrandName";
 import { ProductListItem } from "./ProductListItem";
@@ -13,6 +14,9 @@ import { ProductListItemNote } from "./ProductListItemNote";
 import { ProductListName } from "./ProductListName";
 import { ProductListPrice } from "./ProductListPrice";
 import { ProductListThumbnail } from "./ProductListThumbnail";
+import { QuantityContainer } from "./QuantityContainer";
+import { QuantityDisplay } from "./QuantityDisplay";
+import { QuantityIncrementer } from "./QuantityIncrementer";
 
 export {
   Cart,
@@ -23,11 +27,15 @@ export {
   Nav,
   ProductItemImage,
   ProductItemMain,
+  ProductItemName,
   ProductList,
   ProductListBrandName,
   ProductListItem,
   ProductListItemNote,
   ProductListName,
   ProductListPrice,
-  ProductListThumbnail
+  ProductListThumbnail,
+  QuantityContainer,
+  QuantityDisplay,
+  QuantityIncrementer
 };
