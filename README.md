@@ -4,14 +4,10 @@ STORIES:
 
 PRODUCT VIEW
 
-- Check if product exists, if not then redirect to product not found page
-- Add product view pages with single product view / more product details
+- Use cart state object like this { [shoeId] : 0}
+- Add as much detail as possible from the shoe
 - Add back button when viewing single product view
-- Add ability to add quantity to cart
-
-STATE MANAGEMENT
-
-- Map retrieved shoes into state object with key of productId for quicker look up
+- Add button for quantity increase / decrease, update cart state
 
 CART
 
