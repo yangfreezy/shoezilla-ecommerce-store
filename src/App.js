@@ -17,6 +17,9 @@ export const App = () => {
   const [shoes, setShoes] = useState(
     JSON.parse(localStorage.getItem("shoes")) || []
   );
+  const [shoeIdCache, setShoeIdCache] = useState(
+    JSON.parse(localStorage.getItem("shoeIdCache")) || {}
+  );
   const [requestAttempts, setRequestAttempts] = useState(0);
   const [cart, setCart] = useState([]);
 
@@ -28,18 +31,24 @@ export const App = () => {
           localStorage.setItem("shoes", JSON.stringify(shoeData));
           setShoes(shoeData);
           setRequestAttempts(requestAttempts + 1);
+          const mappedIdCache = shoeData.reduce((cache, shoe) => {
+            cache[shoe.productId] = shoe;
+            return cache;
+          }, {});
+          localStorage.setItem("shoeIdCache", JSON.stringify(mappedIdCache));
+          setShoeIdCache(mappedIdCache);
         })();
       }
     }
   }, [shoes, requestAttempts]);
 
   return (
-    <StoreContext.Provider value={{ shoes, cart, setCart }}>
+    <StoreContext.Provider value={{ shoes, cart, shoeIdCache, setCart }}>
       <Router>
         <div className="App">
           <Switch>
             <Route path="/" exact component={Main} />
-            <Route path="/product/:product_id" exact component={ProductPage} />
+            <Route path="/product/:id" exact component={ProductPage} />
             <Route path="/cart" exact component={Cart} />
             <Route path="/purchase" exact component={Purchase} />
             <Route

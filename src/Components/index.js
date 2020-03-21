@@ -4,7 +4,8 @@ import { Footer } from "./Footer";
 import { HomeButton } from "./HomeButton";
 import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
-import { ProductItem } from "./ProductItem";
+import { ProductItemImage } from "./ProductItemImage";
+import { ProductItemMain } from "./ProductItemMain";
 import { ProductList } from "./ProductList";
 import { ProductListBrandName } from "./ProductListBrandName";
 import { ProductListItem } from "./ProductListItem";
@@ -19,7 +20,8 @@ export {
   HomeButton,
   MainLogo,
   Nav,
-  ProductItem,
+  ProductItemImage,
+  ProductItemMain,
   ProductList,
   ProductListBrandName,
   ProductListItem,

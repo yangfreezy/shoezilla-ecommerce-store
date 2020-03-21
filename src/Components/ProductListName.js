@@ -1,5 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const StyledName = styled.div`
   font-family: Lato;
@@ -10,6 +15,10 @@ const StyledName = styled.div`
   color: black;
   max-width: 200px;
 `;
-export const ProductListName = ({ name }) => {
-  return <StyledName> {name} </StyledName>;
+export const ProductListName = ({ name, id }) => {
+  return (
+    <StyledLink to={`/product/${id}`}>
+      <StyledName> {name} </StyledName>{" "}
+    </StyledLink>
+  );
 };

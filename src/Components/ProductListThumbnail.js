@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledThumbnail = styled.img`
@@ -6,6 +7,10 @@ const StyledThumbnail = styled.img`
   height: auto;
 `;
 
-export const ProductListThumbnail = ({ src, alt }) => {
-  return <StyledThumbnail src={src} alt={alt} />;
+export const ProductListThumbnail = ({ src, alt, id }) => {
+  return (
+    <Link to={`/product/${id}`}>
+      <StyledThumbnail src={src} alt={alt} />
+    </Link>
+  );
 };

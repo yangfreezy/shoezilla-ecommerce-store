@@ -2,16 +2,16 @@ TODO:
 
 STORIES:
 
-STATE MANAGEMENT
-
-- Map retrieved shoes into state object with key of productId for quicker look up
-
 PRODUCT VIEW
 
 - Check if product exists, if not then redirect to product not found page
 - Add product view pages with single product view / more product details
 - Add back button when viewing single product view
 - Add ability to add quantity to cart
+
+STATE MANAGEMENT
+
+- Map retrieved shoes into state object with key of productId for quicker look up
 
 CART
 

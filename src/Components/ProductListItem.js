@@ -17,14 +17,14 @@ const StyledListItem = styled.div`
 `;
 
 export const ProductListItem = ({ product }) => {
-  console.log(product);
   return (
     <StyledListItem>
-      <ProductListName name={product.productName} />
+      <ProductListName name={product.productName} id={product.productId} />
       <ProductListBrandName brandName={product.brandName} />
       <ProductListThumbnail
         src={product.thumbnailImageUrl}
         alt={product.productName}
+        id={product.productId}
       />
       <ProductListPrice price={product.price} />
     </StyledListItem>
