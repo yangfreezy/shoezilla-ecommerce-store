@@ -2,6 +2,7 @@ import { Cart } from "./Cart";
 import { CartIcon } from "./CartIcon";
 import { Footer } from "./Footer";
 import { HomeButton } from "./HomeButton";
+import { Icon } from "./Icon";
 import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
 import { ProductItemImage } from "./ProductItemImage";
@@ -23,6 +24,7 @@ export {
   CartIcon,
   Footer,
   HomeButton,
+  Icon,
   MainLogo,
   Nav,
   ProductItemImage,

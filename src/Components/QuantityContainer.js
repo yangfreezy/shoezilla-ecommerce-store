@@ -3,19 +3,23 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
 import { StoreContext } from "./../Context";
-import { QuantityIncrementer, QuantityDisplay } from ".";
+import { QuantityIncrementer, QuantityDisplay, ProductListItemNote } from ".";
 
 const StyledQuantityContainer = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
+`;
+
+const StyledColumn = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const QuantityContainer = () => {
   const value = useContext(StoreContext);
   const { id } = useParams();
   const { cart, setCart } = value;
-  const [quantity, setQuantity] = useState(cart[id]);
+  const [quantity, setQuantity] = useState(cart[id] || 0);
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
@@ -32,10 +36,16 @@ export const QuantityContainer = () => {
   };
 
   return (
-    <StyledQuantityContainer>
-      <QuantityIncrementer direction={"up"} handleClick={increaseQuantity} />
-      <QuantityDisplay quantity={quantity} />
-      <QuantityIncrementer direction={"down"} handleClick={decreaseQuantity} />
-    </StyledQuantityContainer>
+    <StyledColumn>
+      <ProductListItemNote note="Quantity" />
+      <StyledQuantityContainer>
+        <QuantityIncrementer
+          direction={"down"}
+          handleClick={decreaseQuantity}
+        />
+        <QuantityDisplay quantity={quantity} />
+        <QuantityIncrementer direction={"up"} handleClick={increaseQuantity} />
+      </StyledQuantityContainer>
+    </StyledColumn>
   );
 };

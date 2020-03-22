@@ -5,7 +5,6 @@ STORIES:
 PRODUCT VIEW
 
 - Add as much detail as possible from the shoe
-- Add back button when viewing single product view
 
 CART
 

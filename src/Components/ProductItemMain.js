@@ -9,7 +9,8 @@ import {
   ProductItemName,
   ProductListBrandName,
   ProductListPrice,
-  ProductItemImage
+  ProductItemImage,
+  QuantityContainer
 } from ".";
 
 const ProductItem = styled.div`
@@ -44,7 +45,8 @@ export const ProductItemMain = () => {
       <ProductListBrandName brandName={shoe.brandName} />
       <ProductItemImage src={shoe.thumbnailImageUrl} alt={shoe.productName} />
       <ProductListPrice price={shoe.price} />
-      {shoeDetails && <div>{shoe.widthFit.text}</div>}
+      <QuantityContainer />
+      {shoe.details && <div>{shoe.details.widthFit.text}</div>}
     </ProductItem>
   ) : (
     <Redirect to="/" />
