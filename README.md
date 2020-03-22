@@ -2,9 +2,9 @@ TODO:
 
 STORIES:
 
-PRODUCT VIEW
+PRODUCT:
 
-- Add to cart button adds quantity state to cart
+- Add size, change Cart to be like { [id]: { 'sizes': { '9': 1 } } }
 
 CART
 

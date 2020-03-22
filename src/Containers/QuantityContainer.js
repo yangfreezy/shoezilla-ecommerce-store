@@ -26,12 +26,9 @@ export const QuantityContainer = ({
     <StyledColumn>
       <ProductListItemNote fontSize="12px" fontWeight="light" note="Quantity" />
       <StyledQuantityContainer>
-        <QuantityIncrementer
-          direction={"down"}
-          handleClick={decreaseQuantity}
-        />
+        <QuantityIncrementer direction="down" handleClick={decreaseQuantity} />
         <QuantityDisplay quantity={quantity} />
-        <QuantityIncrementer direction={"up"} handleClick={increaseQuantity} />
+        <QuantityIncrementer direction="up" handleClick={increaseQuantity} />
       </StyledQuantityContainer>
     </StyledColumn>
   );
