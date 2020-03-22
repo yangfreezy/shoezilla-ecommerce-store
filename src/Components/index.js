@@ -5,6 +5,7 @@ import { HomeButton } from "./HomeButton";
 import { Icon } from "./Icon";
 import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
+import { ProductDetailsContainer } from "./ProductDetailsContainer";
 import { ProductItemImage } from "./ProductItemImage";
 import { ProductItemMain } from "./ProductItemMain";
 import { ProductItemName } from "./ProductItemName";
@@ -27,6 +28,7 @@ export {
   Icon,
   MainLogo,
   Nav,
+  ProductDetailsContainer,
   ProductItemImage,
   ProductItemMain,
   ProductItemName,

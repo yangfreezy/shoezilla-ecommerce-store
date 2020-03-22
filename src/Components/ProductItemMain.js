@@ -6,6 +6,8 @@ import { StoreContext } from "./../Context";
 import { getShoeDetails } from "./../API";
 import { addShoeDetailsToCache } from "./../Helpers";
 import {
+  ActionText,
+  ProductDetailsContainer,
   ProductItemName,
   ProductListBrandName,
   ProductListPrice,
@@ -25,6 +27,7 @@ export const ProductItemMain = () => {
   const { id } = useParams();
   const shoe = shoeIdCache[id];
   const [shoeDetails, setShoeDetails] = useState(shoe.details ? true : false);
+  const [showDetails, setShowDetails] = useState(false);
   (async () => {
     if (!shoeDetails) {
       const details = await getShoeDetails(id);
@@ -39,6 +42,10 @@ export const ProductItemMain = () => {
     }
   })();
 
+  const showMoreDetails = () => {
+    setShowDetails(true);
+  };
+
   return shoe ? (
     <ProductItem>
       <ProductItemName name={shoe.productName} id={id} />
@@ -46,7 +53,10 @@ export const ProductItemMain = () => {
       <ProductItemImage src={shoe.thumbnailImageUrl} alt={shoe.productName} />
       <ProductListPrice price={shoe.price} />
       <QuantityContainer />
-      {shoe.details && <div>{shoe.details.widthFit.text}</div>}
+      {shoe.details && (
+        <ActionText handleClick={showMoreDetails} text="Product details" />
+      )}
+      {showDetails && <ProductDetailsContainer />}
     </ProductItem>
   ) : (
     <Redirect to="/" />
