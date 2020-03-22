@@ -19,7 +19,7 @@ export const App = () => {
   const [shoes, setShoes] = useState(getCache("shoes") || []);
   const [shoeIdCache, setShoeIdCache] = useState(getCache("shoeIdCache") || {});
   const [requestAttempts, setRequestAttempts] = useState(0);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState({});
 
   useEffect(() => {
     if (!shoes.length) {

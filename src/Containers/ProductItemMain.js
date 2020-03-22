@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Redirect, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { clonedeep } from "lodash";
 
 import { StoreContext } from "./../Context";
 import { getShoeDetails } from "./../API";
@@ -20,15 +19,15 @@ const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px 75px 0px 75px;
+  margin: 0px 75px 25px 75px;
   justify-content: flex-start;
 `;
 const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 50px 25px 0px 25px;
+  margin: 25px 25px 0px 25px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 export const ProductItemMain = () => {
@@ -39,6 +38,7 @@ export const ProductItemMain = () => {
   const [shoeDetails, setShoeDetails] = useState(shoe.details || {});
   const [quantity, setQuantity] = useState(cart[id] || 0);
   const [requestAttempts, setRequestAttempts] = useState(0);
+
   (async () => {
     if (!shoe.details && requestAttempts < 1) {
       const details = await getShoeDetails(id);
@@ -50,8 +50,8 @@ export const ProductItemMain = () => {
 
   const addToCart = () => {
     if (quantity < 1) return;
-    const updatedCart = clonedeep(cart);
-    updatedCart[id] = ~~updatedCart[id] + quantity;
+    const updatedCart = JSON.parse(JSON.stringify(cart));
+    updatedCart[id] = quantity;
     return setCart(updatedCart);
   };
 
@@ -59,6 +59,7 @@ export const ProductItemMain = () => {
     return setQuantity(quantity + 1);
   };
   const decreaseQuantity = () => {
+    if (quantity === 0) return;
     return setQuantity(quantity - 1);
   };
 

@@ -16,13 +16,13 @@ const StyledPrimaryButton = styled.div`
 `;
 
 export const PrimaryButton = ({
+  value,
   handleClick,
   width,
   height,
   backgroundColor,
   color,
   fontSize,
-  value,
   margin
 }) => {
   return (

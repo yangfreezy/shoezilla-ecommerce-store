@@ -10,6 +10,7 @@ import archFitIcon from "./../Assets/arch-fit-icon.png";
 
 const StyledProductFitDetails = styled.div`
   margin: 10px 10px 10px 10px;
+  letter-spacing: 0.5px;
 `;
 
 export const ProductFitDetails = ({ details }) => {

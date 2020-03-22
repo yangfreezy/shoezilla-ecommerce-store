@@ -1,8 +1,6 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
 
-import { StoreContext } from "./../Context";
 import {
   QuantityIncrementer,
   QuantityDisplay,
@@ -19,26 +17,11 @@ const StyledColumn = styled.div`
   flex-direction: column;
 `;
 
-export const QuantityContainer = () => {
-  const value = useContext(StoreContext);
-  const { id } = useParams();
-  const { cart, setCart } = value;
-  const [quantity, setQuantity] = useState(cart[id] || 0);
-
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
-    const updatedCart = cart;
-    updatedCart[id]++;
-    setCart(updatedCart);
-  };
-  const decreaseQuantity = () => {
-    if (quantity === 0) return;
-    setQuantity(quantity - 1);
-    const updatedCart = cart;
-    updatedCart[id]--;
-    setCart(updatedCart);
-  };
-
+export const QuantityContainer = ({
+  quantity,
+  increaseQuantity,
+  decreaseQuantity
+}) => {
   return (
     <StyledColumn>
       <ProductListItemNote fontSize="12px" fontWeight="light" note="Quantity" />

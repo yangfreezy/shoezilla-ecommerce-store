@@ -4,17 +4,18 @@ import Parser from "html-react-parser";
 
 import { Text, ProductFitDetails } from ".";
 import { Column } from "./Layouts";
+import { removeLiTagsWithLinks } from "./../Helpers";
 
 const StyledTitle = styled.div`
   text-align: center;
-  width: 350px;
+  width: 450px;
 `;
 
 const StyledDetails = styled.div`
   font-size: 13px;
   font-weight: normal;
-  width: 350px;
-  max-width: 350px;
+  letter-spacing: 0.5px;
+  max-width: 450px;
   text-wrap: wrap;
   display: inline-flex;
   flex-direction: column;
@@ -23,7 +24,9 @@ const StyledDetails = styled.div`
 
 export const ProductDetails = ({ details }) => {
   const description = details.description;
-  const descriptionHTML = description ? Parser(details.description) : null;
+  const descriptionHTML = description
+    ? Parser(removeLiTagsWithLinks(details.description))
+    : null;
   return (
     <Column>
       <StyledTitle>

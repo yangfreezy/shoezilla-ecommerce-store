@@ -8,7 +8,7 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledName = styled.div`
-  font-size: 20px;
+  font-size: 36px;
   text-align: center;
   font-weight: 900;
   margin: 10px 10px 10px 10px;
