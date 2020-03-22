@@ -2,8 +2,8 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import Parser from "html-react-parser";
 
-import { Text, ProductFitDetails } from ".";
-import { Column } from "./Layouts";
+import { ProductFitDetails } from ".";
+import { Text, Column } from ".";
 import { removeLiTagsWithLinks } from "./../Helpers";
 
 const StyledTitle = styled.div`
@@ -38,7 +38,11 @@ export const ProductDetails = ({ details }) => {
           <ProductFitDetails details={details} />
         </Fragment>
       ) : (
-        <Text fontSize="13px" fontWeight="normal" text="Loading details.." />
+        <Text
+          fontSize="13px"
+          fontWeight="normal"
+          text="Getting product details.."
+        />
       )}
     </Column>
   );

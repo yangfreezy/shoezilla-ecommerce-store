@@ -1,12 +1,10 @@
-import { ActionText } from "./ActionText";
+// Components
 import { Cart } from "./Cart";
 import { CartIcon } from "./CartIcon";
 import { Footer } from "./Footer";
 import { HomeButton } from "./HomeButton";
-import { Icon } from "./Icon";
 import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
-import { PrimaryButton } from "./PrimaryButton";
 import { ProductDetails } from "./ProductDetails";
 import { ProductFitDetails } from "./ProductFitDetails";
 import { ProductItemImage } from "./ProductItemImage";
@@ -20,18 +18,22 @@ import { ProductListPrice } from "./ProductListPrice";
 import { ProductListThumbnail } from "./ProductListThumbnail";
 import { QuantityDisplay } from "./QuantityDisplay";
 import { QuantityIncrementer } from "./QuantityIncrementer";
-import { Text } from "./Text";
 
+// Abstracted components
+import { ActionText, Icon, PrimaryButton, Text } from "./Abstracted";
+
+// Layouts
+
+import { Column, Row } from "./Layouts";
+
+// Components
 export {
-  ActionText,
   Cart,
   CartIcon,
   Footer,
   HomeButton,
-  Icon,
   MainLogo,
   Nav,
-  PrimaryButton,
   ProductDetails,
   ProductFitDetails,
   ProductItemImage,
@@ -44,6 +46,12 @@ export {
   ProductListPrice,
   ProductListThumbnail,
   QuantityDisplay,
-  QuantityIncrementer,
-  Text
+  QuantityIncrementer
 };
+
+// Abstracted components
+export { ActionText, Icon, PrimaryButton, Text };
+
+// Layouts
+
+export { Column, Row };

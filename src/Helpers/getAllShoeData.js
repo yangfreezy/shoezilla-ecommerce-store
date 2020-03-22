@@ -1,5 +1,12 @@
 import { getMensShoes } from "./../API";
-import { mapShoes, insertCache } from ".";
+import { insertCache } from ".";
+
+export const mapShoes = data => {
+  return data.reduce((cache, shoe) => {
+    cache[shoe.productId] = shoe;
+    return cache;
+  }, {});
+};
 
 export const getAllShoeData = (
   setShoes,
