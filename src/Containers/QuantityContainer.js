@@ -3,7 +3,11 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
 import { StoreContext } from "./../Context";
-import { QuantityIncrementer, QuantityDisplay, ProductListItemNote } from ".";
+import {
+  QuantityIncrementer,
+  QuantityDisplay,
+  ProductListItemNote
+} from "./../Components";
 
 const StyledQuantityContainer = styled.div`
   display: flex;
@@ -37,7 +41,7 @@ export const QuantityContainer = () => {
 
   return (
     <StyledColumn>
-      <ProductListItemNote note="Quantity" />
+      <ProductListItemNote fontSize="12px" fontWeight="light" note="Quantity" />
       <StyledQuantityContainer>
         <QuantityIncrementer
           direction={"down"}

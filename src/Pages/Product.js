@@ -1,5 +1,7 @@
 import React from "react";
-import { Nav, ProductItemMain } from "./../Components";
+
+import { Nav } from "./../Components";
+import { ProductItemMain } from "./../Containers";
 
 export const Product = () => {
   return (

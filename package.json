@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "browser-history": "^1.0.1",
     "he": "^1.2.0",
+    "html-react-parser": "^0.10.2",
     "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

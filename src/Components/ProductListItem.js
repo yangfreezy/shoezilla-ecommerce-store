@@ -28,7 +28,7 @@ export const ProductListItem = ({ product }) => {
         id={product.productId}
       />
       <ProductListPrice price={product.price} />
-      {product.isNew && <ProductListItemNote note="New" />}
+      {product.isNew && <ProductListItemNote fontSize="10px" note="New" />}
     </StyledListItem>
   );
 };

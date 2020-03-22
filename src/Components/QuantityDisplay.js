@@ -5,6 +5,7 @@ const StyledDisplay = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 20px;
 `;
 
 export const QuantityDisplay = ({ quantity }) => {

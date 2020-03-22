@@ -4,12 +4,13 @@ STORIES:
 
 PRODUCT VIEW
 
-- Add as much detail as possible from the shoe
+- Add to cart button adds quantity state to cart
 
 CART
 
 - Displays products with quantities and price
 - Link to Purchase Page
+- Icon on top right updates with red dot if there's stuff in the cart
 
 PURCHASE
 
