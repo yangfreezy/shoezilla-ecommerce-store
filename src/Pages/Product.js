@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Nav } from "./../Components";
+import { Nav, Footer } from "./../Components";
 import { ProductItemMain } from "./../Containers";
 
 export const Product = () => {
@@ -8,6 +8,7 @@ export const Product = () => {
     <div>
       <Nav />
       <ProductItemMain />
+      <Footer />
     </div>
   );
 };

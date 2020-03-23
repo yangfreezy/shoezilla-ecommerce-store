@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Cart = () => {
+export const CartContainer = () => {
   return <div />;
 };

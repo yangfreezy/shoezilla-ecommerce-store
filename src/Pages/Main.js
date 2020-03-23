@@ -1,21 +1,21 @@
-import React, { Fragment } from "react";
-import styled from "styled-components";
+import React from "react";
 
-import { Nav, ProductList } from "./../Components/";
-
-const StyledPage = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+import {
+  Nav,
+  Footer,
+  ProductList,
+  PageContainer,
+  Column
+} from "./../Components";
 
 export const Main = () => {
   return (
-    <Fragment>
+    <PageContainer>
       <Nav />
-      <StyledPage>
+      <Column>
         <ProductList />
-      </StyledPage>
-    </Fragment>
+      </Column>
+      <Footer />
+    </PageContainer>
   );
 };

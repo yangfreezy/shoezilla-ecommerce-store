@@ -26,6 +26,6 @@ PURCHASE COMPLETED
 
 - Displays that the order has been received
 
-FOOTER:
+FOOTER
 
-- Add footer with links to: About page, contact info, address
+- Keep footer atleast at the bottom of the page when page content doesn't expand the full height

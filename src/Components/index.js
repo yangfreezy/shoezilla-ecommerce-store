@@ -1,5 +1,4 @@
 // Components
-import { Cart } from "./Cart";
 import { CartIcon } from "./CartIcon";
 import { Footer } from "./Footer";
 import { HomeButton } from "./HomeButton";
@@ -24,11 +23,10 @@ import { ActionText, Icon, PrimaryButton, Text } from "./Abstracted";
 
 // Layouts
 
-import { Column, Row } from "./Layouts";
+import { Column, PageContainer, Row } from "./Layouts";
 
 // Components
 export {
-  Cart,
   CartIcon,
   Footer,
   HomeButton,
@@ -54,4 +52,4 @@ export { ActionText, Icon, PrimaryButton, Text };
 
 // Layouts
 
-export { Column, Row };
+export { Column, PageContainer, Row };

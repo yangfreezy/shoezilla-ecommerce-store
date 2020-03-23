@@ -1,12 +1,16 @@
 import React from "react";
 
-import { Nav } from "./../Components/Nav";
+import { Nav, Footer, Column, PageContainer } from "./../Components";
+import { CartContainer } from "./../Containers";
 
 export const Cart = () => {
   return (
-    <div>
+    <PageContainer>
       <Nav />
-      {"youre on the cart page son"}
-    </div>
+      <Column>
+        <CartContainer />
+      </Column>
+      <Footer />
+    </PageContainer>
   );
 };
