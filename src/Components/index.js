@@ -23,7 +23,7 @@ import { ActionText, Icon, PrimaryButton, Text } from "./Abstracted";
 
 // Layouts
 
-import { Column, PageContainer, Row } from "./Layouts";
+import { Column, PageBody, PageContainer, Row } from "./Layouts";
 
 // Components
 export {
@@ -52,4 +52,4 @@ export { ActionText, Icon, PrimaryButton, Text };
 
 // Layouts
 
-export { Column, PageContainer, Row };
+export { Column, PageBody, PageContainer, Row };

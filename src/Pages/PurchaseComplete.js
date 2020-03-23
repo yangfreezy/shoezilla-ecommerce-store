@@ -1,13 +1,15 @@
 import React from "react";
 
-import { Nav, Footer } from "./../Components";
+import { Nav, Footer, Column, PageBody, PageContainer } from "./../Components";
 
 export const PurchaseComplete = () => {
   return (
-    <div>
-      <Nav />
-      {"youre on the purchase complete page son"}
+    <PageContainer>
+      <PageBody>
+        <Nav />
+        <Column>{"youre on the purchase complete page son"}</Column>
+      </PageBody>
       <Footer />
-    </div>
+    </PageContainer>
   );
 };

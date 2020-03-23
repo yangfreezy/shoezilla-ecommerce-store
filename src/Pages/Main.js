@@ -4,6 +4,7 @@ import {
   Nav,
   Footer,
   ProductList,
+  PageBody,
   PageContainer,
   Column
 } from "./../Components";
@@ -11,10 +12,12 @@ import {
 export const Main = () => {
   return (
     <PageContainer>
-      <Nav />
-      <Column>
-        <ProductList />
-      </Column>
+      <PageBody>
+        <Nav />
+        <Column>
+          <ProductList />
+        </Column>
+      </PageBody>
       <Footer />
     </PageContainer>
   );

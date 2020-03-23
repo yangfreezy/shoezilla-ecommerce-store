@@ -5,6 +5,7 @@ const StyledText = styled.div`
   font-size: ${props => props.fontSize || "14px"};
   font-weight: ${props => props.fontWeight || "bold"};
   margin: 10px 10px 10px 10px;
+  display: inline;
 `;
 
 export const Text = ({ text, fontSize, fontWeight }) => {

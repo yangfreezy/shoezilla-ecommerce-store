@@ -9,10 +9,11 @@ const StyledIcon = styled.img.attrs({
 })`
   width: 100px;
   height: auto;
+  margin: ${props => props.margin || "0"};
 `;
 
-export const MainLogo = () => (
+export const MainLogo = ({ margin }) => (
   <Link to="/">
-    <StyledIcon />
+    <StyledIcon margin={margin} />
   </Link>
 );

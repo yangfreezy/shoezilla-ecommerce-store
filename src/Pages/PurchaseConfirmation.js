@@ -1,13 +1,15 @@
 import React from "react";
 
-import { Nav, Footer } from "./../Components";
+import { Nav, Footer, Column, PageBody, PageContainer } from "./../Components";
 
 export const PurchaseConfirmation = () => {
   return (
-    <div>
-      <Nav />
-      {"youre on the purchase confirmation page son"}
+    <PageContainer>
+      <PageBody>
+        <Nav />
+        <Column>{"youre on the purchase confirmation page son"}</Column>
+      </PageBody>
       <Footer />
-    </div>
+    </PageContainer>
   );
 };

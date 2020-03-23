@@ -1,14 +1,18 @@
 import React from "react";
 
-import { Nav, Footer } from "./../Components";
+import { Nav, Footer, Column, PageBody, PageContainer } from "./../Components";
 import { ProductItemMain } from "./../Containers";
 
 export const Product = () => {
   return (
-    <div>
-      <Nav />
-      <ProductItemMain />
+    <PageContainer>
+      <PageBody>
+        <Nav />
+        <Column>
+          <ProductItemMain />
+        </Column>
+      </PageBody>
       <Footer />
-    </div>
+    </PageContainer>
   );
 };
