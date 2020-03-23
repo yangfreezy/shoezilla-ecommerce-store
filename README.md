@@ -3,7 +3,7 @@ TODO:
 STORIES:
 
 Phase 1:
-(PRODUCT/Cart)
+(PRODUCT/CART)
 
 - Swap quantity for "size", make add to cart button append one item to the cart.
 - Add sizes, change Cart to be like { [id]: { 'sizes': { '9': 1 } } }
@@ -17,7 +17,7 @@ Phase 2:
 - Icon on top right updates with red numbers indicating number of items in the cart
 
 Phase 3:
-(PRODUCT/Cart)
+(PRODUCT/CART)
 
 - Make a pop up appear, notifying you your item has been added to cart, cart preview with price.
 
