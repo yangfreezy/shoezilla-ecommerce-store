@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 import { StoreContext } from "./../Context";
-import { ProductListItem } from ".";
+import { ProductListItem, Loading } from ".";
 
 const StyledList = styled.div`
   display: flex;
@@ -17,9 +17,13 @@ export const ProductList = () => {
   const value = useContext(StoreContext);
   return (
     <StyledList>
-      {value.shoes.map(shoe => {
-        return <ProductListItem product={shoe} />;
-      })}
+      {value.shoes.length ? (
+        value.shoes.map(shoe => {
+          return <ProductListItem product={shoe} />;
+        })
+      ) : (
+        <Loading />
+      )}
     </StyledList>
   );
 };

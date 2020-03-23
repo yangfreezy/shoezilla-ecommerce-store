@@ -4,8 +4,6 @@ STORIES:
 
 Bugs to fix:
 
-- Make page start at top of page when you go from main page to a product view
-- Show loading animation when getting shoes on main page
 - When localStorage is cleared and user goes directly to a product page, should display a loading animation and make a request to get shoes, store them in cache, then get product details
 
 Maintenance:
