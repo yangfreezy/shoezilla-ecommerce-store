@@ -6,6 +6,10 @@ One-off tasks:
 
 - Make page start at top of page when you go from main page to a product view
 
+Maintenance:
+
+- Add prop types where applicable
+
 Phase 1:
 (PRODUCT/CART)
 
