@@ -6,7 +6,7 @@ import { priceWithTax } from "./../Helpers";
 const StyledPrice = styled.div`
   font-size: 14px;
   text-align: center;
-  margin: 50px 0px 10px 0px;
+  margin: 25px 0px 10px 0px;
   font-weight: bold;
 `;
 
