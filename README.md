@@ -2,6 +2,10 @@ TODO:
 
 STORIES:
 
+One-off tasks:
+
+- Make page start at top of page when you go from main page to a product view
+
 Phase 1:
 (PRODUCT/CART)
 
