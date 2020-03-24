@@ -1,7 +1,5 @@
 TODO:
 
-STORIES:
-
 Phase 1:
 (PRODUCT/CART)
 
