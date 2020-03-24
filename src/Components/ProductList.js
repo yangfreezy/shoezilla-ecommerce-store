@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 
 import { StoreContext } from "./../Context";
@@ -15,11 +15,14 @@ const StyledList = styled.div`
 
 export const ProductList = () => {
   const value = useContext(StoreContext);
+  const { shoesList, setShoesList } = value;
+  useEffect(() => {}, [shoesList, setShoesList]);
   return (
     <StyledList>
-      {value.shoes.length ? (
-        value.shoes.map(shoe => {
-          return <ProductListItem product={shoe} />;
+      {shoesList && shoesList.length ? (
+        shoesList.map(shoe => {
+          const key = shoe.productId + "/" + shoe.colorId;
+          return <ProductListItem product={shoe} key={key} />;
         })
       ) : (
         <Loading />

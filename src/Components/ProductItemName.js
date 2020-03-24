@@ -8,10 +8,9 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledName = styled.div`
-  font-size: 36px;
+  font-size: 40px;
   text-align: center;
   font-weight: 900;
-  margin: 10px 10px 10px 10px;
   color: #282828;
 `;
 export const ProductItemName = ({ name, id }) => {

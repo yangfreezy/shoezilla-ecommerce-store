@@ -13,8 +13,10 @@ export const ProductItemImage = ({ src, alt }) => {
   let { id } = useParams();
   const value = useContext(StoreContext);
   const { shoeIdCache } = value;
-  const mostDetailedImage = shoeIdCache[id].details
-    ? "https://www.zappos.com" + shoeIdCache[id].details.defaultImageUrl
-    : src;
+  let mostDetailedImage;
+  if (shoeIdCache[id].details) {
+    mostDetailedImage =
+      "https://www.zappos.com" + shoeIdCache[id].details.defaultImageUrl;
+  }
   return <StyledImage src={mostDetailedImage || src} alt={alt} />;
 };

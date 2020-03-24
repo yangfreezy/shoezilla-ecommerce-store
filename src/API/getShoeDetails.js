@@ -13,6 +13,7 @@ export const getShoeDetails = async productId => {
         }
       }
     );
+    if (!res.data.product) return;
     return res.data.product[0];
   } catch (err) {
     console.error(err);

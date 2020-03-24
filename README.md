@@ -2,10 +2,6 @@ TODO:
 
 STORIES:
 
-Bugs to fix:
-
-- When localStorage is cleared and user goes directly to a product page, should display a loading animation and make a request to get shoes, store them in cache, then get product details
-
 Maintenance:
 
 - Add prop types where applicable

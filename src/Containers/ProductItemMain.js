@@ -1,12 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Redirect, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 import { StoreContext } from "./../Context";
 import { getShoeDetails } from "./../API";
-import { addShoeDetailsToCache } from "./../Helpers";
+import { getAllShoeData, addShoeDetailsToCache } from "./../Helpers";
 import { QuantityContainer } from ".";
 import {
+  Loading,
   PrimaryButton,
   ProductDetails,
   ProductItemName,
@@ -25,7 +26,7 @@ const StyledColumn = styled.div`
 const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 25px 25px 0px 25px;
+  margin: 25px 25px 25px 25px;
   flex-wrap: wrap;
   justify-content: center;
 `;
@@ -33,20 +34,49 @@ const StyledRow = styled.div`
 export const ProductItemMain = () => {
   const value = useContext(StoreContext);
   const { id } = useParams();
-  const { shoeIdCache, setShoeIdCache, cart, setCart } = value;
-  const shoe = shoeIdCache[id];
-  const [shoeDetails, setShoeDetails] = useState(shoe.details || {});
-  const [quantity, setQuantity] = useState(cart[id] || 0);
-  const [requestAttempts, setRequestAttempts] = useState(0);
+  const { shoeIdCache, setShoeIdCache, cart, setCart, setShoesList } = value;
 
-  (async () => {
-    if (!shoe.details && requestAttempts < 1) {
-      const details = await getShoeDetails(id);
-      setShoeDetails(details);
-      setRequestAttempts(requestAttempts + 1);
-      return addShoeDetailsToCache(id, details, shoeIdCache, setShoeIdCache);
+  const shoe = shoeIdCache[id];
+  const [shoeDetails, setShoeDetails] = useState(
+    shoe ? (shoe.details ? shoe.details : {}) : {}
+  );
+  const needShoe = !shoe;
+  const needShoeDetails = !Object.keys(shoeDetails).length;
+  const [requestMade, setRequestMade] = useState(false);
+
+  const [quantity, setQuantity] = useState(cart[id] || 0);
+
+  useEffect(() => {
+    if (needShoe) {
+      (async () => {
+        const idCache = await getAllShoeData(setShoesList, setShoeIdCache);
+        if (!idCache) {
+          setRequestMade(true);
+          return;
+        }
+        const details = await getShoeDetails(id);
+        if (!details) {
+          setRequestMade(true);
+          return;
+        }
+        setShoeDetails(details);
+        addShoeDetailsToCache(id, details, idCache, setShoeIdCache);
+        setRequestMade(true);
+      })();
+    } else if (needShoeDetails) {
+      (async () => {
+        const details = await getShoeDetails(id);
+        if (!details) {
+          setRequestMade(true);
+          return;
+        }
+        setShoeDetails(details);
+        await addShoeDetailsToCache(id, details, shoeIdCache, setShoeIdCache);
+        setRequestMade(true);
+      })();
     }
-  })();
+    /*eslint-disable-next-line*/
+  }, []);
 
   const addToCart = () => {
     if (quantity < 1) return;
@@ -62,9 +92,12 @@ export const ProductItemMain = () => {
     if (quantity === 0) return;
     return setQuantity(quantity - 1);
   };
-
-  return shoe ? (
-    <StyledColumn>
+  if ((needShoe || needShoeDetails) && !requestMade) {
+    return <Loading />;
+  } else if (needShoe && requestMade) {
+    return <Redirect to="/" />;
+  } else
+    return (
       <StyledRow>
         <StyledColumn>
           <ProductItemName name={shoe.productName} id={id} />
@@ -85,8 +118,5 @@ export const ProductItemMain = () => {
           <ProductDetails details={shoeDetails} />
         </StyledColumn>
       </StyledRow>
-    </StyledColumn>
-  ) : (
-    <Redirect to="/" />
-  );
+    );
 };

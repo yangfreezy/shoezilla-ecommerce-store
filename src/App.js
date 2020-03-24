@@ -16,25 +16,28 @@ import { getCache, getAllShoeData } from "./Helpers";
 import "./App.css";
 
 export const App = () => {
-  const [shoes, setShoes] = useState(getCache("shoes") || []);
+  const [shoesList, setShoesList] = useState(getCache("shoes") || []);
   const [shoeIdCache, setShoeIdCache] = useState(getCache("shoeIdCache") || {});
-  const [requestAttempts, setRequestAttempts] = useState(0);
   const [cart, setCart] = useState({});
 
   useEffect(() => {
-    if (!shoes.length) {
-      getAllShoeData(
-        setShoes,
-        setShoeIdCache,
-        requestAttempts,
-        setRequestAttempts
-      );
+    if (!shoesList.length) {
+      (async () => {
+        await getAllShoeData(setShoesList, setShoeIdCache);
+      })();
     }
-  }, [shoes, requestAttempts]);
+  }, [shoesList]);
 
   return (
     <StoreContext.Provider
-      value={{ shoes, cart, setCart, shoeIdCache, setShoeIdCache }}
+      value={{
+        shoesList,
+        setShoesList,
+        shoeIdCache,
+        setShoeIdCache,
+        cart,
+        setCart
+      }}
     >
       <Router>
         <div className="App">

@@ -1,5 +1,5 @@
 import { getCache, insertCache } from "./cache";
-import { mapShoes, getAllShoeData } from "./getAllShoeData";
+import { mapProductListToCache, getAllShoeData } from "./getAllShoeData";
 import { addShoeDetailsToCache } from "./addShoeDetailsToCache";
 import { priceWithTax } from "./priceWithTax";
 import { removeLiTagsWithLinks } from "./removeLiTagsWithLinks";
@@ -7,7 +7,7 @@ import { removeLiTagsWithLinks } from "./removeLiTagsWithLinks";
 export {
   getCache,
   insertCache,
-  mapShoes,
+  mapProductListToCache,
   getAllShoeData,
   addShoeDetailsToCache,
   priceWithTax,

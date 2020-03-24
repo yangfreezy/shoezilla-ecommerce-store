@@ -9,6 +9,7 @@ import { removeLiTagsWithLinks } from "./../Helpers";
 const StyledTitle = styled.div`
   text-align: center;
   width: 450px;
+  margin: 0px 0px 10px 0px;
 `;
 
 const StyledDetails = styled.div`
@@ -19,7 +20,7 @@ const StyledDetails = styled.div`
   text-wrap: wrap;
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 `;
 
 export const ProductDetails = ({ details }) => {
