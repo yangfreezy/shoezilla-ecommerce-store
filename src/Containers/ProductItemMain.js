@@ -7,7 +7,7 @@ import { getShoeDetails } from "./../API";
 import { getAllShoeData, addShoeDetailsToCache } from "./../Helpers";
 import { QuantityContainer } from ".";
 import {
-  Loading,
+  LoadingAnimation,
   PrimaryButton,
   ProductDetails,
   ProductItemName,
@@ -93,7 +93,7 @@ export const ProductItemMain = () => {
     return setQuantity(quantity - 1);
   };
   if ((needShoe || needShoeDetails) && !requestMade) {
-    return <Loading />;
+    return <LoadingAnimation />;
   } else if (needShoe && requestMade) {
     return <Redirect to="/" />;
   } else

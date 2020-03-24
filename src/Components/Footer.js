@@ -32,16 +32,16 @@ export const Footer = () => {
       <StyledFooterColumn>
         <MainLogo margin="0px 0px 0px -8px" />
         <StyledLink to="/about">
-          <Text fontSize="10px" text="About Us" />
+          <Text color="white" fontSize="10px" text="About" />
         </StyledLink>
         <StyledLink to="/contact">
-          <Text fontSize="10px" text="Contact Us" />
+          <Text color="white" fontSize="10px" text="Contact" />
         </StyledLink>
         <StyledLink to="/deliveries">
-          <Text fontSize="10px" text="Delivery" />
+          <Text color="white" fontSize="10px" text="Delivery" />
         </StyledLink>
         <StyledLink to="/returns">
-          <Text fontSize="10px" text="Returns" />
+          <Text color="white" fontSize="10px" text="Returns" />
         </StyledLink>
       </StyledFooterColumn>
     </StyledFooter>

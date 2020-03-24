@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 
 import { StoreContext } from "./../Context";
-import { ProductListItem, Loading } from ".";
+import { ProductListItem, LoadingAnimation } from ".";
 
 const StyledList = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ export const ProductList = () => {
           return <ProductListItem product={shoe} key={key} />;
         })
       ) : (
-        <Loading />
+        <LoadingAnimation />
       )}
     </StyledList>
   );

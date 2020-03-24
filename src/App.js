@@ -18,7 +18,7 @@ import "./App.css";
 export const App = () => {
   const [shoesList, setShoesList] = useState(getCache("shoes") || []);
   const [shoeIdCache, setShoeIdCache] = useState(getCache("shoeIdCache") || {});
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState({ size: 10 });
 
   useEffect(() => {
     if (!shoesList.length) {

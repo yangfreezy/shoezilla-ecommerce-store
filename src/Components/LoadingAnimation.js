@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledLoading = styled.div`
+const StyledLoadingAnimation = styled.div`
   display: inline-block;
   position: relative;
   top: 35vh;
@@ -41,12 +41,12 @@ const StyledLoading = styled.div`
   }
 `;
 
-export const Loading = () => {
+export const LoadingAnimation = () => {
   return (
-    <StyledLoading>
+    <StyledLoadingAnimation>
       <div></div>
       <div></div>
       <div></div>
-    </StyledLoading>
+    </StyledLoadingAnimation>
   );
 };

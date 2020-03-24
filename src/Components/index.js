@@ -2,7 +2,7 @@
 import { CartIcon } from "./CartIcon";
 import { Footer } from "./Footer";
 import { HomeButton } from "./HomeButton";
-import { Loading } from "./Loading";
+import { LoadingAnimation } from "./LoadingAnimation";
 import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
 import { ProductDetails } from "./ProductDetails";
@@ -31,7 +31,7 @@ export {
   CartIcon,
   Footer,
   HomeButton,
-  Loading,
+  LoadingAnimation,
   MainLogo,
   Nav,
   ProductDetails,
