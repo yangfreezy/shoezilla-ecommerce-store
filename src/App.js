@@ -10,6 +10,7 @@ import {
   PurchaseComplete,
   PurchaseConfirmation
 } from "./Pages";
+
 import { StoreContext } from "./Context";
 import { getCache, getAllShoeData } from "./Helpers";
 
@@ -18,7 +19,7 @@ import "./App.css";
 export const App = () => {
   const [shoesList, setShoesList] = useState(getCache("shoes") || []);
   const [shoeIdCache, setShoeIdCache] = useState(getCache("shoeIdCache") || {});
-  const [cart, setCart] = useState({ size: 10 });
+  const [cart, setCart] = useState({ size: 1 });
 
   useEffect(() => {
     if (!shoesList.length) {

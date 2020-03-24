@@ -2,10 +2,6 @@ TODO:
 
 STORIES:
 
-Maintenance:
-
-- Add prop types where applicable
-
 Phase 1:
 (PRODUCT/CART)
 
@@ -38,6 +34,10 @@ Phase 6:
 (PURCHASE COMPLETED)
 
 - Displays that the order has been received
+
+Maintenance:
+
+- Add prop types where applicable
 
 Optimizations:
 
