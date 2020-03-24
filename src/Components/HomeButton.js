@@ -12,7 +12,7 @@ const StyledIcon = styled.img.attrs({
 `;
 const StickyWrapper = styled.div`
   position: fixed;
-  top: 20px;
+  top: 25px;
 `;
 
 export const HomeButton = () => (

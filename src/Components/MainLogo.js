@@ -7,13 +7,13 @@ import mainLogo from "./../Assets/main-logo.png";
 const StyledIcon = styled.img.attrs({
   src: mainLogo
 })`
-  width: 100px;
+  width: ${props => props.width || "100px"};
   height: auto;
   margin: ${props => props.margin || "0"};
 `;
 
-export const MainLogo = ({ margin }) => (
+export const MainLogo = ({ margin, width }) => (
   <Link to="/">
-    <StyledIcon margin={margin} />
+    <StyledIcon margin={margin} width={width} />
   </Link>
 );

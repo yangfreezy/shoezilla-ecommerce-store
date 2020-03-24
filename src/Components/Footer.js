@@ -30,7 +30,7 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <StyledFooterColumn>
-        <MainLogo margin="0px 0px 0px -8px" />
+        <MainLogo width="100px" margin="0px 0px 0px -8px" />
         <StyledLink to="/about">
           <Text color="white" fontSize="10px" text="About" />
         </StyledLink>

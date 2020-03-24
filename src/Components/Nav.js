@@ -14,7 +14,7 @@ export const Nav = () => {
   return (
     <NavBar>
       <HomeButton />
-      <MainLogo />
+      <MainLogo width={"115px"} />
       <CartIcon />
     </NavBar>
   );
