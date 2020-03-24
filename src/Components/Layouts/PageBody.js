@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const StyledPageBody = styled.div`
   min-height: 100vh;
+  padding-bottom: 50px;
 `;
 
 export const PageBody = ({ children }) => {

@@ -8,6 +8,7 @@ const StyledPrimaryButton = styled.div`
   background-color: ${props => props.backgroundColor || "black"};
   color: ${props => props.color || "white"};
   font-size: ${props => props.fontSize || "12px"};
+  line-height: ${props => props.fontSize || "12px"};
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -16,8 +17,8 @@ const StyledPrimaryButton = styled.div`
 `;
 
 export const PrimaryButton = ({
-  value,
   handleClick,
+  value,
   width,
   height,
   backgroundColor,
