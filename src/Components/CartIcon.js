@@ -8,8 +8,8 @@ import cartIcon from "./../Assets/cart-icon.png";
 const StyledCartNumber = styled.div`
   color: white;
   position: relative;
-  bottom: 31px;
-  left: 1px;
+  bottom: 36px;
+  left: 5px;
   font-size: 6px;
   font-weight: bolder;
   background-image: linear-gradient(
@@ -44,13 +44,20 @@ const StyledLink = styled(Link)`
   position: relative;
 `;
 
+const StickyWrapper = styled.div`
+  position: fixed;
+  top: 20px;
+`;
+
 export const CartIcon = () => {
   const value = useContext(StoreContext);
   const { cart } = value;
   return (
     <StyledLink to="/cart">
-      <StyledIcon />
-      {cart.size >= 1 && <StyledCartNumber>{cart.size}</StyledCartNumber>}
+      <StickyWrapper>
+        <StyledIcon />
+        {cart.size >= 1 && <StyledCartNumber>{cart.size}</StyledCartNumber>}
+      </StickyWrapper>
     </StyledLink>
   );
 };

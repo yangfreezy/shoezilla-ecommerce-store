@@ -10,9 +10,15 @@ const StyledIcon = styled.img.attrs({
   width: 24px;
   height: 24px;
 `;
+const StickyWrapper = styled.div`
+  position: fixed;
+  top: 20px;
+`;
 
 export const HomeButton = () => (
   <Link to="/">
-    <StyledIcon />
+    <StickyWrapper>
+      <StyledIcon />
+    </StickyWrapper>
   </Link>
 );
