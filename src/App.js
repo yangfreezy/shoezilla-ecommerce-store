@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ScrollToTop from "react-router-scroll-top";
 
 import {
   Cart,
@@ -14,12 +15,10 @@ import {
 import { StoreContext } from "./Context";
 import { getCache, getAllShoeData } from "./Helpers";
 
-import "./App.css";
-
 export const App = () => {
   const [shoesList, setShoesList] = useState(getCache("shoes") || []);
   const [shoeIdCache, setShoeIdCache] = useState(getCache("shoeIdCache") || {});
-  const [cart, setCart] = useState({ size: 1 });
+  const [cart, setCart] = useState({ numOfItems: 0 });
 
   useEffect(() => {
     if (!shoesList.length) {
@@ -41,7 +40,7 @@ export const App = () => {
       }}
     >
       <Router>
-        <div className="App">
+        <ScrollToTop>
           <Switch>
             <Route path="/" exact component={Main} />
             <Route path="/product/:id" exact component={Product} />
@@ -59,7 +58,7 @@ export const App = () => {
             />
             <Route path="/:404" exact component={NotFound} />
           </Switch>
-        </div>
+        </ScrollToTop>
       </Router>
     </StoreContext.Provider>
   );

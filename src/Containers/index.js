@@ -1,5 +1,5 @@
 import { CartContainer } from "./CartContainer";
 import { ProductItemMain } from "./ProductItemMain";
-import { QuantityContainer } from "./QuantityContainer";
+import { SizeContainer } from "./SizeContainer";
 
-export { CartContainer, ProductItemMain, QuantityContainer };
+export { CartContainer, ProductItemMain, SizeContainer };

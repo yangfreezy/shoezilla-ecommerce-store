@@ -56,7 +56,9 @@ export const CartIcon = () => {
     <StyledLink to="/cart">
       <StickyWrapper>
         <StyledIcon />
-        {cart.size >= 1 && <StyledCartNumber>{cart.size}</StyledCartNumber>}
+        {cart.numOfItems >= 1 && (
+          <StyledCartNumber>{cart.numOfItems}</StyledCartNumber>
+        )}
       </StickyWrapper>
     </StyledLink>
   );

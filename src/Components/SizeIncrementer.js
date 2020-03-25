@@ -24,7 +24,7 @@ const StyledIncrementer = styled.div`
   }
 `;
 
-export const QuantityIncrementer = ({ direction, handleClick }) => {
+export const SizeIncrementer = ({ direction, handleClick }) => {
   return direction === "up" ? (
     <StyledIncrementer onClick={handleClick}>
       <Icon src={minusIcon} width="24px" />

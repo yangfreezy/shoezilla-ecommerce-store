@@ -16,8 +16,8 @@ import { ProductListItemNote } from "./ProductListItemNote";
 import { ProductListName } from "./ProductListName";
 import { ProductListPrice } from "./ProductListPrice";
 import { ProductListThumbnail } from "./ProductListThumbnail";
-import { QuantityDisplay } from "./QuantityDisplay";
-import { QuantityIncrementer } from "./QuantityIncrementer";
+import { SizeDisplay } from "./SizeDisplay";
+import { SizeIncrementer } from "./SizeIncrementer";
 
 // Abstracted components
 import { ActionText, Icon, PrimaryButton, Text } from "./Abstracted";
@@ -45,8 +45,8 @@ export {
   ProductListName,
   ProductListPrice,
   ProductListThumbnail,
-  QuantityDisplay,
-  QuantityIncrementer
+  SizeDisplay,
+  SizeIncrementer
 };
 
 // Abstracted components

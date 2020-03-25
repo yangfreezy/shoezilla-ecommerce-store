@@ -6,8 +6,9 @@ const StyledDisplay = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 20px;
+  width: 30px;
 `;
 
-export const QuantityDisplay = ({ quantity }) => {
-  return <StyledDisplay>{quantity}</StyledDisplay>;
+export const SizeDisplay = ({ size }) => {
+  return <StyledDisplay>{size}</StyledDisplay>;
 };
