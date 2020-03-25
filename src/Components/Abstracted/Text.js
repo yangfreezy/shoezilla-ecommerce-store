@@ -13,6 +13,7 @@ const StyledText = styled.div`
 `;
 
 export const Text = ({
+  children,
   text,
   alignItems,
   textAlign,
@@ -32,7 +33,7 @@ export const Text = ({
       fontWeight={fontWeight}
       color={color}
     >
-      {text}
+      {text || children}
     </StyledText>
   );
 };

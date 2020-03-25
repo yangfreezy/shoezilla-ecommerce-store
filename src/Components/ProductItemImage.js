@@ -9,8 +9,9 @@ const StyledImage = styled.img`
   height: auto;
 `;
 
-export const ProductItemImage = ({ src, alt }) => {
+export const ProductItemImage = ({ src, alt, productId }) => {
   let { id } = useParams();
+  if (!id) id = productId;
   const value = useContext(StoreContext);
   const { shoeIdCache } = value;
   let mostDetailedImage;

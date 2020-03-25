@@ -25,14 +25,13 @@ const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px 100px 25px 100px;
   justify-content: flex-start;
+  margin: 25px 100px 25px 100px;
 `;
 
 const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 25px 25px 25px 25px;
   flex-wrap: wrap;
   justify-content: center;
 `;

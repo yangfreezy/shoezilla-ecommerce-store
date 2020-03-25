@@ -9,16 +9,16 @@ const StyledLink = styled(Link)`
 
 const StyledName = styled.div`
   font-size: 16px;
-  text-align: center;
+  text-align: ${props => props.textAlign || "center"};
   font-weight: 900;
   margin: 10px 10px 10px 10px;
   max-width: 225px;
   color: #282828;
 `;
-export const ProductListName = ({ name, id }) => {
+export const ProductListName = ({ name, id, textAlign }) => {
   return (
     <StyledLink to={`/product/${id}`}>
-      <StyledName>{he.decode(name)}</StyledName>
+      <StyledName textAlign={textAlign}>{he.decode(name)}</StyledName>
     </StyledLink>
   );
 };
