@@ -25,9 +25,10 @@ const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px 75px 25px 75px;
+  margin: 0px 100px 25px 100px;
   justify-content: flex-start;
 `;
+
 const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -77,16 +78,14 @@ export const ProductView = () => {
         setRequestMade(true);
       })();
     }
-    /*eslint-disable-next-line*/
+    // eslint-disable-next-line
   }, []);
 
   const addToCart = () => {
     const currentCart = JSON.parse(JSON.stringify(cart));
-
     const currentCartItems = currentCart.itemsCache;
     if (!currentCartItems[id]) currentCartItems[id] = {};
     currentCartItems[id][size] = ~~currentCartItems[id][size] + 1;
-
     currentCart["numOfItems"]++;
     insertCache("cart", currentCart);
     return setCart(currentCart);
@@ -100,31 +99,27 @@ export const ProductView = () => {
     if (size === 6) return;
     return setSize(size - 0.5);
   };
-  if ((!shoe || !shoeDetailsExist) && !requestMade) {
-    return <LoadingAnimation />;
-  } else if (!shoe && requestMade) {
-    return <Redirect to="/" />;
-  } else
-    return (
-      <StyledRow>
-        <StyledColumn>
-          <ProductItemName name={shoe.productName} id={id} />
-          <ProductListBrandName fontSize="12px" brandName={shoe.brandName} />
-          <ProductItemImage
-            src={shoe.thumbnailImageUrl}
-            alt={shoe.productName}
-          />
-          <PriceText price={shoe.price} />
-          <SizeDisplay
-            increaseSize={increaseSize}
-            decreaseSize={decreaseSize}
-            size={size}
-          />
-          <PrimaryButton value="Add to Cart" handleClick={addToCart} />
-        </StyledColumn>
-        <StyledColumn>
-          <ProductDetails details={shoeDetails} />
-        </StyledColumn>
-      </StyledRow>
-    );
+
+  if ((!shoe || !shoeDetailsExist) && !requestMade) return <LoadingAnimation />;
+  if (!shoe && requestMade) return <Redirect to="/" />;
+
+  return (
+    <StyledRow>
+      <StyledColumn>
+        <ProductItemName name={shoe.productName} id={id} />
+        <ProductListBrandName fontSize="12px" brandName={shoe.brandName} />
+        <ProductItemImage src={shoe.thumbnailImageUrl} alt={shoe.productName} />
+        <PriceText price={shoe.price} />
+        <SizeDisplay
+          increaseSize={increaseSize}
+          decreaseSize={decreaseSize}
+          size={size}
+        />
+        <PrimaryButton value="Add to Cart" handleClick={addToCart} />
+      </StyledColumn>
+      <StyledColumn>
+        <ProductDetails details={shoeDetails} />
+      </StyledColumn>
+    </StyledRow>
+  );
 };

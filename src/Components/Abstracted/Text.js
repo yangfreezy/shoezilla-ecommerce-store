@@ -2,15 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledText = styled.div`
-  ${props => (props.alignItems ? "align-items: " + props.alignItems : null)};
-  ${props => (props.textAlign ? "text-align: " + props.textAlign : null)};
-  ${props =>
-    props.margin ? "margin: " + props.margin : "margin: 10px 10px 10px 10px"};
-  ${props => (props.width ? "width: " + props.width : null)};
-  ${props => (props.fontSize ? "font-size: " + props.fontSize : null)};
-  ${props =>
-    props.fontWeight ? "font-weight: " + props.fontWeight : "normal"};
-  ${props => (props.color ? "color: " + props.color : null)};
+  align-items: ${props => props.alignItems || "center"};
+  text-align: ${props => props.textAlign || "left"};
+  margin: ${props => props.margin || "10px 0px 10px 0px"};
+  width: ${props => props.width || "auto"};
+  font-size: ${props => props.fontSize || "14px"};
+  font-weight: ${props => props.fontWeight || "normal"};
+  line-height: ${props => props.fontSize || "normal"}
+  color: ${props => props.color || "black"};
 `;
 
 export const Text = ({
