@@ -4,7 +4,7 @@ import ScrollToTop from "react-router-scroll-top";
 
 import {
   Cart,
-  Main,
+  Home,
   NotFound,
   Product,
   Purchase,
@@ -18,7 +18,9 @@ import { getCache, getAllShoeData } from "./Helpers";
 export const App = () => {
   const [shoesList, setShoesList] = useState(getCache("shoes") || []);
   const [shoeIdCache, setShoeIdCache] = useState(getCache("shoeIdCache") || {});
-  const [cart, setCart] = useState({ numOfItems: 0 });
+  const [cart, setCart] = useState(
+    getCache("cart") || { numOfItems: 0, itemsCache: {} }
+  );
 
   useEffect(() => {
     if (!shoesList.length) {
@@ -42,7 +44,7 @@ export const App = () => {
       <Router>
         <ScrollToTop>
           <Switch>
-            <Route path="/" exact component={Main} />
+            <Route path="/" exact component={Home} />
             <Route path="/product/:id" exact component={Product} />
             <Route path="/cart" exact component={Cart} />
             <Route path="/purchase" exact component={Purchase} />

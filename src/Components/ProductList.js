@@ -10,7 +10,7 @@ const StyledList = styled.div`
   max-width: 1400px;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const ProductList = () => {

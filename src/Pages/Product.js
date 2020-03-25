@@ -1,18 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Nav, Footer, Column, PageBody, PageContainer } from "./../Components";
-import { ProductItemMain } from "./../Containers";
+import { ProductView } from "./../Containers";
 
 export const Product = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <PageContainer>
       <PageBody>
         <Nav />
         <Column>
-          <ProductItemMain />
+          <ProductView />
         </Column>
       </PageBody>
       <Footer />

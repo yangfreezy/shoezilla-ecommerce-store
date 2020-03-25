@@ -1,5 +1,5 @@
 import { Cart } from "./Cart";
-import { Main } from "./Main";
+import { Home } from "./Home";
 import { NotFound } from "./NotFound";
 import { Product } from "./Product";
 import { Purchase } from "./Purchase";
@@ -8,7 +8,7 @@ import { PurchaseConfirmation } from "./PurchaseConfirmation";
 
 export {
   Cart,
-  Main,
+  Home,
   NotFound,
   Product,
   Purchase,

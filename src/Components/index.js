@@ -5,6 +5,7 @@ import { HomeButton } from "./HomeButton";
 import { LoadingAnimation } from "./LoadingAnimation";
 import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
+import { PriceText } from "./PriceText";
 import { ProductDetails } from "./ProductDetails";
 import { ProductFitDetails } from "./ProductFitDetails";
 import { ProductItemImage } from "./ProductItemImage";
@@ -14,10 +15,10 @@ import { ProductListBrandName } from "./ProductListBrandName";
 import { ProductListItem } from "./ProductListItem";
 import { ProductListItemNote } from "./ProductListItemNote";
 import { ProductListName } from "./ProductListName";
-import { ProductListPrice } from "./ProductListPrice";
 import { ProductListThumbnail } from "./ProductListThumbnail";
 import { SizeDisplay } from "./SizeDisplay";
 import { SizeIncrementer } from "./SizeIncrementer";
+import { SizeValue } from "./SizeValue";
 
 // Abstracted components
 import { ActionText, Icon, PrimaryButton, Text } from "./Abstracted";
@@ -34,6 +35,7 @@ export {
   LoadingAnimation,
   MainLogo,
   Nav,
+  PriceText,
   ProductDetails,
   ProductFitDetails,
   ProductItemImage,
@@ -43,10 +45,10 @@ export {
   ProductListItem,
   ProductListItemNote,
   ProductListName,
-  ProductListPrice,
   ProductListThumbnail,
   SizeDisplay,
-  SizeIncrementer
+  SizeIncrementer,
+  SizeValue
 };
 
 // Abstracted components

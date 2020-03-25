@@ -4,16 +4,21 @@ import styled from "styled-components";
 
 import { StoreContext } from "./../Context";
 import { getShoeDetails } from "./../API";
-import { getAllShoeData, addShoeDetailsToCache } from "./../Helpers";
-import { SizeContainer } from ".";
+import {
+  getAllShoeData,
+  addShoeDetailsToCache,
+  insertCache
+} from "./../Helpers";
+
 import {
   LoadingAnimation,
+  PriceText,
   PrimaryButton,
   ProductDetails,
   ProductItemName,
   ProductListBrandName,
-  ProductListPrice,
-  ProductItemImage
+  ProductItemImage,
+  SizeDisplay
 } from "./../Components";
 
 const StyledColumn = styled.div`
@@ -31,7 +36,7 @@ const StyledRow = styled.div`
   justify-content: center;
 `;
 
-export const ProductItemMain = () => {
+export const ProductView = () => {
   const value = useContext(StoreContext);
   const { id } = useParams();
   const { shoeIdCache, setShoeIdCache, cart, setCart, setShoesList } = value;
@@ -75,15 +80,15 @@ export const ProductItemMain = () => {
     /*eslint-disable-next-line*/
   }, []);
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
-
   const addToCart = () => {
     const currentCart = JSON.parse(JSON.stringify(cart));
-    if (!currentCart[id]) currentCart[id] = {};
-    currentCart[id][size] = ~~currentCart[id][size] + 1;
+
+    const currentCartItems = currentCart.itemsCache;
+    if (!currentCartItems[id]) currentCartItems[id] = {};
+    currentCartItems[id][size] = ~~currentCartItems[id][size] + 1;
+
     currentCart["numOfItems"]++;
+    insertCache("cart", currentCart);
     return setCart(currentCart);
   };
 
@@ -104,13 +109,13 @@ export const ProductItemMain = () => {
       <StyledRow>
         <StyledColumn>
           <ProductItemName name={shoe.productName} id={id} />
-          <ProductListBrandName brandName={shoe.brandName} />
+          <ProductListBrandName fontSize="12px" brandName={shoe.brandName} />
           <ProductItemImage
             src={shoe.thumbnailImageUrl}
             alt={shoe.productName}
           />
-          <ProductListPrice price={shoe.price} />
-          <SizeContainer
+          <PriceText price={shoe.price} />
+          <SizeDisplay
             increaseSize={increaseSize}
             decreaseSize={decreaseSize}
             size={size}

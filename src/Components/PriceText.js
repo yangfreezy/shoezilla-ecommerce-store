@@ -23,7 +23,7 @@ const StyledRow = styled.div`
   align-items: flex-end;
 `;
 
-export const ProductListPrice = ({ price, withTax }) => {
+export const PriceText = ({ price, withTax }) => {
   return (
     <StyledRow>
       <StyledPrice> {price} </StyledPrice>

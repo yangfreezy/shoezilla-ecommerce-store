@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import {
   Nav,
@@ -9,10 +9,7 @@ import {
   Column
 } from "./../Components";
 
-export const Main = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+export const Home = () => {
   return (
     <PageContainer>
       <PageBody>

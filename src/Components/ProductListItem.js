@@ -1,34 +1,33 @@
 import React from "react";
-import styled from "styled-components";
 
 import {
-  ProductListItemNote,
+  Column,
+  PriceText,
+  Text,
   ProductListName,
   ProductListBrandName,
-  ProductListPrice,
   ProductListThumbnail
 } from ".";
 
-const StyledListItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 50px 50px 50px 50px;
-  text-align: center;
-`;
-
 export const ProductListItem = ({ product }) => {
   return (
-    <StyledListItem>
+    <Column margin="50px 50px 50px 50px">
       <ProductListName name={product.productName} id={product.productId} />
-      <ProductListBrandName brandName={product.brandName} />
+      <ProductListBrandName fontSize="10px" brandName={product.brandName} />
       <ProductListThumbnail
         src={product.thumbnailImageUrl}
         alt={product.productName}
         id={product.productId}
       />
-      <ProductListPrice price={product.price} />
-      {product.isNew && <ProductListItemNote fontSize="10px" note="New" />}
-    </StyledListItem>
+      <PriceText price={product.price} />
+      {product.isNew && (
+        <Text
+          fontSize="10px"
+          textAlign="center"
+          margin="10px 10px 0px 10px"
+          text="New"
+        />
+      )}
+    </Column>
   );
 };

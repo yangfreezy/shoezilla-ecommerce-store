@@ -1,5 +1,4 @@
-import { CartContainer } from "./CartContainer";
-import { ProductItemMain } from "./ProductItemMain";
-import { SizeContainer } from "./SizeContainer";
+import { CartView } from "./CartView";
+import { ProductView } from "./ProductView";
 
-export { CartContainer, ProductItemMain, SizeContainer };
+export { CartView, ProductView };
