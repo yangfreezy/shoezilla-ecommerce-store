@@ -6,8 +6,7 @@ import { ProductFitDetails } from ".";
 import { Text, Column } from ".";
 import { removeLiTagsWithLinks } from "./../Helpers";
 
-const StyledTitle = styled.div`
-  text-align: center;
+const StyledTitleContainer = styled.div`
   width: 450px;
   margin: 0px 0px 10px 0px;
 `;
@@ -30,9 +29,14 @@ export const ProductDetails = ({ details }) => {
     : null;
   return (
     <Column>
-      <StyledTitle>
-        <Text fontSize="20px" fontWeight="bold" text="Product Description" />
-      </StyledTitle>
+      <StyledTitleContainer>
+        <Text
+          fontSize="20px"
+          fontWeight="bold"
+          text="Product Description"
+          textAlign="center"
+        />
+      </StyledTitleContainer>
       {Object.keys(details).length ? (
         <Fragment>
           <StyledDetails>{descriptionHTML}</StyledDetails>
@@ -42,6 +46,7 @@ export const ProductDetails = ({ details }) => {
         <Text
           fontSize="13px"
           fontWeight="normal"
+          textAlign="center"
           text="Getting product details.."
         />
       )}

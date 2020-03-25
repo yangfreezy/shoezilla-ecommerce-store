@@ -8,15 +8,18 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "browser-history": "^1.0.1",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.4.4",
     "he": "^1.2.0",
     "html-react-parser": "^0.10.2",
-    "lodash": "^4.17.15",
     "react": "^16.13.1",
+    "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.13.1",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-router-scroll-top": "^0.2.1",
     "react-scripts": "3.4.0",
+    "react-test-renderer": "^16.13.1",
     "styled-components": "^5.0.1"
   },
   "scripts": {
@@ -24,6 +27,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/coverage",
+    "coverageReporters": [
+      "text",
+      "html"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(jpg|png|svg)$": "<rootDir>/test-config/file-mock.js",
+      "^.+\\.styl": "<rootDir>/test-config/style-mock.js"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
