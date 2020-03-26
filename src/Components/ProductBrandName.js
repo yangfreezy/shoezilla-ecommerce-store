@@ -6,7 +6,7 @@ const StyledName = styled.div`
   font-size: ${props => props.fontSize || "12px"};
   text-align: ${props => props.textAlign || "center"};
   font-weight: light;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 0px;
 `;
 export const ProductBrandName = ({ brandName, fontSize, textAlign }) => {
   return (

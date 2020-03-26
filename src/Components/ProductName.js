@@ -8,7 +8,7 @@ const StyledName = styled.div`
   font-size: 16px;
   text-align: ${props => props.textAlign || "center"};
   font-weight: 900;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 0px;
   max-width: 225px;
   color: #282828;
 `;

@@ -19,7 +19,7 @@ const StyledLink = styled(Link)`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin: 0px 0px 0px 0px;
+  margin: 0px;
 `;
 
 export const CartView = () => {
@@ -63,25 +63,23 @@ export const CartView = () => {
   return (
     <Fragment>
       <Column>
-        <Text margin="20px 10px 10px 10px" fontSize="16px">
-          {"Checkout"}
+        <Text margin="10px" fontSize="16px">
+          {"My Cart"}
         </Text>
       </Column>
       {cartItemsExist ? (
-        <Column
-          alignItems="space-between"
-          margin="10px 100px 10px 100px"
-          width="45vw"
-        >
-          <CartItemsList cartItems={cartItems} shoeIdCache={shoeIdCache} />
-          <Column alignItems="flex-end" margin="25px 0px">
+        <Column alignItems="flex-end">
+          <Column alignItems="space-between" margin="10px 50px">
+            <CartItemsList cartItems={cartItems} shoeIdCache={shoeIdCache} />
+          </Column>
+          <Column alignItems="flex-end" justifyContent="flex-start">
             <CartPriceTotals
               cartTotalBeforeShipping={cartTotalBeforeShipping}
               cartTotalAfterShipping={cartTotalAfterShipping}
             />
             <StyledLink to="/purchase">
               <PrimaryButton
-                margin="25px 0px 25px 0px"
+                margin="10px 100px"
                 value="Checkout"
               ></PrimaryButton>
             </StyledLink>

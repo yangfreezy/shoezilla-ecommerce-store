@@ -22,7 +22,7 @@ export const CartItem = ({
   return (
     <Column>
       <Row justifyContent="space-between" alignItems="flex-start">
-        <Column alignItems="flex-start">
+        <Column alignItems="flex-start" margin="0px 50px">
           <ProductName
             name={product.productName}
             productId={productId}
@@ -40,7 +40,11 @@ export const CartItem = ({
             width="150px"
           />
         </Column>
-        <Column alignItems="flex-end" justifyContent="flex-start">
+        <Column
+          alignItems="flex-end"
+          justifyContent="flex-start"
+          margin="0px 50px"
+        >
           <CartPriceDetails
             productUnits={productUnits}
             initialPrice={product.price}
@@ -50,11 +54,7 @@ export const CartItem = ({
             totalPrice={priceWithTax(product.price, 0.065, productUnits).total}
           />
           <QuantitySelection defaultValue={productUnits} />
-          <PrimaryButton
-            fontSize="10px"
-            margin="20px 0px 20px 0px"
-            padding="10px 15px 10px 15px"
-          >
+          <PrimaryButton fontSize="10px" margin="10px 0px" padding="10px 15px">
             {"Remove"}
           </PrimaryButton>
         </Column>

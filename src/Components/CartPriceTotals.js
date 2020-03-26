@@ -7,16 +7,15 @@ export const CartPriceTotals = ({
   cartTotalAfterShipping
 }) => {
   return (
-    <Column justifyContent="flex-start" alignItems="flex-end">
-      <Text textAlign="right" width="45vw" fontSize="12px">
-        {"Shipping & Handling: $5.99"}
+    <Column justifyContent="center" alignItems="flex-end" margin="10px 100px">
+      <Text textAlign="right" fontSize="12px">
+        {"Shipping: $5.99"}
       </Text>
       <Text
         textAlign="right"
-        width="45vw"
         fontSize="12px"
       >{`Subtotal: ${cartTotalBeforeShipping}`}</Text>
-      <Text textAlign="right" width="35vw" fontSize="16px">
+      <Text textAlign="right" fontSize="16px">
         {`Total: ${cartTotalAfterShipping}`}
       </Text>
     </Column>

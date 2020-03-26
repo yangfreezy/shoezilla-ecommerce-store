@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Redirect, useParams } from "react-router-dom";
-import styled from "styled-components";
 
 import { StoreContext } from "./../Context";
 import { getShoeDetails } from "./../API";
@@ -11,28 +10,15 @@ import {
 } from "./../Helpers";
 
 import {
+  Column,
   LoadingAnimation,
   PriceText,
   PrimaryButton,
   ProductDetails,
   ProductItem,
+  Row,
   SizeDisplay
 } from "./../Components";
-
-const StyledColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 25px 100px 25px 100px;
-`;
-
-const StyledRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
 
 export const ProductView = () => {
   const value = useContext(StoreContext);
@@ -103,8 +89,8 @@ export const ProductView = () => {
   if (!shoe && requestMade) return <Redirect to="/" />;
 
   return (
-    <StyledRow>
-      <StyledColumn>
+    <Row>
+      <Column justifyContent="flex-start" margin="25px 100px">
         <ProductItem product={shoe} productId={id} />
         <PriceText price={shoe.price} />
         <SizeDisplay
@@ -113,10 +99,10 @@ export const ProductView = () => {
           size={size}
         />
         <PrimaryButton value="Add to Cart" handleClick={addToCart} />
-      </StyledColumn>
-      <StyledColumn>
+      </Column>
+      <Column justifyContent="flex-start" margin="25px 100px">
         <ProductDetails details={shoeDetails} />
-      </StyledColumn>
-    </StyledRow>
+      </Column>
+    </Row>
   );
 };
