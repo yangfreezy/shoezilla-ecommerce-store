@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 
-import { StoreContext } from "./../Context";
 import { ProductListItem, LoadingAnimation } from ".";
+import { StoreContext } from "./../Context";
 
 const StyledList = styled.div`
   display: flex;

@@ -7,7 +7,7 @@ export const CartPriceTotals = ({
   cartTotalAfterShipping
 }) => {
   return (
-    <Column justifyContent="center" alignItems="flex-end" margin="10px 100px">
+    <Column justifyContent="center" alignItems="flex-end" margin="10px 50px">
       <Text textAlign="right" fontSize="12px">
         {"Shipping: $5.99"}
       </Text>

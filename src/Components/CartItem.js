@@ -1,8 +1,4 @@
-import React, { useContext } from "react";
-
-import { StoreContext } from "./../Context";
-
-import { insertCache, priceWithTax } from "./../Helpers";
+import React from "react";
 
 import {
   CartPriceDetails,
@@ -18,38 +14,17 @@ import {
   Text
 } from "./../Components";
 
+import { priceWithTax } from "./../Helpers";
+
 export const CartItem = ({
   productId,
   productUnits,
   product,
   mostDetailedImage,
-  size
+  productSize,
+  editQuantity,
+  removeFromCart
 }) => {
-  const value = useContext(StoreContext);
-  const { cart, setCart } = value;
-
-  const editQuantity = event => {
-    const newQuantity = event.target.value;
-    const updatedCart = JSON.parse(JSON.stringify(cart));
-    const difference = newQuantity - updatedCart.itemsCache[productId][size];
-    updatedCart.itemsCache[productId][size] = newQuantity;
-    updatedCart.numOfItems += difference;
-    setCart(updatedCart);
-    insertCache("cart", updatedCart);
-  };
-
-  const removeFromCart = () => {
-    const updatedCart = JSON.parse(JSON.stringify(cart));
-    const numberOfItemsRemoved = updatedCart.itemsCache[productId][size];
-    delete updatedCart.itemsCache[productId][size];
-    updatedCart.numOfItems -= numberOfItemsRemoved;
-    if (!Object.keys(updatedCart.itemsCache[productId]).length) {
-      delete updatedCart.itemsCache[productId];
-    }
-    setCart(updatedCart);
-    insertCache("cart", updatedCart);
-  };
-
   return (
     <Column>
       <Row justifyContent="space-between" alignItems="flex-start">
@@ -66,7 +41,7 @@ export const CartItem = ({
                 fontSize="10px"
                 textAlign="left"
               />
-              <Text fontSize="10px"> {"Size: Men's " + size}</Text>
+              <Text fontSize="10px"> {"Size: Men's " + productSize}</Text>
               <ProductItemImage
                 src={mostDetailedImage}
                 alt={mostDetailedImage}
@@ -95,14 +70,14 @@ export const CartItem = ({
           </Column>
           <Column>
             <QuantitySelection
-              editQuantity={editQuantity}
+              editQuantity={e => editQuantity(e, productId, productSize)}
               defaultValue={productUnits}
             />
             <PrimaryButton
               fontSize="10px"
               margin="10px 0px"
               padding="10px 15px"
-              handleClick={removeFromCart}
+              handleClick={e => removeFromCart(e, productId, productSize)}
             >
               {"Remove"}
             </PrimaryButton>

@@ -1,5 +1,5 @@
 import { CartView } from "./CartView";
-import { CartItem } from "./CartItem";
+import { CartItemsList } from "./CartItemsList";
 import { ProductView } from "./ProductView";
 
-export { CartItem, CartView, ProductView };
+export { CartItemsList, CartView, ProductView };

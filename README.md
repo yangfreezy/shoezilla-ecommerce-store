@@ -1,12 +1,5 @@
 TODO:
 
-Phase 2:
-(CART)
-
-- Add size to products in cart, refactor existing code to split by Size
-- Add ability to make changes to cart from selection
-- Add ability to remove item from cart
-
 Phase 4:
 (PURCHASE)
 

@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Redirect, useParams } from "react-router-dom";
 
-import { StoreContext } from "./../Context";
-import { getShoeDetails } from "./../API";
-import {
-  getAllShoeData,
-  addShoeDetailsToCache,
-  insertCache
-} from "./../Helpers";
-
 import {
   Column,
   LoadingAnimation,
@@ -19,6 +11,13 @@ import {
   Row,
   SizeDisplay
 } from "./../Components";
+import { StoreContext } from "./../Context";
+import {
+  getAllShoeData,
+  addShoeDetailsToCache,
+  insertCache
+} from "./../Helpers";
+import { getShoeDetails } from "./../API";
 
 export const ProductView = () => {
   const value = useContext(StoreContext);
