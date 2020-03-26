@@ -42,21 +42,31 @@ export const CartItem = ({
         </Column>
         <Column
           alignItems="flex-end"
-          justifyContent="flex-start"
+          justifyContent="space-between"
           margin="0px 50px"
         >
-          <CartPriceDetails
-            productUnits={productUnits}
-            initialPrice={product.price}
-            initialPriceWithTax={
-              priceWithTax(product.price, 0.065, productUnits).taxCost
-            }
-            totalPrice={priceWithTax(product.price, 0.065, productUnits).total}
-          />
-          <QuantitySelection defaultValue={productUnits} />
-          <PrimaryButton fontSize="10px" margin="10px 0px" padding="10px 15px">
-            {"Remove"}
-          </PrimaryButton>
+          <Column>
+            <CartPriceDetails
+              productUnits={productUnits}
+              initialPrice={product.price}
+              initialPriceWithTax={
+                priceWithTax(product.price, 0.065, productUnits).taxCost
+              }
+              totalPrice={
+                priceWithTax(product.price, 0.065, productUnits).total
+              }
+            />
+          </Column>
+          <Column>
+            <QuantitySelection defaultValue={productUnits} />
+            <PrimaryButton
+              fontSize="10px"
+              margin="10px 0px"
+              padding="10px 15px"
+            >
+              {"Remove"}
+            </PrimaryButton>
+          </Column>
         </Column>
       </Row>
     </Column>

@@ -1,5 +1,6 @@
+import { Column } from "./Column";
+import { HoverWrapper } from "./HoverWrapper";
 import { Row } from "./Row";
 import { PageBody } from "./PageBody";
 import { PageContainer } from "./PageContainer";
-import { Column } from "./Column";
-export { Row, PageBody, PageContainer, Column };
+export { Column, HoverWrapper, Row, PageBody, PageContainer };

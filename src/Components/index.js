@@ -26,7 +26,6 @@ import { SizeIncrementer } from "./SizeIncrementer";
 // Abstracted components
 import {
   ActionText,
-  HoverText,
   Icon,
   LinkWrapper,
   PrimaryButton,
@@ -34,7 +33,7 @@ import {
 } from "./Abstracted";
 
 // Layouts
-import { Column, PageBody, PageContainer, Row } from "./Layouts";
+import { Column, HoverWrapper, PageBody, PageContainer, Row } from "./Layouts";
 
 export {
   CartIcon,
@@ -63,8 +62,8 @@ export {
 };
 
 // Abstracted components
-export { ActionText, HoverText, Icon, LinkWrapper, PrimaryButton, Text };
+export { ActionText, Icon, LinkWrapper, PrimaryButton, Text };
 
 // Layouts
 
-export { Column, PageBody, PageContainer, Row };
+export { Column, HoverWrapper, PageBody, PageContainer, Row };
