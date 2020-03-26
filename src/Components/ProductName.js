@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import he from "he";
 
-import { LinkWrapper } from ".";
-
 const StyledName = styled.div`
   font-size: 16px;
   text-align: ${props => props.textAlign || "center"};
@@ -14,9 +12,5 @@ const StyledName = styled.div`
 `;
 
 export const ProductName = ({ name, productId, textAlign }) => {
-  return (
-    <LinkWrapper to={`/product/${productId}`}>
-      <StyledName textAlign={textAlign}>{he.decode(name)}</StyledName>
-    </LinkWrapper>
-  );
+  return <StyledName textAlign={textAlign}>{he.decode(name)}</StyledName>;
 };

@@ -24,7 +24,7 @@ const StyledLink = styled(Link)`
 
 export const CartView = () => {
   const value = useContext(StoreContext);
-  const { cart, shoeIdCache } = value;
+  const { cart, setCart, shoeIdCache } = value;
   const cartItems = cart.itemsCache || {};
   const cartItemsExist = Object.keys(cartItems).length > 0;
   const [cartTotalBeforeShipping, setCartTotalBeforeShipping] = useState(0);
@@ -38,6 +38,8 @@ export const CartView = () => {
     }
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {}, [setCart]);
 
   const getTotalPriceOfCart = cartItems => {
     let totalBeforeShipping = 0;

@@ -2,12 +2,11 @@ import React from "react";
 
 import { Column, Text } from ".";
 
-export const QuantitySelection = ({ defaultValue }) => {
+export const QuantitySelection = ({ defaultValue, editQuantity }) => {
   return (
     <Column margin="10px 0px">
       <Text text="Quantity" textAlign="center" fontSize="8px" />
-      <select id="Quantity" defaultValue={defaultValue}>
-        <option value="0">0</option>
+      <select id="Quantity" onChange={editQuantity} defaultValue={defaultValue}>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

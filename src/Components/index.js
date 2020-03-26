@@ -1,6 +1,5 @@
 // Components
 import { CartIcon } from "./CartIcon";
-import { CartItem } from "./CartItem";
 import { CartItemsList } from "./CartItemsList";
 import { CartPriceDetails } from "./CartPriceDetails";
 import { CartPriceTotals } from "./CartPriceTotals";
@@ -37,7 +36,6 @@ import { Column, HoverWrapper, PageBody, PageContainer, Row } from "./Layouts";
 
 export {
   CartIcon,
-  CartItem,
   CartItemsList,
   CartPriceDetails,
   CartPriceTotals,
