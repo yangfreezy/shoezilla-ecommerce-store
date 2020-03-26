@@ -1,11 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import he from "he";
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-`;
+import { LinkWrapper } from ".";
 
 const StyledName = styled.div`
   font-size: 16px;
@@ -16,10 +13,10 @@ const StyledName = styled.div`
   color: #282828;
 `;
 
-export const ProductName = ({ name, id, textAlign }) => {
+export const ProductName = ({ name, productId, textAlign }) => {
   return (
-    <StyledLink to={`/product/${id}`}>
+    <LinkWrapper to={`/product/${productId}`}>
       <StyledName textAlign={textAlign}>{he.decode(name)}</StyledName>
-    </StyledLink>
+    </LinkWrapper>
   );
 };

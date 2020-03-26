@@ -5,9 +5,10 @@ import { priceWithTax } from "./../Helpers";
 import {
   CartPriceDetails,
   Column,
+  PrimaryButton,
   ProductName,
   ProductBrandName,
-  ProductThumbnail,
+  ProductItemImage,
   QuantitySelection,
   Row
 } from ".";
@@ -20,16 +21,11 @@ export const CartItem = ({
 }) => {
   return (
     <Column>
-      <Row
-        justifyContent="space-between"
-        alignItems="flex-start"
-        margin="10px 100px 10px 100px"
-        width="45vw"
-      >
+      <Row justifyContent="space-between" alignItems="flex-start">
         <Column alignItems="flex-start">
           <ProductName
             name={product.productName}
-            id={productId}
+            productId={productId}
             textAlign="left"
           />
           <ProductBrandName
@@ -37,10 +33,11 @@ export const CartItem = ({
             fontSize="10px"
             textAlign="left"
           />
-          <ProductThumbnail
+          <ProductItemImage
             src={mostDetailedImage}
-            id={productId}
-            width="125px"
+            alt={mostDetailedImage}
+            productId={productId}
+            width="150px"
           />
         </Column>
         <Column alignItems="flex-end" justifyContent="flex-start">
@@ -53,6 +50,13 @@ export const CartItem = ({
             totalPrice={priceWithTax(product.price, 0.065, productUnits).total}
           />
           <QuantitySelection defaultValue={productUnits} />
+          <PrimaryButton
+            fontSize="10px"
+            margin="20px 0px 20px 0px"
+            padding="10px 15px 10px 15px"
+          >
+            {"Remove"}
+          </PrimaryButton>
         </Column>
       </Row>
     </Column>

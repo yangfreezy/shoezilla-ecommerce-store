@@ -10,6 +10,11 @@ const StyledIcon = styled.img.attrs({
   width: ${props => props.width || "100px"};
   height: auto;
   margin: ${props => props.margin || "0"};
+  &:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #888888;
+    transition: box-shadow 0.2s ease-in-out;
+  }
 `;
 
 export const MainLogo = ({ margin, width }) => (

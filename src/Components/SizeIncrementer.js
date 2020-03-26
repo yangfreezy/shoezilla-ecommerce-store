@@ -19,9 +19,6 @@ const StyledIncrementer = styled.div`
   text-align: center;
   cursor: pointer;
   border-radius: 50%;
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 export const SizeIncrementer = ({ direction, handleClick }) => {

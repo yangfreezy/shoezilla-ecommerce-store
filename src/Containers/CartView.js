@@ -1,10 +1,26 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import { StoreContext } from "./../Context";
 
-import { CartItemsList, CartPriceTotals, Column, Text } from "./../Components";
+import {
+  CartItemsList,
+  CartPriceTotals,
+  Column,
+  Text,
+  PrimaryButton
+} from "./../Components";
 
 import { priceWithTax } from "./../Helpers";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0px 0px 0px 0px;
+`;
 
 export const CartView = () => {
   const value = useContext(StoreContext);
@@ -52,13 +68,25 @@ export const CartView = () => {
         </Text>
       </Column>
       {cartItemsExist ? (
-        <Fragment>
+        <Column
+          alignItems="space-between"
+          margin="10px 100px 10px 100px"
+          width="45vw"
+        >
           <CartItemsList cartItems={cartItems} shoeIdCache={shoeIdCache} />
-          <CartPriceTotals
-            cartTotalBeforeShipping={cartTotalBeforeShipping}
-            cartTotalAfterShipping={cartTotalAfterShipping}
-          />
-        </Fragment>
+          <Column alignItems="flex-end" margin="25px 0px">
+            <CartPriceTotals
+              cartTotalBeforeShipping={cartTotalBeforeShipping}
+              cartTotalAfterShipping={cartTotalAfterShipping}
+            />
+            <StyledLink to="/purchase">
+              <PrimaryButton
+                margin="25px 0px 25px 0px"
+                value="Checkout"
+              ></PrimaryButton>
+            </StyledLink>
+          </Column>
+        </Column>
       ) : (
         <Column maxWidth="500px">
           <Text margin="15vw 0px 0px 0px" textAlign="center" fontSize="34px">

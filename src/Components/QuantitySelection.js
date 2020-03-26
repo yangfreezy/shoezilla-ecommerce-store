@@ -4,7 +4,7 @@ import { Column, Text } from ".";
 
 export const QuantitySelection = ({ defaultValue }) => {
   return (
-    <Column>
+    <Column margin="10px 0px 10px 0px">
       <Text text="Quantity" fontSize="8px" />
       <select id="Quantity" defaultValue={defaultValue}>
         <option value="0">0</option>

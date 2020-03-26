@@ -9,7 +9,7 @@ export const CartPriceTotals = ({
   return (
     <Column justifyContent="flex-start" alignItems="flex-end">
       <Text textAlign="right" width="45vw" fontSize="12px">
-        {"Shipping: $5.99"}
+        {"Shipping & Handling: $5.99"}
       </Text>
       <Text
         textAlign="right"

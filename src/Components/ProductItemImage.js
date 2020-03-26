@@ -5,11 +5,11 @@ import styled from "styled-components";
 import { StoreContext } from "./../Context";
 
 const StyledImage = styled.img`
-  width: 225px;
+  width: ${props => props.width || "225px"};
   height: auto;
 `;
 
-export const ProductItemImage = ({ src, alt, productId }) => {
+export const ProductItemImage = ({ src, alt, productId, width }) => {
   let { id } = useParams();
   if (!id) id = productId;
   const value = useContext(StoreContext);
@@ -19,5 +19,5 @@ export const ProductItemImage = ({ src, alt, productId }) => {
     mostDetailedImage =
       "https://www.zappos.com" + shoeIdCache[id].details.defaultImageUrl;
   }
-  return <StyledImage src={mostDetailedImage || src} alt={alt} />;
+  return <StyledImage src={mostDetailedImage || src} alt={alt} width={width} />;
 };

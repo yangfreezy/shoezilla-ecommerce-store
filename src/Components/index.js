@@ -12,8 +12,8 @@ import { Nav } from "./Nav";
 import { PriceText } from "./PriceText";
 import { ProductDetails } from "./ProductDetails";
 import { ProductFitDetails } from "./ProductFitDetails";
+import { ProductItem } from "./ProductItem";
 import { ProductItemImage } from "./ProductItemImage";
-import { ProductItemName } from "./ProductItemName";
 import { ProductList } from "./ProductList";
 import { ProductBrandName } from "./ProductBrandName";
 import { ProductListItem } from "./ProductListItem";
@@ -24,13 +24,18 @@ import { SizeDisplay } from "./SizeDisplay";
 import { SizeIncrementer } from "./SizeIncrementer";
 
 // Abstracted components
-import { ActionText, Icon, PrimaryButton, Text } from "./Abstracted";
+import {
+  ActionText,
+  HoverText,
+  Icon,
+  LinkWrapper,
+  PrimaryButton,
+  Text
+} from "./Abstracted";
 
 // Layouts
-
 import { Column, PageBody, PageContainer, Row } from "./Layouts";
 
-// Components
 export {
   CartIcon,
   CartItem,
@@ -45,8 +50,8 @@ export {
   PriceText,
   ProductDetails,
   ProductFitDetails,
+  ProductItem,
   ProductItemImage,
-  ProductItemName,
   ProductList,
   ProductBrandName,
   ProductListItem,
@@ -58,7 +63,7 @@ export {
 };
 
 // Abstracted components
-export { ActionText, Icon, PrimaryButton, Text };
+export { ActionText, HoverText, Icon, LinkWrapper, PrimaryButton, Text };
 
 // Layouts
 

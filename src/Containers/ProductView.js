@@ -15,9 +15,7 @@ import {
   PriceText,
   PrimaryButton,
   ProductDetails,
-  ProductItemName,
-  ProductBrandName,
-  ProductItemImage,
+  ProductItem,
   SizeDisplay
 } from "./../Components";
 
@@ -107,9 +105,7 @@ export const ProductView = () => {
   return (
     <StyledRow>
       <StyledColumn>
-        <ProductItemName name={shoe.productName} id={id} />
-        <ProductBrandName fontSize="12px" brandName={shoe.brandName} />
-        <ProductItemImage src={shoe.thumbnailImageUrl} alt={shoe.productName} />
+        <ProductItem product={shoe} productId={id} />
         <PriceText price={shoe.price} />
         <SizeDisplay
           increaseSize={increaseSize}
