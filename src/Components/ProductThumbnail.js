@@ -7,9 +7,10 @@ import imageGuard from "./../Assets/image-unavailable.png";
 const StyledThumbnail = styled.img`
   width: ${props => (props.width ? props.width : "200px")};
   height: auto;
+  margin: 10px 10px 10px 10px;
 `;
 
-export const ProductListThumbnail = ({ src, alt, id, width }) => {
+export const ProductThumbnail = ({ src, alt, id, width }) => {
   return (
     <Link to={`/product/${id}`}>
       <StyledThumbnail width={width} src={src || imageGuard} alt={alt} />

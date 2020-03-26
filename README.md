@@ -3,7 +3,9 @@ TODO:
 Phase 2:
 (CART)
 
-- Add selection with ability to update cart state
+- Add size to products in cart, refactor existing code to split by Size
+- Add ability to make changes to cart from selection
+- Break down Cart View into smaller components
 - Add ability to remove item from cart
 - Link to Purchase Page at bottom
 

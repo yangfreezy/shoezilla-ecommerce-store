@@ -1,31 +1,16 @@
 import React from "react";
-import styled from "styled-components";
 
-import {
-  SizeValue,
-  SizeIncrementer,
-  ProductListItemNote
-} from "./../Components";
-
-const StyledSizeContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const StyledColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+import { Column, Row, SizeIncrementer, Text } from "./../Components";
 
 export const SizeDisplay = ({ size, increaseSize, decreaseSize }) => {
   return (
-    <StyledColumn>
-      <ProductListItemNote fontSize="12px" fontWeight="light" note="Size" />
-      <StyledSizeContainer>
+    <Column>
+      <Text fontSize="12px" fontWeight="light" text="Size" />
+      <Row>
         <SizeIncrementer direction="down" handleClick={decreaseSize} />
-        <SizeValue size={size} />
+        <Text fontSize="18px" width="30px" textAlign="center" text={size} />
         <SizeIncrementer direction="up" handleClick={increaseSize} />
-      </StyledSizeContainer>
-    </StyledColumn>
+      </Row>
+    </Column>
   );
 };

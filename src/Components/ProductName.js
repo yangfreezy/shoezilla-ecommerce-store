@@ -15,7 +15,8 @@ const StyledName = styled.div`
   max-width: 225px;
   color: #282828;
 `;
-export const ProductListName = ({ name, id, textAlign }) => {
+
+export const ProductName = ({ name, id, textAlign }) => {
   return (
     <StyledLink to={`/product/${id}`}>
       <StyledName textAlign={textAlign}>{he.decode(name)}</StyledName>

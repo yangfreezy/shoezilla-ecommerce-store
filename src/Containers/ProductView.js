@@ -16,7 +16,7 @@ import {
   PrimaryButton,
   ProductDetails,
   ProductItemName,
-  ProductListBrandName,
+  ProductBrandName,
   ProductItemImage,
   SizeDisplay
 } from "./../Components";
@@ -84,10 +84,12 @@ export const ProductView = () => {
     const currentCart = JSON.parse(JSON.stringify(cart));
     const currentCartItems = currentCart.itemsCache;
     if (!currentCartItems[id]) currentCartItems[id] = {};
-    currentCartItems[id][size] = ~~currentCartItems[id][size] + 1;
-    currentCart["numOfItems"]++;
-    insertCache("cart", currentCart);
-    return setCart(currentCart);
+    if (~~currentCartItems[id][size] < 5) {
+      currentCartItems[id][size] = ~~currentCartItems[id][size] + 1;
+      currentCart["numOfItems"]++;
+      insertCache("cart", currentCart);
+      return setCart(currentCart);
+    }
   };
 
   const increaseSize = () => {
@@ -106,7 +108,7 @@ export const ProductView = () => {
     <StyledRow>
       <StyledColumn>
         <ProductItemName name={shoe.productName} id={id} />
-        <ProductListBrandName fontSize="12px" brandName={shoe.brandName} />
+        <ProductBrandName fontSize="12px" brandName={shoe.brandName} />
         <ProductItemImage src={shoe.thumbnailImageUrl} alt={shoe.productName} />
         <PriceText price={shoe.price} />
         <SizeDisplay

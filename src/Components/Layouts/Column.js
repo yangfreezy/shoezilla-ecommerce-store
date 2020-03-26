@@ -7,14 +7,25 @@ const StyledColumn = styled.div`
   align-items: ${props => props.alignItems || "center"};
   justify-content: ${props => props.justifyContent || "center"};
   margin: ${props => props.margin || "0"};
+  padding: ${props => props.padding || "0"};
+  max-width: ${props => props.maxWidth || "100%"};
 `;
 
-export const Column = ({ children, margin, alignItems, justifyContent }) => {
+export const Column = ({
+  children,
+  margin,
+  padding,
+  alignItems,
+  justifyContent,
+  maxWidth
+}) => {
   return (
     <StyledColumn
       margin={margin}
+      padding={padding}
       alignItems={alignItems}
       justifyContent={justifyContent}
+      maxWidth={maxWidth}
     >
       {children}
     </StyledColumn>

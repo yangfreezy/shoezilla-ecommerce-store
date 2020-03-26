@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { Text, MainLogo } from ".";
+import { Column, Text, MainLogo } from ".";
 
 const StyledFooter = styled.div`
   width: 100%;
@@ -14,12 +14,6 @@ const StyledFooter = styled.div`
   color: white;
 `;
 
-const StyledFooterColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
-
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
@@ -29,7 +23,7 @@ const StyledLink = styled(Link)`
 export const Footer = () => {
   return (
     <StyledFooter>
-      <StyledFooterColumn>
+      <Column alignItems="flex-start">
         <MainLogo width="100px" margin="0px 0px 0px -8px" />
         <StyledLink to="/about">
           <Text
@@ -67,7 +61,7 @@ export const Footer = () => {
             text="Returns"
           />
         </StyledLink>
-      </StyledFooterColumn>
+      </Column>
     </StyledFooter>
   );
 };

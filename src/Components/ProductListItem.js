@@ -4,17 +4,17 @@ import {
   Column,
   PriceText,
   Text,
-  ProductListName,
-  ProductListBrandName,
-  ProductListThumbnail
+  ProductName,
+  ProductBrandName,
+  ProductThumbnail
 } from ".";
 
 export const ProductListItem = ({ product }) => {
   return (
     <Column margin="50px 50px 50px 50px">
-      <ProductListName name={product.productName} id={product.productId} />
-      <ProductListBrandName fontSize="10px" brandName={product.brandName} />
-      <ProductListThumbnail
+      <ProductName name={product.productName} id={product.productId} />
+      <ProductBrandName fontSize="10px" brandName={product.brandName} />
+      <ProductThumbnail
         src={product.thumbnailImageUrl}
         alt={product.productName}
         id={product.productId}

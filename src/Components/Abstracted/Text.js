@@ -8,8 +8,10 @@ const StyledText = styled.div`
   width: ${props => props.width || "auto"};
   font-size: ${props => props.fontSize || "14px"};
   font-weight: ${props => props.fontWeight || "normal"};
-  line-height: ${props => props.fontSize || "normal"}
+  line-height: ${props => props.fontSize || "normal"};
   color: ${props => props.color || "black"};
+  text-wrap: wrap;
+  word-wrap: break-word;
 `;
 
 export const Text = ({

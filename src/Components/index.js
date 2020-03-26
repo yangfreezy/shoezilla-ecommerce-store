@@ -1,5 +1,9 @@
 // Components
 import { CartIcon } from "./CartIcon";
+import { CartItem } from "./CartItem";
+import { CartItemsList } from "./CartItemsList";
+import { CartPriceDetails } from "./CartPriceDetails";
+import { CartPriceTotals } from "./CartPriceTotals";
 import { Footer } from "./Footer";
 import { HomeButton } from "./HomeButton";
 import { LoadingAnimation } from "./LoadingAnimation";
@@ -11,14 +15,13 @@ import { ProductFitDetails } from "./ProductFitDetails";
 import { ProductItemImage } from "./ProductItemImage";
 import { ProductItemName } from "./ProductItemName";
 import { ProductList } from "./ProductList";
-import { ProductListBrandName } from "./ProductListBrandName";
+import { ProductBrandName } from "./ProductBrandName";
 import { ProductListItem } from "./ProductListItem";
-import { ProductListItemNote } from "./ProductListItemNote";
-import { ProductListName } from "./ProductListName";
-import { ProductListThumbnail } from "./ProductListThumbnail";
+import { ProductName } from "./ProductName";
+import { ProductThumbnail } from "./ProductThumbnail";
+import { QuantitySelection } from "./QuantitySelection";
 import { SizeDisplay } from "./SizeDisplay";
 import { SizeIncrementer } from "./SizeIncrementer";
-import { SizeValue } from "./SizeValue";
 
 // Abstracted components
 import { ActionText, Icon, PrimaryButton, Text } from "./Abstracted";
@@ -30,6 +33,10 @@ import { Column, PageBody, PageContainer, Row } from "./Layouts";
 // Components
 export {
   CartIcon,
+  CartItem,
+  CartItemsList,
+  CartPriceDetails,
+  CartPriceTotals,
   Footer,
   HomeButton,
   LoadingAnimation,
@@ -41,14 +48,13 @@ export {
   ProductItemImage,
   ProductItemName,
   ProductList,
-  ProductListBrandName,
+  ProductBrandName,
   ProductListItem,
-  ProductListItemNote,
-  ProductListName,
-  ProductListThumbnail,
+  ProductName,
+  ProductThumbnail,
+  QuantitySelection,
   SizeDisplay,
-  SizeIncrementer,
-  SizeValue
+  SizeIncrementer
 };
 
 // Abstracted components
