@@ -16,12 +16,12 @@ export const CartPriceDetails = ({
         fontSize="12px"
         text={productUnits + " x " + initialPrice}
       />
-      <Text textAlign="right" text={"Total: " + totalPrice} fontSize="10px" />
       <Text
         textAlign="right"
         text={"Tax: " + initialPriceWithTax}
         fontSize="10px"
       />
+      <Text textAlign="right" text={"Total: " + totalPrice} fontSize="10px" />
     </Column>
   );
 };
