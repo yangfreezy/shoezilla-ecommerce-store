@@ -4,7 +4,6 @@ import {
   Column,
   HoverWrapper,
   LinkWrapper,
-  PriceText,
   Text,
   ProductName,
   ProductBrandName,
@@ -19,6 +18,7 @@ export const ProductListItem = ({ product }) => {
           <ProductName
             name={product.productName}
             productId={product.productId}
+            fontWeight="600"
           />
           <ProductBrandName fontSize="10px" brandName={product.brandName} />
           <ProductThumbnail
@@ -26,12 +26,12 @@ export const ProductListItem = ({ product }) => {
             alt={product.productName}
             id={product.productId}
           />
-          <PriceText price={product.price} />
+          <Text>{product.price} </Text>
           {product.isNew && (
             <Text
               fontSize="10px"
               textAlign="center"
-              margin="10px 10px 0px 10px"
+              margin="10px 10px 10px 10px"
               text="New"
             />
           )}

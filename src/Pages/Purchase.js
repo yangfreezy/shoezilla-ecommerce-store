@@ -7,7 +7,7 @@ export const Purchase = () => {
     <PageContainer>
       <PageBody>
         <Nav />
-        <Column>{"Purchase"}</Column>
+        <Column>{"Coming soon!"}</Column>
       </PageBody>
       <Footer />
     </PageContainer>

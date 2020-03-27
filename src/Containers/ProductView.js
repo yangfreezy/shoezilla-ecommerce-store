@@ -4,12 +4,12 @@ import { Redirect, useParams } from "react-router-dom";
 import {
   Column,
   LoadingAnimation,
-  PriceText,
   PrimaryButton,
   ProductDetails,
   ProductItem,
   Row,
-  SizeDisplay
+  SizeDisplay,
+  Text
 } from "./../Components";
 import { StoreContext } from "./../Context";
 import {
@@ -91,7 +91,7 @@ export const ProductView = () => {
     <Row>
       <Column justifyContent="flex-start" margin="25px 100px">
         <ProductItem product={shoe} productId={id} />
-        <PriceText price={shoe.price} />
+        <Text text={shoe.price} />
         <SizeDisplay
           increaseSize={increaseSize}
           decreaseSize={decreaseSize}

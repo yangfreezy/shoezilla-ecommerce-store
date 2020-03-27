@@ -33,7 +33,7 @@ export const CartItem = ({
   return (
     <StyledDiv>
       <Row width="100%" justifyContent="space-between" alignItems="flex-start">
-        <Column alignItems="flex-start" margin="25px 100px">
+        <Column alignItems="flex-start" margin="50px 100px">
           <ProductName
             name={product.productName}
             productId={productId}
@@ -56,7 +56,7 @@ export const CartItem = ({
         <Column
           alignItems="flex-end"
           justifyContent="space-between"
-          margin="25px 100px"
+          margin="50px 100px"
           width="150px"
         >
           <Column>
@@ -71,7 +71,7 @@ export const CartItem = ({
               }
             />
           </Column>
-          <Column margin="10px 0px">
+          <Column margin="0px 0px">
             <QuantitySelection
               editQuantity={e => editQuantity(e, cartId)}
               defaultValue={productUnits}

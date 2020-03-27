@@ -8,7 +8,6 @@ import { HomeButton } from "./HomeButton";
 import { LoadingAnimation } from "./LoadingAnimation";
 import { MainLogo } from "./MainLogo";
 import { Nav } from "./Nav";
-import { PriceText } from "./PriceText";
 import { ProductDetails } from "./ProductDetails";
 import { ProductFitDetails } from "./ProductFitDetails";
 import { ProductItem } from "./ProductItem";
@@ -44,7 +43,6 @@ export {
   LoadingAnimation,
   MainLogo,
   Nav,
-  PriceText,
   ProductDetails,
   ProductFitDetails,
   ProductItem,
