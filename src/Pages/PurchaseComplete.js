@@ -7,7 +7,9 @@ export const PurchaseComplete = () => {
     <PageContainer>
       <PageBody>
         <Nav />
-        <Column>{"youre on the purchase complete page son"}</Column>
+        <Column>
+          {"Your order is set! Check your e-mail for confirmation details."}
+        </Column>
       </PageBody>
       <Footer />
     </PageContainer>

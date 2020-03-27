@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
 import imageGuard from "./../Assets/image-unavailable.png";
@@ -11,9 +11,5 @@ const StyledThumbnail = styled.img`
 `;
 
 export const ProductThumbnail = ({ src, alt, id, width }) => {
-  return (
-    <Link to={`/product/${id}`}>
-      <StyledThumbnail width={width} src={src || imageGuard} alt={alt} />
-    </Link>
-  );
+  return <StyledThumbnail width={width} src={src || imageGuard} alt={alt} />;
 };

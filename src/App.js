@@ -8,8 +8,7 @@ import {
   NotFound,
   Product,
   Purchase,
-  PurchaseComplete,
-  PurchaseConfirmation
+  PurchaseComplete
 } from "./Pages";
 
 import { StoreContext } from "./Context";
@@ -48,11 +47,6 @@ export const App = () => {
             <Route path="/product/:id" exact component={Product} />
             <Route path="/cart" exact component={Cart} />
             <Route path="/purchase" exact component={Purchase} />
-            <Route
-              path="/purchase-confirmation"
-              exact
-              component={PurchaseConfirmation}
-            />
             <Route
               path="/purchase-complete"
               exact

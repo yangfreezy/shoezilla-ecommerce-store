@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -23,98 +23,106 @@ export const CartItemsList = ({ cartItems, shoeIdCache }) => {
   const value = useContext(StoreContext);
   const { cart, setCart } = value;
 
-  const editQuantity = (event, productId, productSize) => {
-    const newQuantity = event.target.value;
-    const updatedCart = JSON.parse(JSON.stringify(cart));
-    const difference =
-      newQuantity - updatedCart.itemsCache[productId][productSize];
-    updatedCart.itemsCache[productId][productSize] = newQuantity;
-    updatedCart.numOfItems += difference;
-    setCart(updatedCart);
-    insertCache("cart", updatedCart);
-  };
-
-  const removeFromCart = (event, productId, productSize) => {
-    const updatedCart = JSON.parse(JSON.stringify(cart));
-    const numberOfItemsRemoved = updatedCart.itemsCache[productId][productSize];
-    delete updatedCart.itemsCache[productId][productSize];
-    updatedCart.numOfItems -= numberOfItemsRemoved;
-    if (!Object.keys(updatedCart.itemsCache[productId]).length) {
-      delete updatedCart.itemsCache[productId];
-    }
-    setCart(updatedCart);
-    insertCache("cart", updatedCart);
-  };
-
   const [cartTotalBeforeShipping, setCartTotalBeforeShipping] = useState(0);
   const [cartTotalAfterShipping, setCartTotalAfterShipping] = useState(0);
+  const [numItemsInCart, setNumItemsInCart] = useState(0);
 
   useEffect(() => {
-    const cartTotals = getTotalPriceOfCart(cartItems);
-    setCartTotalBeforeShipping(cartTotals.beforeShipping);
-    setCartTotalAfterShipping(cartTotals.afterShipping);
+    const {
+      beforeShipping,
+      afterShipping,
+      numOfItemsInCart
+    } = getTotalPriceOfCart(cartItems);
+    setCartTotalBeforeShipping(beforeShipping);
+    setCartTotalAfterShipping(afterShipping);
+    setNumItemsInCart(numOfItemsInCart);
     //eslint-disable-next-line
   }, [cart, setCart]);
 
+  const editQuantity = (event, cartId) => {
+    const newQuantity = event.target.value;
+    const updatedCart = JSON.parse(JSON.stringify(cart));
+    const difference = newQuantity - updatedCart.itemsCache[cartId];
+    updatedCart.itemsCache[cartId] = +newQuantity;
+    updatedCart.numOfItems += difference;
+    setCart(updatedCart);
+    insertCache("cart", updatedCart);
+    setNumItemsInCart(updatedCart.numOfItems);
+  };
+
+  const removeFromCart = (event, cartId) => {
+    const updatedCart = JSON.parse(JSON.stringify(cart));
+    const numberOfItemsRemoved = updatedCart.itemsCache[cartId];
+    delete updatedCart.itemsCache[cartId];
+    updatedCart.numOfItems -= numberOfItemsRemoved;
+    setCart(updatedCart);
+    insertCache("cart", updatedCart);
+    setNumItemsInCart(updatedCart.numOfItems);
+  };
+
   const getTotalPriceOfCart = cartItems => {
     let totalBeforeShipping = 0;
-    for (var productId in cartItems) {
-      for (var productSizeQuantities in cartItems[productId]) {
-        const numberOfUnits = cartItems[productId][productSizeQuantities];
-        const taxRate = 0.065;
-        const costAfterTax = +priceWithTax(
-          shoeIdCache[productId].price,
-          taxRate,
-          numberOfUnits
-        ).total.slice(1);
-        totalBeforeShipping += costAfterTax;
-      }
+    let numOfItemsInCart = 0;
+    for (var cartId in cartItems) {
+      const [productId] = cartId.split("/");
+      const numberOfUnits = cartItems[cartId];
+      const taxRate = 0.065;
+      const costAfterTax = +priceWithTax(
+        shoeIdCache[productId].price,
+        taxRate,
+        numberOfUnits
+      ).total.slice(1);
+      totalBeforeShipping += costAfterTax;
+      console.log(typeof numberOfUnits);
+      numOfItemsInCart += numberOfUnits;
     }
     const totalAftershipping = totalBeforeShipping + 5.99;
     return {
       beforeShipping: "$" + totalBeforeShipping.toFixed(2),
-      afterShipping: "$" + totalAftershipping.toFixed(2)
+      afterShipping: "$" + totalAftershipping.toFixed(2),
+      numOfItemsInCart: numOfItemsInCart
     };
   };
 
   return (
-    <Fragment>
-      {Object.keys(cartItems).map(productId => {
-        const productsBySize = Object.keys(cartItems[productId]);
-        return productsBySize.map(productSize => {
-          const product = shoeIdCache[productId];
-          const mostDetailedImage = product.details
-            ? "https://www.zappos.com" + product.details.defaultImageUrl
-            : product.thumbnailImageUrl;
-          const productUnits = cartItems[productId][productSize];
-          return (
-            <Column alignItems="flex-end" margin="0px">
-              <CartItem
-                key={productId + "/" + product.colorId + "/" + productSize}
-                product={product}
-                productId={productId}
-                productUnits={productUnits}
-                mostDetailedImage={mostDetailedImage}
-                productSize={productSize}
-                removeFromCart={removeFromCart}
-                editQuantity={editQuantity}
-              />
-              <Column alignItems="flex-end" justifyContent="flex-start">
-                <CartPriceTotals
-                  cartTotalBeforeShipping={cartTotalBeforeShipping}
-                  cartTotalAfterShipping={cartTotalAfterShipping}
-                />
-                <StyledLink to="/purchase">
-                  <PrimaryButton
-                    margin="10px 50px"
-                    value="Checkout"
-                  ></PrimaryButton>
-                </StyledLink>
-              </Column>
-            </Column>
-          );
-        });
+    <Column margin="25px 0px">
+      {Object.keys(cartItems).map(cartId => {
+        const [productId, productSize] = cartId.split("/");
+        const product = shoeIdCache[productId];
+        const productUnits = cartItems[cartId];
+        const mostDetailedImage = product.details
+          ? "https://www.zappos.com" + product.details.defaultImageUrl
+          : product.thumbnailImageUrl;
+
+        return (
+          <Column key={cartId} alignItems="flex-end" margin="0px">
+            <CartItem
+              cartId={cartId}
+              product={product}
+              productId={productId}
+              productUnits={productUnits}
+              mostDetailedImage={mostDetailedImage}
+              productSize={productSize}
+              removeFromCart={removeFromCart}
+              editQuantity={editQuantity}
+            />
+          </Column>
+        );
       })}
-    </Fragment>
+      <Column margin="50px 0px" alignItems="center" justifyContent="flex-start">
+        <CartPriceTotals
+          cartTotalBeforeShipping={cartTotalBeforeShipping}
+          cartTotalAfterShipping={cartTotalAfterShipping}
+          numOfItems={numItemsInCart}
+        />
+        <StyledLink to="/purchase">
+          <PrimaryButton
+            boxShadow="5px 5px 10px #888888"
+            margin="10px 100px"
+            value="Checkout"
+          ></PrimaryButton>
+        </StyledLink>
+      </Column>
+    </Column>
   );
 };

@@ -5,11 +5,6 @@ Phase 4:
 
 - Form with email, address, billing info.
 
-Phase 5:
-(PURCHASE CONFIRMATION)
-
-- Displays entered data with payment info.
-
 Phase 6:
 (PURCHASE COMPLETED)
 

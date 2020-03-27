@@ -4,19 +4,27 @@ import { Text, Column } from ".";
 
 export const CartPriceTotals = ({
   cartTotalBeforeShipping,
-  cartTotalAfterShipping
+  cartTotalAfterShipping,
+  numOfItems
 }) => {
   return (
-    <Column justifyContent="center" alignItems="flex-end" margin="10px 50px">
-      <Text textAlign="right" fontSize="12px">
-        {"Shipping: $5.99"}
+    <Column
+      justifyContent="center"
+      alignItems="flex-center"
+      margin="10px 100px"
+    >
+      <Text textAlign="center" fontSize="16px">
+        {numOfItems > 1 ? `${numOfItems} Items` : `1 Item`}
+      </Text>
+      <Text textAlign="center" fontSize="16px">
+        {`Total: ${cartTotalAfterShipping}`}
       </Text>
       <Text
-        textAlign="right"
+        textAlign="center"
         fontSize="12px"
       >{`Subtotal: ${cartTotalBeforeShipping}`}</Text>
-      <Text textAlign="right" fontSize="16px">
-        {`Total: ${cartTotalAfterShipping}`}
+      <Text textAlign="center" fontSize="12px">
+        {"Shipping: $5.99"}
       </Text>
     </Column>
   );

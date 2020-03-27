@@ -9,7 +9,6 @@ export const CartView = () => {
   const { cart, shoeIdCache } = value;
   const cartItems = cart.itemsCache || {};
   const cartItemsExist = Object.keys(cartItems).length > 0;
-
   return (
     <Fragment>
       <Column>
@@ -26,7 +25,7 @@ export const CartView = () => {
       ) : (
         <Column maxWidth="500px">
           <Text margin="15vw 0px 0px 0px" textAlign="center" fontSize="34px">
-            {"There's nothing here to buy my good friend!"}
+            {"Your shopping cart is empty!"}
           </Text>
         </Column>
       )}
