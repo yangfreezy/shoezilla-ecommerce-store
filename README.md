@@ -9,7 +9,6 @@ Phase 6:
 (PURCHASE COMPLETED)
 
 - Displays that the order has been received.
-- Display order, provides tracking number.
 
 Maintenance:
 
