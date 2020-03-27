@@ -1,16 +1,9 @@
 TODO:
 
-Phase 8:
-(FOOTER LINKS):
-
-- Add about page
-- Add contact page
-- Add returns / deliveries page
-
 Phase 9:
 (PURCHASE)
 
-- Form with email, address, billing info.
+- Link Stripe and PayPal
 
 Phase 10:
 (PURCHASE COMPLETED)
