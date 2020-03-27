@@ -1,4 +1,5 @@
 import { insertCache } from ".";
+import { deepCopy } from ".";
 
 /**
  * Adds data from product details GET request to the cache of shoe data
@@ -15,7 +16,7 @@ export const addShoeDetailsToCache = (
   shoeIdCache,
   setShoeIdCache
 ) => {
-  const updatedCache = JSON.parse(JSON.stringify(shoeIdCache));
+  const updatedCache = deepCopy(shoeIdCache);
   updatedCache[id]["details"] = details;
   setShoeIdCache(updatedCache);
   insertCache("shoeIdCache", updatedCache);

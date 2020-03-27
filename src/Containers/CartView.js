@@ -7,7 +7,7 @@ import { StoreContext } from "./../Context";
 export const CartView = () => {
   const value = useContext(StoreContext);
   const { cart, shoeIdCache } = value;
-  const cartItems = cart.itemsCache || {};
+  const cartItems = cart.itemsCache;
   const cartItemsExist = Object.keys(cartItems).length > 0;
   return (
     <Fragment>

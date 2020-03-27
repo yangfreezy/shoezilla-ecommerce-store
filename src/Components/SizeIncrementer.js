@@ -7,7 +7,7 @@ import minusIcon from "./../Assets/minus-icon.png";
 import plusIcon from "./../Assets/plus-icon.png";
 
 const StyledIncrementer = styled.div`
-  margin: 30px 30px 30px 30px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   color: white;

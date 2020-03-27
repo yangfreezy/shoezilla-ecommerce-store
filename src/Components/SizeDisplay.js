@@ -8,7 +8,7 @@ export const SizeDisplay = ({ size, increaseSize, decreaseSize }) => {
       <Text fontSize="12px" fontWeight="light" text="Size" />
       <Row>
         <SizeIncrementer direction="down" handleClick={decreaseSize} />
-        <Text fontSize="18px" width="30px" textAlign="center" text={size} />
+        <Text fontSize="18px" width="40px" textAlign="center" text={size} />
         <SizeIncrementer direction="up" handleClick={increaseSize} />
       </Row>
     </Column>

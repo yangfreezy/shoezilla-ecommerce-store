@@ -9,7 +9,7 @@ import {
   PrimaryButton
 } from "./../Components";
 import { StoreContext } from "./../Context";
-import { insertCache, priceWithTax } from "./../Helpers";
+import { deepCopy, insertCache, priceWithTax } from "./../Helpers";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -40,18 +40,18 @@ export const CartItemsList = ({ cartItems, shoeIdCache }) => {
   }, [cart, setCart]);
 
   const editQuantity = (event, cartId) => {
+    const theCart = deepCopy(cart);
     const newQuantity = event.target.value;
-    const updatedCart = JSON.parse(JSON.stringify(cart));
-    const difference = newQuantity - updatedCart.itemsCache[cartId];
-    updatedCart.itemsCache[cartId] = +newQuantity;
-    updatedCart.numOfItems += difference;
-    setCart(updatedCart);
-    insertCache("cart", updatedCart);
-    setNumItemsInCart(updatedCart.numOfItems);
+    const changeInNumOfItems = newQuantity - theCart.itemsCache[cartId];
+    theCart.itemsCache[cartId] = +newQuantity;
+    theCart.numOfItems += changeInNumOfItems;
+    setCart(theCart);
+    insertCache("cart", theCart);
+    setNumItemsInCart(theCart.numOfItems);
   };
 
   const removeFromCart = (event, cartId) => {
-    const updatedCart = JSON.parse(JSON.stringify(cart));
+    const updatedCart = deepCopy(cart);
     const numberOfItemsRemoved = updatedCart.itemsCache[cartId];
     delete updatedCart.itemsCache[cartId];
     updatedCart.numOfItems -= numberOfItemsRemoved;
@@ -73,7 +73,6 @@ export const CartItemsList = ({ cartItems, shoeIdCache }) => {
         numberOfUnits
       ).total.slice(1);
       totalBeforeShipping += costAfterTax;
-      console.log(typeof numberOfUnits);
       numOfItemsInCart += numberOfUnits;
     }
     const totalAftershipping = totalBeforeShipping + 5.99;

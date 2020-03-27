@@ -13,10 +13,11 @@ import {
 } from "./../Components";
 import { StoreContext } from "./../Context";
 import {
-  getAllShoeData,
   addShoeDetailsToCache,
-  insertCache,
-  generateCartId
+  deepCopy,
+  generateCartId,
+  getAllShoeData,
+  insertCache
 } from "./../Helpers";
 import { getShoeDetails } from "./../API";
 
@@ -65,14 +66,14 @@ export const ProductView = () => {
   }, []);
 
   const addToCart = () => {
-    const currentCart = JSON.parse(JSON.stringify(cart));
-    const currentCartItems = currentCart.itemsCache;
+    const newCart = deepCopy(cart);
+    const cartItems = newCart.itemsCache;
     const cartId = generateCartId(id, size);
-    if (!currentCartItems[cartId]) currentCartItems[cartId] = {};
-    currentCartItems[cartId] = ~~currentCartItems[cartId] + 1;
-    currentCart["numOfItems"]++;
-    insertCache("cart", currentCart);
-    return setCart(currentCart);
+    if (!cartItems[cartId]) cartItems[cartId] = {};
+    cartItems[cartId] = ~~cartItems[cartId] + 1;
+    newCart["numOfItems"]++;
+    insertCache("cart", newCart);
+    return setCart(newCart);
   };
 
   const increaseSize = () => {
