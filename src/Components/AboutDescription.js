@@ -4,7 +4,7 @@ import { Text, ShadowWrapper } from ".";
 
 const StyledBody = styled.div`
   position: relative;
-  top: 20vh;
+  top: 15vh;
 `;
 
 export const AboutDescription = () => {
