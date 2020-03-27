@@ -27,7 +27,7 @@ export const ContactDescription = () => {
           fontSize="14px"
           fontWeight="light"
         >
-          {"Feel free to e-mail Yang at freezydreamin@gmail.com"}
+          {"You can reach Yang at freezydreamin@gmail.com!"}
         </Text>
       </ShadowWrapper>
     </StyledBody>

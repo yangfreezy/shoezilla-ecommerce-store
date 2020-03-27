@@ -37,7 +37,18 @@ export const AboutDescription = () => {
           fontWeight="light"
         >
           {
-            "Shoezilla is a portfolio project e-commerce store built by Yang Yu in React.js with the Zappos API."
+            "Shoezilla is a portfolio project e-commerce store built and designed by Yang Yu."
+          }
+        </Text>
+        <Text
+          margin="15px 0px"
+          textAlign="center"
+          width="500px"
+          fontSize="14px"
+          fontWeight="light"
+        >
+          {
+            "This app was built in React.js with Create-React-App using styled components and a custom built component library. Source code available at www.github.com/yangfreezy/shoezilla-ecommerce-store."
           }
         </Text>
         <Text
