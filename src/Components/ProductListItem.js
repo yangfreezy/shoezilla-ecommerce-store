@@ -20,7 +20,7 @@ export const ProductListItem = ({ product }) => {
             name={product.productName}
             productId={product.productId}
             fontWeight="600"
-            maxWidth="250px"
+            width="250px"
           />
           <ProductBrandName fontSize="10px" brandName={product.brandName} />
           <ProductThumbnail

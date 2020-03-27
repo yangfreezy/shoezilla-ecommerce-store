@@ -7,14 +7,15 @@ export const ProductName = ({
   name,
   productId,
   textAlign,
-  maxWidth,
+  width,
   fontWeight,
   fontSize
 }) => {
   return (
     <LinkWrapper to={`/product/${productId}`}>
       <Text
-        maxWidth={maxWidth || "300px"}
+        maxWidth={width || "200px"}
+        width={width || "200px"}
         textAlign={textAlign || "center"}
         fontWeight={fontWeight || "bolder"}
         fontSize={fontSize || "16px"}
@@ -29,7 +30,7 @@ ProductName.propTypes = {
   name: PropTypes.string,
   productId: PropTypes.string,
   textAlign: PropTypes.string,
-  maxWidth: PropTypes.string,
+  width: PropTypes.string,
   fontWeight: PropTypes.string,
   fontSize: PropTypes.string
 };

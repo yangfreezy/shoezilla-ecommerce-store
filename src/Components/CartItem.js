@@ -39,7 +39,7 @@ export const CartItem = ({
             name={product.productName}
             productId={productId}
             textAlign="left"
-            maxWidth="150px"
+            width="150px"
           />
           <ProductBrandName
             brandName={product.brandName}
