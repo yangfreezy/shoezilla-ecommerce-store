@@ -1,24 +1,14 @@
 import React, { useContext, useEffect } from "react";
-import styled from "styled-components";
 
-import { ProductListItem, LoadingAnimation } from ".";
+import { ProductListItem, LoadingAnimation, Row } from ".";
 import { StoreContext } from "./../Context";
-
-const StyledList = styled.div`
-  display: flex;
-  flex-direction: row;
-  max-width: 1200px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-`;
 
 export const ProductList = () => {
   const value = useContext(StoreContext);
   const { shoesList, setShoesList } = value;
   useEffect(() => {}, [shoesList, setShoesList]);
   return (
-    <StyledList>
+    <Row maxWidth="1200px" alingItems="flex-start">
       {shoesList && shoesList.length ? (
         shoesList.map(shoe => {
           const key = shoe.productId + "/" + shoe.colorId;
@@ -27,6 +17,6 @@ export const ProductList = () => {
       ) : (
         <LoadingAnimation />
       )}
-    </StyledList>
+    </Row>
   );
 };

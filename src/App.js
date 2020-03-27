@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "react-router-scroll-top";
 
 import {
+  About,
   Cart,
+  Contact,
   Home,
   NotFound,
   Product,
@@ -44,7 +46,8 @@ export const App = () => {
         <ScrollToTop>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/product/:id" exact component={Product} />
+            <Route path="/about" exact component={About} />
+            <Route path="/contact" exact component={Contact} />
             <Route path="/cart" exact component={Cart} />
             <Route path="/purchase" exact component={Purchase} />
             <Route
@@ -52,6 +55,7 @@ export const App = () => {
               exact
               component={PurchaseComplete}
             />
+            <Route path="/product/:id" exact component={Product} />
             <Route path="/:404" exact component={NotFound} />
           </Switch>
         </ScrollToTop>

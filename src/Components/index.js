@@ -1,8 +1,10 @@
 // Components
+import { AboutDescription } from "./AboutDescription";
 import { CartIcon } from "./CartIcon";
 import { CartItem } from "./CartItem";
 import { CartPriceDetails } from "./CartPriceDetails";
 import { CartPriceTotals } from "./CartPriceTotals";
+import { ContactDescription } from "./ContactDescription";
 import { Footer } from "./Footer";
 import { HomeButton } from "./HomeButton";
 import { LoadingAnimation } from "./LoadingAnimation";
@@ -25,13 +27,22 @@ import { SizeIncrementer } from "./SizeIncrementer";
 import { Icon, LinkWrapper, PrimaryButton, Text } from "./Abstracted";
 
 // Layouts
-import { Column, HoverWrapper, PageBody, PageContainer, Row } from "./Layouts";
+import {
+  Column,
+  HoverWrapper,
+  PageBody,
+  PageContainer,
+  Row,
+  ShadowWrapper
+} from "./Layouts";
 
 export {
+  AboutDescription,
   CartIcon,
   CartItem,
   CartPriceDetails,
   CartPriceTotals,
+  ContactDescription,
   Footer,
   HomeButton,
   LoadingAnimation,
@@ -56,4 +67,4 @@ export { Icon, LinkWrapper, PrimaryButton, Text };
 
 // Layouts
 
-export { Column, HoverWrapper, PageBody, PageContainer, Row };
+export { Column, HoverWrapper, PageBody, PageContainer, Row, ShadowWrapper };

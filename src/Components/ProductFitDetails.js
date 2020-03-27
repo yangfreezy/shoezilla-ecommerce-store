@@ -17,11 +17,11 @@ export const ProductFitDetails = ({ details }) => {
   return (
     <StyledProductFitDetails>
       <Row>
-        <Icon src={sizeFitIcon} width="20px" height="20px" />
+        <Icon src={archFitIcon} width="20px" height="20px" />
         <Text
           fontSize="11px"
           fontWeight="normal"
-          text={`Size-fit: ${details.sizeFit.text}.`}
+          text={`Arch-fit: ${details.archFit.text}.`}
         />
       </Row>
       <Row>
@@ -33,11 +33,11 @@ export const ProductFitDetails = ({ details }) => {
         />
       </Row>
       <Row>
-        <Icon src={archFitIcon} width="20px" height="20px" />
+        <Icon src={sizeFitIcon} width="20px" height="20px" />
         <Text
           fontSize="11px"
           fontWeight="normal"
-          text={`Arch-fit: ${details.archFit.text}.`}
+          text={`Size-fit: ${details.sizeFit.text}.`}
         />
       </Row>
     </StyledProductFitDetails>

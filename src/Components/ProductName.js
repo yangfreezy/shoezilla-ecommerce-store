@@ -1,20 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 import he from "he";
 
-import { LinkWrapper } from ".";
-
-const StyledName = styled.div`
-  font-size: ${props => props.fontSize || "16px"};
-  text-align: ${props => props.textAlign || "center"};
-  font-weight: ${props => props.fontWeight || "bolder"};
-  margin: 10px 0px;
-  max-width: ${props => props.maxWidth || "300px"};
-  color: #282828;
-  word-wrap: break-word;
-`;
-
+import { LinkWrapper, Text } from ".";
 export const ProductName = ({
   name,
   productId,
@@ -25,14 +13,14 @@ export const ProductName = ({
 }) => {
   return (
     <LinkWrapper to={`/product/${productId}`}>
-      <StyledName
-        maxWidth={maxWidth}
-        textAlign={textAlign}
-        fontWeight={fontWeight}
-        fontSize={fontSize}
+      <Text
+        maxWidth={maxWidth || "300px"}
+        textAlign={textAlign || "center"}
+        fontWeight={fontWeight || "bolder"}
+        fontSize={fontSize || "16px"}
       >
         {he.decode(name)}
-      </StyledName>
+      </Text>
     </LinkWrapper>
   );
 };

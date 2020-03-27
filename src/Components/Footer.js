@@ -36,24 +36,6 @@ export const Footer = () => {
             text="Contact"
           />
         </LinkWrapper>
-        <LinkWrapper to="/deliveries">
-          <Text
-            color="white"
-            fontSize="10px"
-            margin="5px 10px 5px 10px"
-            fontWeight="bold"
-            text="Delivery"
-          />
-        </LinkWrapper>
-        <LinkWrapper to="/returns">
-          <Text
-            color="white"
-            fontSize="10px"
-            margin="5px 10px 5px 10px"
-            fontWeight="bold"
-            text="Returns"
-          />
-        </LinkWrapper>
       </Column>
     </StyledFooter>
   );

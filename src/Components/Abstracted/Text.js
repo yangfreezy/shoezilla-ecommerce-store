@@ -8,9 +8,10 @@ const StyledText = styled.div`
   margin: ${props => props.margin || "10px 0px 10px 0px"};
   padding: ${props => props.padding || "0px"};
   width: ${props => props.width || "auto"};
+  max-width: ${props => props.maxWidth || "none"};
   font-size: ${props => props.fontSize || "14px"};
   font-weight: ${props => props.fontWeight || "normal"};
-  line-height: ${props => props.fontSize || "normal"};
+  line-height: "auto";
   color: ${props => props.color || "black"};
   box-shadow: ${props => props.boxShadow || "none"};
   text-wrap: wrap;
@@ -25,6 +26,7 @@ export const Text = ({
   margin,
   padding,
   width,
+  maxWidth,
   fontSize,
   fontWeight,
   color,
@@ -37,6 +39,7 @@ export const Text = ({
       margin={margin}
       padding={padding}
       width={width}
+      maxWidth={maxWidth}
       fontSize={fontSize}
       fontWeight={fontWeight}
       color={color}
@@ -60,6 +63,7 @@ Text.propTypes = {
   margin: PropTypes.string,
   padding: PropTypes.string,
   width: PropTypes.string,
+  maxWidth: PropTypes.string,
   fontSize: PropTypes.string,
   fontWeight: PropTypes.string,
   color: PropTypes.string,

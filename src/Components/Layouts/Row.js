@@ -9,6 +9,7 @@ const StyledRow = styled.div`
   margin: ${props => props.margin || "0"};
   padding: ${props => props.padding || "0"};
   width: ${props => props.width || "100%"};
+  max-width: ${props => props.maxWidth || "100%"};
   height: ${props => props.height || "100%"};
   flex-wrap: wrap;
 `;
@@ -20,6 +21,7 @@ export const Row = ({
   alignItems,
   justifyContent,
   width,
+  maxWidth,
   height
 }) => {
   return (
@@ -29,6 +31,7 @@ export const Row = ({
       padding={padding}
       width={width}
       justifyContent={justifyContent}
+      maxWidth={maxWidth}
     >
       {children}
     </StyledRow>
@@ -40,6 +43,7 @@ Row.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.element]),
   justifyContent: PropTypes.string,
   width: PropTypes.string,
+  maxWidth: PropTypes.string,
   height: PropTypes.string,
   margin: PropTypes.string,
   padding: PropTypes.string
