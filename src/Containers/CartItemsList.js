@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -23,8 +24,8 @@ export const CartItemsList = ({ cartItems, shoeIdCache }) => {
   const value = useContext(StoreContext);
   const { cart, setCart } = value;
 
-  const [cartTotalBeforeShipping, setCartTotalBeforeShipping] = useState(0);
-  const [cartTotalAfterShipping, setCartTotalAfterShipping] = useState(0);
+  const [cartTotalBeforeShipping, setCartTotalBeforeShipping] = useState("");
+  const [cartTotalAfterShipping, setCartTotalAfterShipping] = useState("");
   const [numItemsInCart, setNumItemsInCart] = useState(0);
 
   useEffect(() => {
@@ -124,4 +125,9 @@ export const CartItemsList = ({ cartItems, shoeIdCache }) => {
       </Column>
     </Column>
   );
+};
+
+CartItemsList.propTypes = {
+  cartItems: PropTypes.object,
+  shoeIdCache: PropTypes.object
 };

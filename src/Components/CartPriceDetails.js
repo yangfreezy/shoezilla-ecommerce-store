@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Text, Column } from ".";
 
@@ -23,4 +24,11 @@ export const CartPriceDetails = ({
       <Text textAlign="right" text={"Total: " + totalPrice} fontSize="10px" />
     </Column>
   );
+};
+
+CartPriceDetails.propTypes = {
+  initialPrice: PropTypes.string,
+  initialPriceWithTax: PropTypes.string,
+  totalPrice: PropTypes.string,
+  productUnits: PropTypes.number
 };

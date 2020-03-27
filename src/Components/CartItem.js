@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import {
@@ -89,4 +90,15 @@ export const CartItem = ({
       </Row>
     </StyledDiv>
   );
+};
+
+CartItem.propTypes = {
+  cartId: PropTypes.string,
+  productId: PropTypes.string,
+  productUnits: PropTypes.number,
+  product: PropTypes.object,
+  mostDetailedImage: PropTypes.string,
+  productSize: PropTypes.string,
+  editQuantity: PropTypes.func,
+  removeFromCart: PropTypes.func
 };

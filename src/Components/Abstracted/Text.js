@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledText = styled.div`
@@ -44,4 +45,23 @@ export const Text = ({
       {text || children}
     </StyledText>
   );
+};
+
+Text.propTypes = {
+  handleClick: PropTypes.func,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.element,
+    PropTypes.string
+  ]),
+  text: PropTypes.string,
+  alignItems: PropTypes.string,
+  textAlign: PropTypes.string,
+  margin: PropTypes.string,
+  padding: PropTypes.string,
+  width: PropTypes.string,
+  fontSize: PropTypes.string,
+  fontWeight: PropTypes.string,
+  color: PropTypes.string,
+  boxShadow: PropTypes.string
 };

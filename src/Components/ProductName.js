@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import he from "he";
 
@@ -34,4 +35,13 @@ export const ProductName = ({
       </StyledName>
     </LinkWrapper>
   );
+};
+
+ProductName.propTypes = {
+  name: PropTypes.string,
+  productId: PropTypes.string,
+  textAlign: PropTypes.string,
+  maxWidth: PropTypes.string,
+  fontWeight: PropTypes.string,
+  fontSize: PropTypes.string
 };

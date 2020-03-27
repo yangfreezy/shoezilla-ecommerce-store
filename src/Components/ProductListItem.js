@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import {
   Column,
@@ -40,4 +41,8 @@ export const ProductListItem = ({ product }) => {
       </LinkWrapper>
     </HoverWrapper>
   );
+};
+
+ProductListItem.propTypes = {
+  product: PropTypes.object
 };

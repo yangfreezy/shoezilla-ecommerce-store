@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Text, Column } from ".";
 
@@ -28,4 +29,10 @@ export const CartPriceTotals = ({
       </Text>
     </Column>
   );
+};
+
+CartPriceTotals.propTypes = {
+  cartTotalBeforeShipping: PropTypes.string,
+  cartTotalAfterShipping: PropTypes.string,
+  numOfItems: PropTypes.number
 };

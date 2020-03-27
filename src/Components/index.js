@@ -22,13 +22,7 @@ import { SizeDisplay } from "./SizeDisplay";
 import { SizeIncrementer } from "./SizeIncrementer";
 
 // Abstracted components
-import {
-  ActionText,
-  Icon,
-  LinkWrapper,
-  PrimaryButton,
-  Text
-} from "./Abstracted";
+import { Icon, LinkWrapper, PrimaryButton, Text } from "./Abstracted";
 
 // Layouts
 import { Column, HoverWrapper, PageBody, PageContainer, Row } from "./Layouts";
@@ -58,7 +52,7 @@ export {
 };
 
 // Abstracted components
-export { ActionText, Icon, LinkWrapper, PrimaryButton, Text };
+export { Icon, LinkWrapper, PrimaryButton, Text };
 
 // Layouts
 

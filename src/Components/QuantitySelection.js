@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Column, Text } from ".";
 
@@ -20,4 +21,9 @@ export const QuantitySelection = ({ defaultValue, editQuantity }) => {
       </select>
     </Column>
   );
+};
+
+QuantitySelection.propTypes = {
+  defaultValue: PropTypes.number,
+  editQuantity: PropTypes.func
 };

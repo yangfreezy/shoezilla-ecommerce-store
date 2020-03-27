@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import imageGuard from "./../Assets/image-unavailable.png";
@@ -10,6 +10,12 @@ const StyledThumbnail = styled.img`
   margin: 10px 10px 10px 10px;
 `;
 
-export const ProductThumbnail = ({ src, alt, id, width }) => {
+export const ProductThumbnail = ({ src, alt, width }) => {
   return <StyledThumbnail width={width} src={src || imageGuard} alt={alt} />;
+};
+
+ProductThumbnail.propTypes = {
+  src: PropTypes.string,
+  alt: PropTypes.string,
+  width: PropTypes.string
 };

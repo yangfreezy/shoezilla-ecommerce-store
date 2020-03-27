@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -22,3 +23,8 @@ export const MainLogo = ({ margin, width }) => (
     <StyledIcon margin={margin} width={width} />
   </Link>
 );
+
+MainLogo.propTypes = {
+  margin: PropTypes.string,
+  width: PropTypes.string
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { Icon } from ".";
@@ -31,4 +32,9 @@ export const SizeIncrementer = ({ direction, handleClick }) => {
       <Icon src={plusIcon} width="24px" />
     </StyledIncrementer>
   );
+};
+
+SizeIncrementer.propTypes = {
+  direction: PropTypes.string,
+  handleClick: PropTypes.func
 };

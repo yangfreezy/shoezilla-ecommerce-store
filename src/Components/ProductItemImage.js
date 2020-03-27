@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
@@ -20,4 +21,11 @@ export const ProductItemImage = ({ src, alt, productId, width }) => {
       "https://www.zappos.com" + shoeIdCache[id].details.defaultImageUrl;
   }
   return <StyledImage src={mostDetailedImage || src} alt={alt} width={width} />;
+};
+
+ProductItemImage.propTypes = {
+  src: PropTypes.string,
+  alt: PropTypes.string,
+  productId: PropTypes.string,
+  width: PropTypes.string
 };

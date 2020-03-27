@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { ProductName, ProductBrandName, ProductItemImage } from ".";
@@ -27,4 +28,9 @@ export const ProductItem = ({ product, productId }) => {
       />
     </StyledContainer>
   );
+};
+
+ProductItem.propTypes = {
+  product: PropTypes.object,
+  productId: PropTypes.string
 };

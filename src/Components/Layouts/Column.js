@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledColumn = styled.div`
@@ -12,11 +13,11 @@ const StyledColumn = styled.div`
 `;
 
 export const Column = ({
+  alignItems,
   children,
+  justifyContent,
   margin,
   padding,
-  alignItems,
-  justifyContent,
   maxWidth
 }) => {
   return (
@@ -30,4 +31,13 @@ export const Column = ({
       {children}
     </StyledColumn>
   );
+};
+
+Column.propTypes = {
+  alignItems: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element]),
+  justifyContent: PropTypes.string,
+  margin: PropTypes.string,
+  padding: PropTypes.string,
+  maxWidth: PropTypes.string
 };

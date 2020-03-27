@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import Parser from "html-react-parser";
 
@@ -52,4 +53,8 @@ export const ProductDetails = ({ details }) => {
       )}
     </Column>
   );
+};
+
+ProductDetails.propTypes = {
+  details: PropTypes.object
 };

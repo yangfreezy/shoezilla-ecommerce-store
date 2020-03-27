@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledPrimaryButton = styled.div`
@@ -50,4 +51,16 @@ export const PrimaryButton = ({
       {children || value}
     </StyledPrimaryButton>
   );
+};
+
+PrimaryButton.propTypes = {
+  handleClick: PropTypes.func,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  color: PropTypes.string,
+  fontSize: PropTypes.string,
+  margin: PropTypes.string,
+  padding: PropTypes.string,
+  boxShadow: PropTypes.string
 };

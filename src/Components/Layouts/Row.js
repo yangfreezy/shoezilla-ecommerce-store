@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledRow = styled.div`
@@ -32,4 +33,14 @@ export const Row = ({
       {children}
     </StyledRow>
   );
+};
+
+Row.propTypes = {
+  alignItems: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element]),
+  justifyContent: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  margin: PropTypes.string,
+  padding: PropTypes.string
 };

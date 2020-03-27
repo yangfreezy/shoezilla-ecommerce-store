@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledHover = styled.div`
@@ -11,4 +12,8 @@ const StyledHover = styled.div`
 
 export const HoverWrapper = ({ children }) => {
   return <StyledHover>{children}</StyledHover>;
+};
+
+HoverWrapper.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element])
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { Text, Icon, Row } from ".";
@@ -41,4 +42,8 @@ export const ProductFitDetails = ({ details }) => {
       </Row>
     </StyledProductFitDetails>
   );
+};
+
+ProductFitDetails.propTypes = {
+  details: PropTypes.object
 };

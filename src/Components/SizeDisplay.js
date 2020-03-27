@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { Column, Row, SizeIncrementer, Text } from "./../Components";
 
@@ -13,4 +14,10 @@ export const SizeDisplay = ({ size, increaseSize, decreaseSize }) => {
       </Row>
     </Column>
   );
+};
+
+SizeDisplay.propTypes = {
+  increaseSize: PropTypes.string,
+  decreaseSize: PropTypes.string,
+  size: PropTypes.string
 };

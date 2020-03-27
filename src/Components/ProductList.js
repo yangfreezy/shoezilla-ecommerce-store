@@ -7,7 +7,7 @@ import { StoreContext } from "./../Context";
 const StyledList = styled.div`
   display: flex;
   flex-direction: row;
-  max-width: 1400px;
+  max-width: 1200px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
