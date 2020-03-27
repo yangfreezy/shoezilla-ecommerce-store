@@ -4,7 +4,7 @@ import { Text, ShadowWrapper } from ".";
 
 const StyledBody = styled.div`
   position: relative;
-  top: 25vh;
+  top: 20vh;
 `;
 
 export const AboutDescription = () => {
@@ -13,16 +13,26 @@ export const AboutDescription = () => {
       <ShadowWrapper>
         <Text
           textAlign="center"
-          width="325px"
+          width="500px"
           fontWeight="bold"
           fontSize="16px"
+          margin="15px 0px"
         >
-          {"Shoezilla"}
+          {"About"}
         </Text>
         <Text
-          margin="10px 0px"
+          margin="15px 0px"
           textAlign="center"
-          width="325px"
+          width="500px"
+          fontSize="14px"
+          fontWeight="light"
+        >
+          {"Thanks for taking the time to check out the project!"}
+        </Text>
+        <Text
+          margin="15px 0px"
+          textAlign="center"
+          width="500px"
           fontSize="14px"
           fontWeight="light"
         >
@@ -31,13 +41,33 @@ export const AboutDescription = () => {
           }
         </Text>
         <Text
-          margin="10px 0px"
+          margin="15px 0px"
           textAlign="center"
-          width="325px"
+          width="500px"
           fontSize="14px"
           fontWeight="light"
         >
-          {"Thanks for taking the time to check out the project!"}
+          {
+            "Yang is a front-end developer with full-stack experience seeking front-end based junior to mid level roles in the United States."
+          }
+        </Text>
+        <Text
+          margin="15px 0px"
+          textAlign="center"
+          width="500px"
+          fontSize="14px"
+          fontWeight="light"
+        >
+          {"Portfolio: www.freezydreamin.com"}
+        </Text>
+        <Text
+          margin="15px 0px"
+          textAlign="center"
+          width="500px"
+          fontSize="14px"
+          fontWeight="light"
+        >
+          {"GitHub: www.github.com/yangfreezy"}
         </Text>
       </ShadowWrapper>
     </StyledBody>

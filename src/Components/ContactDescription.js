@@ -4,7 +4,7 @@ import { Text, ShadowWrapper } from ".";
 
 const StyledBody = styled.div`
   position: relative;
-  top: 25vh;
+  top: 20vh;
 `;
 
 export const ContactDescription = () => {
@@ -13,20 +13,21 @@ export const ContactDescription = () => {
       <ShadowWrapper>
         <Text
           textAlign="center"
-          width="325px"
+          width="500px"
           fontWeight="bold"
           fontSize="16px"
+          margin="15px 0px"
         >
           {"Contact"}
         </Text>
         <Text
-          margin="10px 0px"
+          margin="15px 0px"
           textAlign="center"
-          width="325px"
+          width="500px"
           fontSize="14px"
           fontWeight="light"
         >
-          {"You can e-mail Yang, the developer at freezydreamin@gmail.com."}
+          {"Feel free to e-mail Yang at freezydreamin@gmail.com"}
         </Text>
       </ShadowWrapper>
     </StyledBody>
