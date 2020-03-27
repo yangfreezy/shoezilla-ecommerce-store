@@ -1,0 +1,5 @@
+{
+  "env": {
+    "REACT_APP_ZAPPOS_API_KEY": "@react_app_zappos_api_key"
+  }
+}
