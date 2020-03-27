@@ -57,7 +57,7 @@ export const AboutDescription = () => {
           fontWeight="light"
         >
           {
-            "This app was built in React.js with a custom built component library. Source code available at www.github.com/yangfreezy/shoezilla-ecommerce-store."
+            "This app was built in React.js with a custom built component library."
           }
         </Text>
         <Text
@@ -67,7 +67,7 @@ export const AboutDescription = () => {
           fontSize="14px"
           fontWeight="light"
         >
-          {"Portfolio: www.freezydreamin.com"}
+          {"Source code: www.github.com/yangfreezy/shoezilla-ecommerce-store."}
         </Text>
         <Text
           margin="15px 0px"
@@ -76,7 +76,7 @@ export const AboutDescription = () => {
           fontSize="14px"
           fontWeight="light"
         >
-          {"GitHub: www.github.com/yangfreezy"}
+          {"Portfolio: www.freezydreamin.com"}
         </Text>
       </ShadowWrapper>
     </StyledBody>
