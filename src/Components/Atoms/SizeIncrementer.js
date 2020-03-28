@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { Icon } from ".";
+import { Icon } from "./Abstracted";
 
-import minusIcon from "./../Assets/minus-icon.png";
-import plusIcon from "./../Assets/plus-icon.png";
+import minusIcon from "./../../Assets/minus-icon.png";
+import plusIcon from "./../../Assets/plus-icon.png";
 
 const StyledIncrementer = styled.div`
   margin: 20px;

@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { StoreContext } from "./../Context";
-import cartIcon from "./../Assets/cart-icon.png";
+import { StoreContext } from "./../../Context";
+import cartIcon from "./../../Assets/cart-icon.png";
 
 const StyledCartNumber = styled.div`
   color: white;

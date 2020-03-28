@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import mainLogo from "./../Assets/main-logo.png";
+import mainLogo from "./../../Assets/main-logo.png";
 
 const StyledIcon = styled.img.attrs({
   src: mainLogo

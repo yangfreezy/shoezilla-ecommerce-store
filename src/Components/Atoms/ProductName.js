@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import he from "he";
 
-import { LinkWrapper, Text } from ".";
+import { LinkWrapper, Text } from "./Abstracted";
+
 export const ProductName = ({
   name,
   productId,

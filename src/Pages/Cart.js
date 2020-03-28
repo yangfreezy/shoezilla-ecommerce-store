@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Nav, Footer, Column, PageContainer, PageBody } from "./../Components";
-import { CartView } from "./../Containers";
+import { CartView, Nav, Footer } from "./../Components/Organisms";
+import { Column, PageContainer, PageBody } from "./../Components/Layouts";
 
 export const Cart = () => {
   return (

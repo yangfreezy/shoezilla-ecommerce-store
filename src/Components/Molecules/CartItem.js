@@ -2,19 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import {
-  CartPriceDetails,
-  Column,
-  PrimaryButton,
-  ProductName,
-  ProductBrandName,
-  ProductItemImage,
-  QuantitySelection,
-  Row,
-  Text
-} from "./../Components";
+import { priceWithTax } from "./../../Helpers";
 
-import { priceWithTax } from "./../Helpers";
+import { CartPriceDetails, QuantitySelection } from ".";
+import { ProductName, ProductBrandName, ProductItemImage } from "./../Atoms";
+import { PrimaryButton, Text } from "./../Atoms/Abstracted";
+import { Column, Row } from "./../Layouts";
 
 const StyledDiv = styled.div`
   box-shadow: 5px 5px 10px #888888;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { HomeButton, CartIcon, MainLogo } from ".";
+import { HomeButton, CartIcon, MainLogo } from "./../Atoms";
 
 const NavBar = styled.div`
   display: flex;

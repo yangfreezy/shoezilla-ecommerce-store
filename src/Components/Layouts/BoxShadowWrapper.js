@@ -7,10 +7,10 @@ const StyledDiv = styled.div`
   padding: 20px 50px;
 `;
 
-export const ShadowWrapper = ({ children }) => {
+export const BoxShadowWrapper = ({ children }) => {
   return <StyledDiv>{children}</StyledDiv>;
 };
 
-ShadowWrapper.propTypes = {
+BoxShadowWrapper.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.element])
 };

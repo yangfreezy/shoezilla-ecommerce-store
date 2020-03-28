@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
-import { StoreContext } from "./../Context";
+import { StoreContext } from "./../../Context";
 
 const StyledImage = styled.img`
   width: ${props => props.width || "225px"};

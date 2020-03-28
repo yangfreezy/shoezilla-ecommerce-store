@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "react-router-scroll-top";
 
+import { StoreContext } from "./Context";
+import { getCache, getAllShoeData } from "./Helpers";
+
 import {
   About,
   Cart,
@@ -12,9 +15,6 @@ import {
   Purchase,
   PurchaseComplete
 } from "./Pages";
-
-import { StoreContext } from "./Context";
-import { getCache, getAllShoeData } from "./Helpers";
 
 export const App = () => {
   const [shoesList, setShoesList] = useState(getCache("shoes") || []);

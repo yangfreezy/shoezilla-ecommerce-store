@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from "react";
 
-import { ProductListItem, LoadingAnimation, Row } from ".";
-import { StoreContext } from "./../Context";
+import { StoreContext } from "./../../Context";
+import { ProductListItem } from "./../Molecules";
+import { LoadingAnimation } from "./../Atoms";
+import { Row } from "./../Layouts";
 
 export const ProductList = () => {
   const value = useContext(StoreContext);

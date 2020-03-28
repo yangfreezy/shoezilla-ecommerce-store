@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Nav, Footer, Column, PageBody, PageContainer } from "./../Components";
+import { Nav, Footer } from "./../Components/Organisms";
+import { Column, PageContainer, PageBody } from "./../Components/Layouts";
 
 export const PurchaseComplete = () => {
   return (

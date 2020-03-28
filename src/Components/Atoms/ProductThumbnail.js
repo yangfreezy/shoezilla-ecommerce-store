@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import imageGuard from "./../Assets/image-unavailable.png";
+import imageGuard from "./../../Assets/image-unavailable.png";
 
 const StyledThumbnail = styled.img`
   width: ${props => (props.width ? props.width : "200px")};

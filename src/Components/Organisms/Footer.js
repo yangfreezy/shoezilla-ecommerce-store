@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import { LinkWrapper, Column, Text, MainLogo } from ".";
+import { MainLogo } from "./../Atoms";
+import { LinkWrapper, Text } from "./../Atoms/Abstracted";
+import { Column } from "./../Layouts";
 
 const StyledFooter = styled.div`
   width: 100%;

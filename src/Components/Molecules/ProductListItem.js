@@ -1,15 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {
-  Column,
-  HoverWrapper,
-  LinkWrapper,
-  Text,
-  ProductName,
-  ProductBrandName,
-  ProductThumbnail
-} from ".";
+import { ProductName, ProductBrandName, ProductThumbnail } from "./../Atoms";
+import { LinkWrapper, Text } from "./../Atoms/Abstracted";
+import { Column, HoverWrapper } from "./../Layouts";
 
 export const ProductListItem = ({ product }) => {
   return (

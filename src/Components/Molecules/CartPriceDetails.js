@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Text, Column } from ".";
+import { Text } from "./../Atoms/Abstracted";
+import { Column } from "./../Layouts";
 
 export const CartPriceDetails = ({
   initialPrice,

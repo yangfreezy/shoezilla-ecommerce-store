@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Nav, Footer, Column, PageContainer, PageBody } from "./../Components";
-import { ContactDescription } from "./../Components";
+import { ContactDescription, Nav, Footer } from "./../Components/Organisms";
+import { Column, PageContainer, PageBody } from "./../Components/Layouts";
 
 export const Contact = () => {
   return (

@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Column, Row, SizeIncrementer, Text } from "./../Components";
+import { SizeIncrementer } from "./../Atoms";
+import { Text } from "./../Atoms/Abstracted";
+import { Column, Row } from "./../Layouts";
 
 export const SizeDisplay = ({ size, increaseSize, decreaseSize }) => {
   return (

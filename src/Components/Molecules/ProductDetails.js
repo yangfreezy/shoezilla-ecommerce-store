@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Parser from "html-react-parser";
 
+import { removeLiTagsWithLinks } from "./../../Helpers";
+
 import { ProductFitDetails } from ".";
-import { Text, Column } from ".";
-import { removeLiTagsWithLinks } from "./../Helpers";
+import { Text } from "./../Atoms/Abstracted";
+import { Column } from "./../Layouts";
 
 const StyledTitleContainer = styled.div`
   width: 450px;

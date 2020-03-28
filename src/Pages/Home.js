@@ -1,13 +1,7 @@
 import React from "react";
 
-import {
-  Nav,
-  Footer,
-  ProductList,
-  PageBody,
-  PageContainer,
-  Column
-} from "./../Components";
+import { ProductList, Nav, Footer } from "./../Components/Organisms";
+import { Column, PageContainer, PageBody } from "./../Components/Layouts";
 
 export const Home = () => {
   return (

@@ -3,14 +3,12 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import {
-  CartItem,
-  CartPriceTotals,
-  Column,
-  PrimaryButton
-} from "./../Components";
-import { StoreContext } from "./../Context";
-import { deepCopy, insertCache, priceWithTax } from "./../Helpers";
+import { StoreContext } from "./../../Context";
+import { deepCopy, insertCache, priceWithTax } from "./../../Helpers";
+
+import { CartItem, CartPriceTotals } from ".";
+import { PrimaryButton } from "./../Atoms/Abstracted";
+import { Column } from "./../Layouts";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -93,7 +91,6 @@ export const CartItemsList = ({ cartItems, shoeIdCache }) => {
         const mostDetailedImage = product.details
           ? "https://www.zappos.com" + product.details.defaultImageUrl
           : product.thumbnailImageUrl;
-
         return (
           <Column key={cartId} alignItems="flex-end" margin="0px">
             <CartItem

@@ -1,25 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Redirect, useParams } from "react-router-dom";
 
-import {
-  Column,
-  LoadingAnimation,
-  PrimaryButton,
-  ProductDetails,
-  ProductItem,
-  Row,
-  SizeDisplay,
-  Text
-} from "./../Components";
-import { StoreContext } from "./../Context";
+import { StoreContext } from "./../../Context";
+import { getShoeDetails } from "./../../API";
 import {
   addShoeDetailsToCache,
   deepCopy,
   generateCartId,
   getAllShoeData,
   insertCache
-} from "./../Helpers";
-import { getShoeDetails } from "./../API";
+} from "./../../Helpers";
+
+import { SizeDisplay, ProductDetails, ProductItem } from "./../Molecules";
+import { LoadingAnimation } from "./../Atoms";
+import { PrimaryButton, Text } from "./../Atoms/Abstracted";
+import { Row, Column } from "./../Layouts";
 
 export const ProductView = () => {
   const value = useContext(StoreContext);

@@ -1,8 +1,9 @@
 import React, { Fragment, useContext } from "react";
 
-import { CartItemsList } from "./../Containers";
-import { Column, Text } from "./../Components";
-import { StoreContext } from "./../Context";
+import { StoreContext } from "./../../Context";
+import { CartItemsList } from "./../Molecules";
+import { Text } from "./../Atoms/Abstracted";
+import { Column } from "./../Layouts";
 
 export const CartView = () => {
   const value = useContext(StoreContext);

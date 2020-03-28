@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import shoeIcon from "./../Assets/shoe-icon.png";
+import shoeIcon from "./../../Assets/shoe-icon.png";
 
 const StyledIcon = styled.img.attrs({
   src: shoeIcon

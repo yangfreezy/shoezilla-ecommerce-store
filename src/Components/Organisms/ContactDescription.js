@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Text, ShadowWrapper } from ".";
+
+import { Text } from "./../Atoms/Abstracted";
+import { BoxShadowWrapper } from "./../Layouts";
 
 const StyledBody = styled.div`
   position: relative;
@@ -10,7 +12,7 @@ const StyledBody = styled.div`
 export const ContactDescription = () => {
   return (
     <StyledBody>
-      <ShadowWrapper>
+      <BoxShadowWrapper>
         <Text
           textAlign="center"
           width="500px"
@@ -29,7 +31,7 @@ export const ContactDescription = () => {
         >
           {"You can reach Yang at freezydreamin@gmail.com!"}
         </Text>
-      </ShadowWrapper>
+      </BoxShadowWrapper>
     </StyledBody>
   );
 };

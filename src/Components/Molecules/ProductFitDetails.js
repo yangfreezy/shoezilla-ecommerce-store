@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { Text, Icon, Row } from ".";
+import { Text, Icon } from "./../Atoms/Abstracted";
+import { Row } from "./../Layouts";
 
-import widthFitIcon from "./../Assets/width-fit-icon.png";
-import sizeFitIcon from "./../Assets/size-fit-icon.png";
-import archFitIcon from "./../Assets/arch-fit-icon.png";
+import widthFitIcon from "./../../Assets/width-fit-icon.png";
+import sizeFitIcon from "./../../Assets/size-fit-icon.png";
+import archFitIcon from "./../../Assets/arch-fit-icon.png";
 
 const StyledProductFitDetails = styled.div`
   margin: 10px 10px 10px 10px;
