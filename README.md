@@ -12,6 +12,7 @@ Shoezilla is an e-commerce shoe store built in React.js, using the following tec
 - Zappos API for data
 - Context API for state management
 - Zeit for hosting
+- Jest and Enzyme for testing
 
 **_ Component Design _**
 
