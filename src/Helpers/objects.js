@@ -1,3 +1,9 @@
-export const deepCopy = cart => {
-  return JSON.parse(JSON.stringify(cart));
+/**
+ * Makes a deep copy of an object, will consider using lodash in the future but this works for right now
+ * @param {Object} object
+ * @returns {Object} deep copy of the object
+ **/
+
+export const deepCopy = obj => {
+  return JSON.parse(JSON.stringify(obj));
 };
