@@ -3,6 +3,7 @@
 Live now at shoezilla.now.sh!
 
 **_ Description _**
+
 Shoezilla is an e-commerce shoe store built in React.js, using the following technologies:
 
 - Create React App
