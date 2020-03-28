@@ -4,7 +4,7 @@ export const getMensShoes = async () => {
   let res;
   try {
     res = await axios(
-      "https://zappos1.p.rapidapi.com/products/list?page=1&limit=100",
+      "https://zappos1.p.rapidapi.com/products/list?page=1&limit=30",
       {
         method: "POST",
         headers: {
@@ -33,7 +33,9 @@ export const getMensShoes = async () => {
         ]
       }
     );
-    if (!res.data) return;
+    if (!res.data) {
+      return console.err(res.response);
+    }
     return res.data.results;
   } catch (err) {
     console.error(err);

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "react-router-scroll-top";
 
 import { StoreContext } from "./Context";
-import { getCache, getAllShoeData } from "./Helpers";
+import { insertCache, getCache, getAllShoeData } from "./Helpers";
 
 import {
   About,
@@ -17,19 +17,24 @@ import {
 } from "./Pages";
 
 export const App = () => {
-  const [shoesList, setShoesList] = useState(getCache("shoes") || []);
-  const [shoeIdCache, setShoeIdCache] = useState(getCache("shoeIdCache") || {});
+  const [shoesList, setShoesList] = useState([]);
+  const [shoeIdCache, setShoeIdCache] = useState({});
   const [cart, setCart] = useState(
     getCache("cart") || { numOfItems: 0, itemsCache: {} }
   );
 
   useEffect(() => {
     if (!shoesList.length) {
-      (async () => {
-        await getAllShoeData(setShoesList, setShoeIdCache);
-      })();
+      const loadData = async () => {
+        const { rawDataList, mappedIdCache } = await getAllShoeData();
+        setShoesList(rawDataList);
+        setShoeIdCache(mappedIdCache);
+        insertCache("shoes", rawDataList);
+        insertCache("shoeIdCache", mappedIdCache);
+      };
+      loadData();
     }
-  }, [shoesList]);
+  }, [shoesList.length]);
 
   return (
     <StoreContext.Provider

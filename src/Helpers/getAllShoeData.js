@@ -1,5 +1,4 @@
 import { getMensShoes } from "./../API";
-import { insertCache } from ".";
 
 /**
  * Takes array of objects and maps each object to a cache by id
@@ -21,13 +20,10 @@ export const mapProductListToCache = data => {
  * @returns nothing
  **/
 
-export const getAllShoeData = async (setShoesList, setShoeIdCache) => {
-  let shoeData = await getMensShoes();
+export const getAllShoeData = async () => {
+  const shoeData = await getMensShoes();
+  console.log(shoeData);
   if (!shoeData) return;
   const idCache = mapProductListToCache(shoeData);
-  setShoesList(shoeData);
-  setShoeIdCache(idCache);
-  insertCache("shoes", shoeData);
-  insertCache("shoeIdCache", idCache);
-  return idCache;
+  return { rawDataList: shoeData, mappedIdCache: idCache };
 };
