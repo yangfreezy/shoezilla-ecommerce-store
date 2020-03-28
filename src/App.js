@@ -17,8 +17,8 @@ import {
 } from "./Pages";
 
 export const App = () => {
-  const [shoesList, setShoesList] = useState([]);
-  const [shoeIdCache, setShoeIdCache] = useState({});
+  const [shoesList, setShoesList] = useState(getCache("shoes") || []);
+  const [shoeIdCache, setShoeIdCache] = useState(getCache("shoeIdCache") || {});
   const [cart, setCart] = useState(
     getCache("cart") || { numOfItems: 0, itemsCache: {} }
   );

@@ -22,7 +22,6 @@ export const mapProductListToCache = data => {
 
 export const getAllShoeData = async () => {
   const shoeData = await getMensShoes();
-  console.log(shoeData);
   if (!shoeData) return;
   const idCache = mapProductListToCache(shoeData);
   return { rawDataList: shoeData, mappedIdCache: idCache };
