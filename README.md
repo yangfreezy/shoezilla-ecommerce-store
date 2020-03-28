@@ -3,16 +3,20 @@
 Live now at shoezilla.now.sh!
 
 **_ Description _**
+
 Shoezilla is an e-commerce shoe store built in React.js, using the following technologies:
 
-- Create React App
-- Styled Components
-- Zappos API
-- Context API
+- React.js, JavaScript (ES6), CSS3
+- Create React App for config
+- Styled Components for CSS
+- Zappos API for data
+- Context API for state management
+- Zeit for hosting
+- Jest and Enzyme for testing
 
 **_ Component Design _**
 
-Following a permutation of the Atomic Design pattern by Brad Frost, skipping templates.
+This app was built following a permutation of the Atomic Design pattern by Brad Frost, (no templates).
 
 Categorized in decreasing order of abstraction:
 
