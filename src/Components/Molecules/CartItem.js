@@ -31,7 +31,7 @@ const StyledCartItem = styled.div`
     width: 100%;
 
     > * {
-      margin: 10px 60px;
+      margin: 10px 60px 0px 60px;
       justify-content: space-between;
     }
   }
@@ -72,7 +72,6 @@ export const CartItem = ({
         <Column
           alignItems="flex-end"
           justifyContent="space-between"
-          margin="50px 0px"
           width="150px"
         >
           <Column>
