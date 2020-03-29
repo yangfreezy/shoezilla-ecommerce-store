@@ -4,7 +4,6 @@ import ScrollToTop from "react-router-scroll-top";
 
 import { StoreContext } from "./Context";
 import { insertCache, getCache, getAndMapShoeData } from "./Helpers";
-
 import {
   About,
   Cart,

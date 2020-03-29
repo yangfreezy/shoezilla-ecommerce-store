@@ -1,12 +1,41 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 import { priceWithTax } from "./../../Helpers";
 
 import { CartPriceDetails, QuantitySelection } from ".";
 import { ProductName, ProductBrandName, ProductItemImage } from "./../Atoms";
-import { PrimaryButton, Text } from "./../Atoms/Abstracted";
-import { BoxShadowWrapper, Column, Row } from "./../Layouts";
+import { LinkWrapper, PrimaryButton, Text } from "./../Atoms/Abstracted";
+import { BoxShadowWrapper, Column } from "./../Layouts";
+
+const StyledCartItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  > * {
+    align-items: center;
+    text-align: center;
+    margin: 0px 10px;
+  }
+
+  @media only screen and (min-width: 620px) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+
+    > * {
+      margin: 10px 60px;
+      justify-content: space-between;
+    }
+  }
+`;
 
 export const CartItem = ({
   cartId,
@@ -20,36 +49,30 @@ export const CartItem = ({
 }) => {
   return (
     <BoxShadowWrapper>
-      <Row
-        margin="10px 0px"
-        width="100%"
-        justifyContent="space-between"
-        alignItems="flex-start"
-      >
-        <Column alignItems="flex-start" margin="50px 100px">
-          <ProductName
-            name={product.productName}
-            productId={productId}
-            textAlign="left"
-            width="150px"
-          />
-          <ProductBrandName
-            brandName={product.brandName}
-            fontSize="10px"
-            textAlign="left"
-          />
+      <StyledCartItem>
+        <Column alignItems="flex-start" margin="50px 25px">
+          <LinkWrapper to={`/product/${productId}`}>
+            <ProductName
+              name={product.productName}
+              productId={productId}
+              width="150px"
+            />
+          </LinkWrapper>
+          <ProductBrandName brandName={product.brandName} fontSize="10px" />
           <Text fontSize="10px"> {"Size: Men's " + productSize}</Text>
-          <ProductItemImage
-            src={mostDetailedImage}
-            alt={mostDetailedImage}
-            id={productId}
-            width="150px"
-          />
+          <LinkWrapper to={`/product/${productId}`}>
+            <ProductItemImage
+              src={mostDetailedImage}
+              alt={mostDetailedImage}
+              id={productId}
+              width="150px"
+            />
+          </LinkWrapper>
         </Column>
         <Column
           alignItems="flex-end"
           justifyContent="space-between"
-          margin="50px 100px"
+          margin="50px 0px"
           width="150px"
         >
           <Column>
@@ -74,12 +97,11 @@ export const CartItem = ({
               margin="10px 0px"
               padding="10px 15px"
               handleClick={e => removeFromCart(e, cartId)}
-            >
-              {"Remove"}
-            </PrimaryButton>
+              value="Remove"
+            />
           </Column>
         </Column>
-      </Row>
+      </StyledCartItem>
     </BoxShadowWrapper>
   );
 };

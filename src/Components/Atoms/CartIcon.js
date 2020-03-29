@@ -46,7 +46,7 @@ const StyledLink = styled(Link)`
 
 const StickyWrapper = styled.div`
   position: fixed;
-  top: 25px;
+  top: 30px;
 `;
 
 export const CartIcon = () => {

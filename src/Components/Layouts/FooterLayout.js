@@ -17,5 +17,5 @@ export const FooterLayout = ({ children }) => {
 };
 
 FooterLayout.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element])
 };

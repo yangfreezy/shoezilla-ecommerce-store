@@ -11,7 +11,8 @@ export const getMensShoes = async () => {
           "x-rapidapi-host": "zappos1.p.rapidapi.com",
           "x-rapidapi-key": process.env.REACT_APP_ZAPPOS_API_KEY,
           "content-type": "application/json",
-          accept: "application/json"
+          accept: "application/json",
+          "Set-Cookie": "third_party_var=value; SameSite=None; Secure"
         },
         data: [
           {

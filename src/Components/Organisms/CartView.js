@@ -108,7 +108,7 @@ export const CartView = () => {
                 boxShadow
                 margin="0px 100px 10px 100px"
                 value="Checkout"
-              ></PrimaryButton>
+              />
             </LinkWrapper>
             <CartPriceTotals
               cartTotalBeforeShipping={cartTotalBeforeShipping}

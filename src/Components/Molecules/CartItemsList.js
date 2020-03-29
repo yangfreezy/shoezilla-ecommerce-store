@@ -20,7 +20,7 @@ export const CartItemsList = ({
           ? "https://www.zappos.com" + product.details.defaultImageUrl
           : product.thumbnailImageUrl;
         return (
-          <Column key={cartId} alignItems="flex-end" margin="0px">
+          <Column key={cartId} alignItems="flex-end" margin="0px 0px 20px 0px">
             <CartItem
               cartId={cartId}
               product={product}

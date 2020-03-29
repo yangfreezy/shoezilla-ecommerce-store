@@ -14,16 +14,17 @@ export const CartPriceTotals = ({
       alignItems="flex-center"
       margin="10px 100px"
     >
-      <Text textAlign="center" fontSize="16px">
+      <Text margin="5px 0px" textAlign="center" fontSize="16px">
         {`Total Cost: ${cartTotalAfterShipping}`}
       </Text>
+      <Text margin="5px 0px" textAlign="center" fontSize="12px">
+        {"Shipping: $5.99"}
+      </Text>
       <Text
+        margin="5px 0px"
         textAlign="center"
         fontSize="12px"
       >{`Subtotal: ${cartTotalBeforeShipping}`}</Text>
-      <Text textAlign="center" fontSize="12px">
-        {"Shipping: $5.99"}
-      </Text>
     </Column>
   );
 };

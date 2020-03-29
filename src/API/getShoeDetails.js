@@ -9,7 +9,8 @@ export const getShoeDetails = async productId => {
         method: "GET",
         headers: {
           "x-rapidapi-host": "zappos1.p.rapidapi.com",
-          "x-rapidapi-key": process.env.REACT_APP_ZAPPOS_API_KEY
+          "x-rapidapi-key": process.env.REACT_APP_ZAPPOS_API_KEY,
+          "Set-Cookie": "third_party_var=value; SameSite=None; Secure"
         }
       }
     );

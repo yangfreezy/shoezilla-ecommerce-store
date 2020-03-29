@@ -14,5 +14,5 @@ export const NavLayout = ({ children }) => {
 };
 
 NavLayout.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element])
 };

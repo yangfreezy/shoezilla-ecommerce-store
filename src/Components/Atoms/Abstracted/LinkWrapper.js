@@ -7,6 +7,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
   cursor: pointer;
+  margin: 0px 0px;
 `;
 
 export const LinkWrapper = ({ to, children }) => {

@@ -20,7 +20,7 @@ export const SizeDisplay = ({ size, setSize }) => {
   };
   return (
     <Column>
-      <Text fontSize="12px" fontWeight="light" text="Size" />
+      <Text fontSize="12px" fontWeight="light" text="Size: Men's U.S." />
       <Row>
         <SizeIncrementer direction="decrease" handleClick={handleIncrement} />
         <Text

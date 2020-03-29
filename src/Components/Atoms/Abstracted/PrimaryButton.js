@@ -25,7 +25,6 @@ const StyledPrimaryButton = styled.div`
 
 export const PrimaryButton = ({
   handleClick,
-  children,
   value,
   width,
   height,
@@ -48,13 +47,14 @@ export const PrimaryButton = ({
       padding={padding}
       boxShadow={boxShadow}
     >
-      {children || value}
+      {value}
     </StyledPrimaryButton>
   );
 };
 
 PrimaryButton.propTypes = {
   handleClick: PropTypes.func,
+  value: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
   backgroundColor: PropTypes.string,
