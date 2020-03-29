@@ -50,15 +50,14 @@ const StickyWrapper = styled.div`
 `;
 
 export const CartIcon = () => {
-  const value = useContext(StoreContext);
-  const { cart } = value;
+  const {
+    cart: { numOfItems }
+  } = useContext(StoreContext);
   return (
     <StyledLink to="/cart">
       <StickyWrapper>
         <StyledIcon />
-        {cart.numOfItems >= 1 && (
-          <StyledCartNumber>{cart.numOfItems}</StyledCartNumber>
-        )}
+        {numOfItems >= 1 && <StyledCartNumber>{numOfItems}</StyledCartNumber>}
       </StickyWrapper>
     </StyledLink>
   );

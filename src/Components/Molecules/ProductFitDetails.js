@@ -10,8 +10,8 @@ import archFitIcon from "./../../Assets/arch-fit-icon.png";
 
 export const ProductFitDetails = ({ details }) => {
   return (
-    <Column margin="10px">
-      <Row>
+    <Column margin="10px" alignItems="flex-start">
+      <Row justifyContent="flex-start">
         <Icon src={archFitIcon} width="16px" height="16px" />
         <Text
           fontSize="12px"
@@ -19,7 +19,7 @@ export const ProductFitDetails = ({ details }) => {
           text={`Arch: ${details.archFit.text}.`}
         />
       </Row>
-      <Row>
+      <Row justifyContent="flex-start">
         <Icon src={widthFitIcon} width="16px" height="16px" />
         <Text
           fontSize="12px"
@@ -27,7 +27,7 @@ export const ProductFitDetails = ({ details }) => {
           text={`Width: ${details.widthFit.text}.`}
         />
       </Row>
-      <Row>
+      <Row justifyContent="flex-start">
         <Icon src={sizeFitIcon} width="16px" height="16px" />
         <Text
           fontSize="12px"

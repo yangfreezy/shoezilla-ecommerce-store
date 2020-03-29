@@ -21,8 +21,8 @@ const StyledImage = styled.img`
 export const ProductItemImage = ({ src, alt, id, width }) => {
   let { productId } = useParams();
   if (!productId) productId = id;
-  const value = useContext(StoreContext);
-  const { shoeIdCache } = value;
+  const { shoeIdCache } = useContext(StoreContext);
+
   let mostDetailedImage;
   if (shoeIdCache[productId].details) {
     mostDetailedImage =

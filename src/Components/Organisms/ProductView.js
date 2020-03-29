@@ -17,8 +17,9 @@ import { Row, Column } from "./../Layouts";
 
 export const ProductView = () => {
   const { productId } = useParams();
-  const value = useContext(StoreContext);
-  const { shoeIdCache, setShoeIdCache, cart, setCart } = value;
+  const { shoeIdCache, setShoeIdCache, cart, setCart } = useContext(
+    StoreContext
+  );
   const currentShoe = shoeIdCache[productId];
   const shoeDetails = currentShoe
     ? currentShoe.details
@@ -59,10 +60,12 @@ export const ProductView = () => {
     const cartItems = newCart.itemsCache;
     const cartId = generateCartId(productId, size);
     if (!cartItems[cartId]) cartItems[cartId] = {};
-    cartItems[cartId] = ~~cartItems[cartId] + 1;
-    newCart["numOfItems"]++;
-    insertCache("cart", newCart);
-    return setCart(newCart);
+    if (~~cartItems[cartId] < 10) {
+      cartItems[cartId] = ~~cartItems[cartId] + 1;
+      newCart["numOfItems"]++;
+      insertCache("cart", newCart);
+      return setCart(newCart);
+    }
   };
 
   if (toHome) return <Redirect to="/" />;

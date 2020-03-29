@@ -44,17 +44,19 @@ export const ProductDetails = ({ details }) => {
   const descriptionHTML = description
     ? Parser(removeLiTagsWithLinks(details.description))
     : null;
+  const detailsExist = Object.keys(details).length;
   return (
     <Column>
       <StyledDetails>
         <Text fontSize="18px" fontWeight="bold" text="Product Description" />
       </StyledDetails>
-      {Object.keys(details).length ? (
+      {detailsExist && (
         <StyledDetails>
           <Text fontSize="14px">{descriptionHTML}</Text>
           <ProductFitDetails details={details} />
         </StyledDetails>
-      ) : (
+      )}
+      {!detailsExist && (
         <Text
           fontSize="14px"
           fontWeight="normal"

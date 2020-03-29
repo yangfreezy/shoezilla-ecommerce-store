@@ -9,10 +9,14 @@ import { LinkWrapper, Text, PrimaryButton } from "./../Atoms/Abstracted";
 import { Column } from "./../Layouts";
 
 export const CartView = () => {
-  const value = useContext(StoreContext);
-  const { cart, setCart, shoeIdCache } = value;
-  const cartItems = cart.itemsCache;
-  const cartItemsExist = Object.keys(cartItems).length > 0;
+  const {
+    cart,
+    cart: { itemsCache },
+    setCart,
+    shoeIdCache
+  } = useContext(StoreContext);
+
+  const cartItemsExist = Object.keys(itemsCache).length > 0;
   const [cartTotalBeforeShipping, setCartTotalBeforeShipping] = useState("");
   const [cartTotalAfterShipping, setCartTotalAfterShipping] = useState("");
   const [numItemsInCart, setNumItemsInCart] = useState(0);
@@ -23,7 +27,7 @@ export const CartView = () => {
       beforeShipping,
       afterShipping,
       numOfItemsInCart
-    } = getTotalPriceOfCart(cartItems);
+    } = getTotalPriceOfCart(itemsCache);
     setCartTotalBeforeShipping(beforeShipping);
     setCartTotalAfterShipping(afterShipping);
     setNumItemsInCart(numOfItemsInCart);
@@ -94,7 +98,7 @@ export const CartView = () => {
               <CartItemsList
                 removeFromCart={removeFromCart}
                 editQuantity={editQuantity}
-                cartItems={cartItems}
+                cartItems={itemsCache}
                 shoeIdCache={shoeIdCache}
               />
             </Column>
