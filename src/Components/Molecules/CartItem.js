@@ -87,7 +87,7 @@ export const CartItem = ({
               }
             />
           </Column>
-          <Column margin="0px 0px">
+          <Column margin="25px 0px 0px 0px">
             <QuantitySelection
               editQuantity={e => editQuantity(e, cartId)}
               defaultValue={productUnits}
