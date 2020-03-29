@@ -43,7 +43,7 @@ export const CartItem = ({
           <ProductItemImage
             src={mostDetailedImage}
             alt={mostDetailedImage}
-            productId={productId}
+            id={productId}
             width="150px"
           />
         </Column>

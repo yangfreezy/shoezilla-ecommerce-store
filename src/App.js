@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "react-router-scroll-top";
 
 import { StoreContext } from "./Context";
-import { insertCache, getCache, getAllShoeData } from "./Helpers";
+import { insertCache, getCache, getAndMapShoeData } from "./Helpers";
 
 import {
   About,
@@ -26,7 +26,7 @@ export const App = () => {
   useEffect(() => {
     if (!shoesList.length) {
       const loadData = async () => {
-        const { rawDataList, mappedIdCache } = await getAllShoeData();
+        const { rawDataList, mappedIdCache } = await getAndMapShoeData();
         setShoesList(rawDataList);
         setShoeIdCache(mappedIdCache);
         insertCache("shoes", rawDataList);
@@ -60,7 +60,7 @@ export const App = () => {
               exact
               component={PurchaseComplete}
             />
-            <Route path="/product/:id" exact component={Product} />
+            <Route path="/product/:productId" exact component={Product} />
             <Route path="/:404" exact component={NotFound} />
           </Switch>
         </ScrollToTop>

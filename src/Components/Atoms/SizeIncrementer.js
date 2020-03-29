@@ -23,13 +23,10 @@ const StyledIncrementer = styled.div`
 `;
 
 export const SizeIncrementer = ({ direction, handleClick }) => {
-  return direction === "up" ? (
-    <StyledIncrementer onClick={handleClick}>
-      <Icon src={minusIcon} width="24px" />
-    </StyledIncrementer>
-  ) : (
-    <StyledIncrementer onClick={handleClick}>
-      <Icon src={plusIcon} width="24px" />
+  const directionIcon = direction === "decrease" ? minusIcon : plusIcon;
+  return (
+    <StyledIncrementer onClick={() => handleClick(direction)}>
+      <Icon src={directionIcon} width="24px" />
     </StyledIncrementer>
   );
 };

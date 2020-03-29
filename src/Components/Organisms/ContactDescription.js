@@ -29,7 +29,7 @@ export const ContactDescription = () => {
           fontSize="14px"
           fontWeight="light"
         >
-          {"You can reach Yang at freezydreamin@gmail.com!"}
+          {"freezydreamin@gmail.com."}
         </Text>
       </BoxShadowWrapper>
     </StyledBody>

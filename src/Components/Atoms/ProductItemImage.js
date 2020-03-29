@@ -10,15 +10,15 @@ const StyledImage = styled.img`
   height: auto;
 `;
 
-export const ProductItemImage = ({ src, alt, productId, width }) => {
-  let { id } = useParams();
-  if (!id) id = productId;
+export const ProductItemImage = ({ src, alt, id, width }) => {
+  let { productId } = useParams();
+  if (!productId) productId = id;
   const value = useContext(StoreContext);
   const { shoeIdCache } = value;
   let mostDetailedImage;
-  if (shoeIdCache[id].details) {
+  if (shoeIdCache[productId].details) {
     mostDetailedImage =
-      "https://www.zappos.com" + shoeIdCache[id].details.defaultImageUrl;
+      "https://www.zappos.com" + shoeIdCache[productId].details.defaultImageUrl;
   }
   return <StyledImage src={mostDetailedImage || src} alt={alt} width={width} />;
 };

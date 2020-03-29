@@ -38,7 +38,9 @@ export const AboutDescription = () => {
           fontSize="14px"
           fontWeight="light"
         >
-          {"Shoezilla is a portfolio project built and designed by Yang Yu."}
+          {
+            "Shoezilla is a React.js portfolio project built and designed by Yang Yu. "
+          }
         </Text>
         <Text
           margin="15px 0px"
@@ -58,9 +60,7 @@ export const AboutDescription = () => {
           fontSize="14px"
           fontWeight="light"
         >
-          {
-            "This app was built in React.js with a custom built component library."
-          }
+          {"You can reach him at freezydreamin@gmail.com."}
         </Text>
         <Text
           margin="15px 0px"
@@ -69,7 +69,7 @@ export const AboutDescription = () => {
           fontSize="14px"
           fontWeight="light"
         >
-          {"Source code: www.github.com/yangfreezy/shoezilla-ecommerce-store."}
+          {"www.github.com/yangfreezy/shoezilla-ecommerce-store"}
         </Text>
         <Text
           margin="15px 0px"
@@ -78,7 +78,7 @@ export const AboutDescription = () => {
           fontSize="14px"
           fontWeight="light"
         >
-          {"Portfolio: www.freezydreamin.com"}
+          {"www.freezydreamin.com"}
         </Text>
       </BoxShadowWrapper>
     </StyledBody>

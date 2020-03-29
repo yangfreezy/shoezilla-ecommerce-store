@@ -6,7 +6,7 @@ import { getMensShoes } from "./../API";
  * @returns {Object} Object of all data mapped by id
  **/
 
-export const mapProductListToCache = data => {
+const mapProductListToCache = data => {
   return data.reduce((cache, product) => {
     cache[product.productId] = product;
     return cache;
@@ -20,7 +20,7 @@ export const mapProductListToCache = data => {
  * @returns nothing
  **/
 
-export const getAllShoeData = async () => {
+export const getAndMapShoeData = async () => {
   const shoeData = await getMensShoes();
   if (!shoeData) return;
   const idCache = mapProductListToCache(shoeData);
