@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledFooterLayout = styled.div`
   width: 100%;
-  height: 125px;
+  height: 100px;
   flex-direction: row;
   justify-content: space-between;
   padding: 25px 25px 25px 25px;
