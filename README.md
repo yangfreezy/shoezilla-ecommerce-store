@@ -29,7 +29,7 @@ Categorized in decreasing order of abstraction:
 
 TODO:
 
-- Link Stripe and PayPal to Cart / Checkout
-- Add Purchase Confirmation page
 - Add snapshot tests
-- Save timestamps in localStorage for when data was last retrieved, retrieve data if it's been X amount of time since last request.
+- Link Stripe and PayPal to Checkout
+- Add redirect to Purchase Confirmation page after Stripe / PayPal
+- Save timestamps in localStorage for when data was last retrieved, get new batch of data every X hours
