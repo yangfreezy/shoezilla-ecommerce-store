@@ -6,9 +6,8 @@ Live now at shoezilla.now.sh!
 
 Shoezilla is a fully responsive e-commerce web app built in React.js, using the following technologies:
 
-- React.js, JavaScript (ES6), CSS3
+- React.js, JavaScript (ES6), CSS3, Styled Components
 - Create React App for config
-- Styled Components for CSS
 - Zappos API for data
 - Context API for state management
 - Zeit for hosting
