@@ -31,6 +31,5 @@ export const CartPriceTotals = ({
 
 CartPriceTotals.propTypes = {
   cartTotalBeforeShipping: PropTypes.string,
-  cartTotalAfterShipping: PropTypes.string,
-  numOfItems: PropTypes.number
+  cartTotalAfterShipping: PropTypes.string
 };

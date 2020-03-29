@@ -34,6 +34,6 @@ export const ProductItemImage = ({ src, alt, id, width }) => {
 ProductItemImage.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
-  productId: PropTypes.string,
+  id: PropTypes.string,
   width: PropTypes.string
 };
