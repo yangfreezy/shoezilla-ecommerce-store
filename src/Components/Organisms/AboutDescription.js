@@ -12,7 +12,7 @@ const StyledBody = styled.div`
   }
   @media only screen and (min-width: 620px) {
     position: relative;
-    top: 15vh;
+    top: 7.5vh;
     > * div {
       width: 500px;
       max-width: 500px;
