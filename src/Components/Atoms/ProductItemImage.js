@@ -6,8 +6,13 @@ import styled from "styled-components";
 import { StoreContext } from "./../../Context";
 
 const StyledImage = styled.img`
-  width: 175px;
+  width: 125px;
   height: auto;
+
+  @media only screen and (min-width: 375px) {
+    width: ${props => props.width || "200px"};
+  }
+
   @media only screen and (min-width: 620px) {
     width: ${props => props.width || "225px"};
   }

@@ -15,6 +15,7 @@ const StyledCartItem = styled.div`
   margin: 10px 0px;
   justify-content: center;
   align-items: center;
+  width: 100%;
 
   > * {
     align-items: center;
@@ -22,16 +23,20 @@ const StyledCartItem = styled.div`
     margin: 0px 10px;
   }
 
+  @media only screen and (min-width: 375px) {
+    margin: 5px 0px;
+    > * {
+      margin: 5px 0px;
+      justify-content: space-between;
+    }
+  }
+
   @media only screen and (min-width: 620px) {
-    display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    width: 100%;
-
-    > * {
-      margin: 10px 60px 0px 60px;
-      justify-content: space-between;
+    > * > * {
+      margin: 5px 60px;
     }
   }
 `;
@@ -49,7 +54,7 @@ export const CartItem = ({
   return (
     <BoxShadowWrapper>
       <StyledCartItem>
-        <Column alignItems="flex-start" margin="50px 25px">
+        <Column>
           <LinkWrapper to={`/product/${productId}`}>
             <ProductName
               name={product.productName}
@@ -68,11 +73,7 @@ export const CartItem = ({
             />
           </LinkWrapper>
         </Column>
-        <Column
-          alignItems="flex-end"
-          justifyContent="space-between"
-          width="150px"
-        >
+        <Column width="150px">
           <Column>
             <CartPriceDetails
               productUnits={productUnits}
@@ -85,15 +86,14 @@ export const CartItem = ({
               }
             />
           </Column>
-          <Column margin="25px 0px 0px 0px">
+          <Column>
             <QuantitySelection
               editQuantity={e => editQuantity(e, cartId)}
               defaultValue={productUnits}
             />
             <PrimaryButton
               fontSize="10px"
-              margin="10px 0px"
-              padding="10px 15px"
+              padding="12px 15px"
               handleClick={e => removeFromCart(e, cartId)}
               value="Remove"
             />

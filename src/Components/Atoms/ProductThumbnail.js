@@ -5,9 +5,18 @@ import styled from "styled-components";
 import imageGuard from "./../../Assets/image-unavailable.png";
 
 const StyledThumbnail = styled.img`
-  width: ${props => (props.width ? props.width : "200px")};
+  width: 120px;
   height: auto;
-  margin: 10px 10px 10px 10px;
+  margin: 5px 5px;
+
+  @media only screen and (min-width: 375px) {
+    width: ${props => props.width || "175px"};
+    margin: 10px 10px;
+  }
+
+  @media only screen and (min-width: 620px) {
+    width: ${props => props.width || "225px"};
+  }
 `;
 
 export const ProductThumbnail = ({ src, alt, width }) => {
