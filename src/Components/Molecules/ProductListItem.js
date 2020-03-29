@@ -1,15 +1,37 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 import { ProductName, ProductBrandName, ProductThumbnail } from "./../Atoms";
 import { LinkWrapper, Text } from "./../Atoms/Abstracted";
-import { Column, HoverWrapper } from "./../Layouts";
+import { HoverWrapper } from "./../Layouts";
+
+const StyledProductListItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0px;
+  > * {
+    margin: 10px 0px;
+  }
+
+  @media only screen and (min-width: 375px) {
+    margin: 25px 25px;
+  }
+
+  @media only screen and (min-width: 620px) {
+    margin: 50px 50px;
+    > * {
+      margin: 15px 0px;
+    }
+  }
+`;
 
 export const ProductListItem = ({ product }) => {
   return (
     <HoverWrapper>
       <LinkWrapper to={`/product/${product.productId}`}>
-        <Column margin="50px 50px 50px 50px">
+        <StyledProductListItem>
           <ProductName
             name={product.productName}
             productId={product.productId}
@@ -31,7 +53,7 @@ export const ProductListItem = ({ product }) => {
               text="New"
             />
           )}
-        </Column>
+        </StyledProductListItem>
       </LinkWrapper>
     </HoverWrapper>
   );

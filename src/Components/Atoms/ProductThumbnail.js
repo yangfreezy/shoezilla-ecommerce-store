@@ -10,12 +10,12 @@ const StyledThumbnail = styled.img`
   margin: 5px 5px;
 
   @media only screen and (min-width: 375px) {
-    width: ${props => props.width || "175px"};
+    width: ${props => props.width || "150px"};
     margin: 10px 10px;
   }
 
   @media only screen and (min-width: 620px) {
-    width: ${props => props.width || "225px"};
+    width: ${props => props.width || "150px"};
   }
 `;
 

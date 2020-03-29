@@ -5,21 +5,16 @@ import styled from "styled-components";
 import { ProductName, ProductBrandName, ProductItemImage } from "./../Atoms";
 
 const StyledContainer = styled.div`
-  > * {
-    margin: 5x 0px 5px 0px;
-  }
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  > * {
+    margin: 5x 0px 5px 0px;
+  }
   @media only screen and (min-width: 620px) {
     > * {
       margin: 10px 0px 10px 0px;
     }
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 `;
 
