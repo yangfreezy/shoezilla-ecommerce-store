@@ -15,7 +15,7 @@ Shoezilla is a fully responsive e-commerce web app built in React.js, using the 
 
 **_ Component Design _**
 
-This app was built following a permutation of the Atomic Design pattern by Brad Frost, (no templates).
+This app was built following design principles based off of Atomic Design, (only difference is no templates).
 
 Categorized in decreasing order of abstraction:
 
