@@ -1,23 +1,12 @@
 import React from "react";
-import styled from "styled-components";
 
 import { MainLogo } from "./../Atoms";
 import { LinkWrapper, Text } from "./../Atoms/Abstracted";
-import { Column } from "./../Layouts";
-
-const StyledFooter = styled.div`
-  width: 100%;
-  height: 150px;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 25px 25px 25px 25px;
-  background-color: black;
-  color: white;
-`;
+import { Column, FooterLayout } from "./../Layouts";
 
 export const Footer = () => {
   return (
-    <StyledFooter>
+    <FooterLayout>
       <Column alignItems="flex-start">
         <MainLogo width="100px" margin="0px 0px 10px -8px" />
         <LinkWrapper to="/about">
@@ -39,6 +28,6 @@ export const Footer = () => {
           />
         </LinkWrapper>
       </Column>
-    </StyledFooter>
+    </FooterLayout>
   );
 };

@@ -1,18 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
 import { priceWithTax } from "./../../Helpers";
 
 import { CartPriceDetails, QuantitySelection } from ".";
 import { ProductName, ProductBrandName, ProductItemImage } from "./../Atoms";
 import { PrimaryButton, Text } from "./../Atoms/Abstracted";
-import { Column, Row } from "./../Layouts";
-
-const StyledDiv = styled.div`
-  box-shadow: 5px 5px 10px #888888;
-  margin: 10px 0px;
-`;
+import { BoxShadowWrapper, Column, Row } from "./../Layouts";
 
 export const CartItem = ({
   cartId,
@@ -25,8 +19,13 @@ export const CartItem = ({
   removeFromCart
 }) => {
   return (
-    <StyledDiv>
-      <Row width="100%" justifyContent="space-between" alignItems="flex-start">
+    <BoxShadowWrapper>
+      <Row
+        margin="10px 0px"
+        width="100%"
+        justifyContent="space-between"
+        alignItems="flex-start"
+      >
         <Column alignItems="flex-start" margin="50px 100px">
           <ProductName
             name={product.productName}
@@ -81,7 +80,7 @@ export const CartItem = ({
           </Column>
         </Column>
       </Row>
-    </StyledDiv>
+    </BoxShadowWrapper>
   );
 };
 

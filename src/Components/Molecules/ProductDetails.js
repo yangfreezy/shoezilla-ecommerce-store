@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 import Parser from "html-react-parser";
 
 import { removeLiTagsWithLinks } from "./../../Helpers";
@@ -9,22 +8,6 @@ import { ProductFitDetails } from ".";
 import { Text } from "./../Atoms/Abstracted";
 import { Column } from "./../Layouts";
 
-const StyledTitleContainer = styled.div`
-  width: 450px;
-  margin: 0px 0px 10px 0px;
-`;
-
-const StyledDetails = styled.div`
-  font-size: 13px;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  max-width: 450px;
-  text-wrap: wrap;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 export const ProductDetails = ({ details }) => {
   const description = details.description;
   const descriptionHTML = description
@@ -32,22 +15,24 @@ export const ProductDetails = ({ details }) => {
     : null;
   return (
     <Column>
-      <StyledTitleContainer>
+      <Column width="450px">
         <Text
           fontSize="20px"
           fontWeight="bold"
           text="Product Description"
           textAlign="center"
         />
-      </StyledTitleContainer>
+      </Column>
       {Object.keys(details).length ? (
         <Fragment>
-          <StyledDetails>{descriptionHTML}</StyledDetails>
+          <Text maxWidth="450px" fontSize="14px">
+            {descriptionHTML}
+          </Text>
           <ProductFitDetails details={details} />
         </Fragment>
       ) : (
         <Text
-          fontSize="13px"
+          fontSize="14px"
           fontWeight="normal"
           textAlign="center"
           text="Getting product details.."

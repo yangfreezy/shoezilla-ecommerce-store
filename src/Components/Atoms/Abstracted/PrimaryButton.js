@@ -11,7 +11,7 @@ const StyledPrimaryButton = styled.div`
   line-height: ${props => props.fontSize || "12px"};
   margin: ${props => props.margin || "10px 10px 10px 10px"};
   padding: ${props => props.padding || "15px 25px 15px 25px"};
-  box-shadow: ${props => props.boxShadow || "none"};
+  box-shadow: ${props => (props.boxShadow ? "5px 5px 10px #888888" : "none")};
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -62,5 +62,5 @@ PrimaryButton.propTypes = {
   fontSize: PropTypes.string,
   margin: PropTypes.string,
   padding: PropTypes.string,
-  boxShadow: PropTypes.string
+  boxShadow: PropTypes.bool
 };

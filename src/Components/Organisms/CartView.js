@@ -105,6 +105,7 @@ export const CartView = () => {
           >
             <LinkWrapper to="/purchase">
               <PrimaryButton
+                boxShadow
                 margin="0px 100px 10px 100px"
                 value="Checkout"
               ></PrimaryButton>
