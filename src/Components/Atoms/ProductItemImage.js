@@ -6,9 +6,9 @@ import styled from "styled-components";
 import { StoreContext } from "./../../Context";
 
 const StyledImage = styled.img`
-  width: "200px";
+  width: 175px;
   height: auto;
-  @media screen only and (min-width: 620px) {
+  @media only screen and (min-width: 620px) {
     width: ${props => props.width || "225px"};
   }
 `;

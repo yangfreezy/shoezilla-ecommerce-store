@@ -1,8 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 import he from "he";
 
-import { Text } from "./Abstracted";
+const StyledName = styled.div`
+  width: 175px;
+  max-width: 175px;
+  font-weight: ${({ fontWeight }) => fontWeight || "bolder"};
+  font-size: 14px;
+  text-align: center;
+
+  @media only screen and (min-width: 620px) {
+    width: ${({ width }) => width || "200px"};
+    max-width: ${({ maxWidth }) => maxWidth || "200px"};
+    font-weight: ${({ fontWeight }) => fontWeight || "bolder"};
+    font-size: ${({ fontSize }) => fontSize || "16px"};
+  }
+`;
 
 export const ProductName = ({
   name,
@@ -12,15 +26,15 @@ export const ProductName = ({
   fontSize
 }) => {
   return (
-    <Text
-      maxWidth={width || "200px"}
-      width={width || "200px"}
+    <StyledName
+      maxWidth={width}
+      width={width}
       textAlign={textAlign || "center"}
       fontWeight={fontWeight || "bolder"}
       fontSize={fontSize || "16px"}
     >
       {he.decode(name)}
-    </Text>
+    </StyledName>
   );
 };
 

@@ -4,6 +4,7 @@ import { StoreContext } from "./../../Context";
 import { deepCopy, insertCache, priceWithTax } from "./../../Helpers";
 
 import { CartItemsList, CartPriceTotals } from "./../Molecules";
+import { EmptyCartMessage } from "./../Atoms";
 import { LinkWrapper, Text, PrimaryButton } from "./../Atoms/Abstracted";
 import { Column } from "./../Layouts";
 
@@ -77,7 +78,7 @@ export const CartView = () => {
   };
 
   return (
-    <Fragment>
+    <Column>
       <Column>
         <Text margin="10px" fontSize="16px">
           {"My Cart"}
@@ -85,7 +86,7 @@ export const CartView = () => {
       </Column>
       {cartItemsExist ? (
         <Fragment>
-          <Column alignItems="flex-end">
+          <Column alignItems="center">
             <Column alignItems="center" margin="10px 50px">
               <Text textAlign="center" fontSize="16px">
                 {numItemsInCart > 1 ? `${numItemsInCart} Items` : `1 Item`}
@@ -118,12 +119,8 @@ export const CartView = () => {
           </Column>
         </Fragment>
       ) : (
-        <Column maxWidth="500px">
-          <Text margin="15vw 0px 0px 0px" textAlign="center" fontSize="34px">
-            {"Your shopping cart is empty!"}
-          </Text>
-        </Column>
+        <EmptyCartMessage />
       )}
-    </Fragment>
+    </Column>
   );
 };

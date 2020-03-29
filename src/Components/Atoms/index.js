@@ -5,6 +5,7 @@ import { Icon, LinkWrapper, PrimaryButton, Text } from "./Abstracted";
 // Specific atoms
 
 import { CartIcon } from "./CartIcon.js";
+import { EmptyCartMessage } from "./EmptyCartMessage.js";
 import { HomeButton } from "./HomeButton.js";
 import { LoadingAnimation } from "./LoadingAnimation.js";
 import { MainLogo } from "./MainLogo.js";
@@ -22,6 +23,7 @@ export { Icon, LinkWrapper, PrimaryButton, Text };
 
 export {
   CartIcon,
+  EmptyCartMessage,
   HomeButton,
   LoadingAnimation,
   MainLogo,

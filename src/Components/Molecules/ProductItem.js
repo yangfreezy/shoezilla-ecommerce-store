@@ -13,7 +13,7 @@ const StyledContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media screen only and (min-width: 620px) {
+  @media only screen and (min-width: 620px) {
     > * {
       margin: 10px 0px 10px 0px;
     }

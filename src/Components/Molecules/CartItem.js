@@ -13,7 +13,6 @@ const StyledCartItem = styled.div`
   display: flex;
   flex-direction: column;
   margin: 10px 0px;
-  width: 100%;
   justify-content: center;
   align-items: center;
 

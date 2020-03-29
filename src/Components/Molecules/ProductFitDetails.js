@@ -12,27 +12,27 @@ export const ProductFitDetails = ({ details }) => {
   return (
     <Column margin="10px">
       <Row>
-        <Icon src={archFitIcon} width="20px" height="20px" />
+        <Icon src={archFitIcon} width="16px" height="16px" />
         <Text
           fontSize="12px"
           fontWeight="normal"
-          text={`Arch-fit: ${details.archFit.text}.`}
+          text={`Arch: ${details.archFit.text}.`}
         />
       </Row>
       <Row>
-        <Icon src={widthFitIcon} width="20px" height="20px" />
+        <Icon src={widthFitIcon} width="16px" height="16px" />
         <Text
           fontSize="12px"
           fontWeight="normal"
-          text={`Width-fit: ${details.widthFit.text}.`}
+          text={`Width: ${details.widthFit.text}.`}
         />
       </Row>
       <Row>
-        <Icon src={sizeFitIcon} width="20px" height="20px" />
+        <Icon src={sizeFitIcon} width="16px" height="16px" />
         <Text
           fontSize="12px"
           fontWeight="normal"
-          text={`Size-fit: ${details.sizeFit.text}.`}
+          text={`Size: ${details.sizeFit.text}.`}
         />
       </Row>
     </Column>
