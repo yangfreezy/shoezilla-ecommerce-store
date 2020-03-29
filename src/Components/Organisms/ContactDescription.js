@@ -6,11 +6,13 @@ import { BoxShadowWrapper, Column } from "./../Layouts";
 
 const StyledBody = styled.div`
   position: relative;
-  top: 15vh;
+  top: 5vh;
   > * div {
     max-width: 225px;
   }
   @media only screen and (min-width: 620px) {
+    position: relative;
+    top: 15vh;
     > * div {
       width: 500px;
       max-width: 500px;
