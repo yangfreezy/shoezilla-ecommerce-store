@@ -6,11 +6,21 @@ import { ProductName, ProductBrandName, ProductItemImage } from "./../Atoms";
 
 const StyledContainer = styled.div`
   > * {
-    margin: 10px 0px 10px 0px;
+    margin: 5x 0px 5px 0px;
   }
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen only and (min-width: 620px) {
+    > * {
+      margin: 10px 0px 10px 0px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ProductItem = ({ product, productId }) => {

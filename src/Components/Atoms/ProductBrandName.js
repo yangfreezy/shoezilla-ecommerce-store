@@ -4,10 +4,18 @@ import styled from "styled-components";
 
 const StyledName = styled.div`
   font-style: italic;
-  font-size: ${props => props.fontSize || "12px"};
+  font-size: ${props => props.fontSize || "14px"};
   text-align: ${props => props.textAlign || "center"};
   font-weight: light;
   margin: 10px 0px 10px 0px;
+
+  @media screen only and (min-width: 620px) {
+    font-style: italic;
+    font-size: ${props => props.fontSize || "12px"};
+    text-align: ${props => props.textAlign || "center"};
+    font-weight: light;
+    margin: 10px 0px 10px 0px;
+  }
 `;
 export const ProductBrandName = ({ brandName, fontSize, textAlign }) => {
   return (
