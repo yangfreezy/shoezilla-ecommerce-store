@@ -45,16 +45,7 @@ export const AboutView = () => {
             {page}
           </Text>
           {pageSentences.map(sentence => {
-            return (
-              <Text
-                margin="10px 0px"
-                textAlign="center"
-                fontSize="14px"
-                fontWeight="light"
-              >
-                {sentence}
-              </Text>
-            );
+            return <Text fontWeight="light">{sentence}</Text>;
           })}
         </Column>
       </BoxShadowWrapper>

@@ -6,7 +6,7 @@ import he from "he";
 const StyledName = styled.div`
   font-style: italic;
   font-weight: light;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0px;
   font-size: ${({ fontSize }) => fontSize || "10px"};
   text-align: ${({ textAlign }) => textAlign || "center"};
 `;

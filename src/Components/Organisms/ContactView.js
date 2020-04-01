@@ -35,7 +35,6 @@ export const ContactView = () => {
       <BoxShadowWrapper>
         <Column margin="25px 0px">
           <Text
-            textAlign="center"
             width="500px"
             fontWeight="bold"
             fontSize="16px"
@@ -43,13 +42,7 @@ export const ContactView = () => {
           >
             {page}
           </Text>
-          <Text
-            margin="15px 0px"
-            textAlign="center"
-            width="500px"
-            fontSize="14px"
-            fontWeight="light"
-          >
+          <Text margin="15px 0px" width="500px" fontWeight="light">
             {myEmail}
           </Text>
         </Column>

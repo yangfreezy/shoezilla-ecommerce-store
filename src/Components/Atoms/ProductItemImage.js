@@ -24,11 +24,12 @@ export const ProductItemImage = ({ src, alt, id, width }) => {
   const { shoeIdCache } = useContext(StoreContext);
 
   let mostDetailedImage;
-  if (shoeIdCache[productId].details) {
-    mostDetailedImage =
-      "https://www.zappos.com" + shoeIdCache[productId].details.defaultImageUrl;
-  }
-  return <StyledImage src={mostDetailedImage || src} alt={alt} width={width} />;
+  const detailedImage = shoeIdCache[productId].details;
+  mostDetailedImage = detailedImage
+    ? "https://www.zappos.com" + shoeIdCache[productId].details.defaultImageUrl
+    : src;
+
+  return <StyledImage src={mostDetailedImage} alt={alt} width={width} />;
 };
 
 ProductItemImage.propTypes = {

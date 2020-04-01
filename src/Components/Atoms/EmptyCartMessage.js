@@ -31,11 +31,7 @@ const StyledMessage = styled.div`
 export const EmptyCartMessage = () => {
   return (
     <StyledMessage>
-      <Text
-        textAlign="center"
-        fontSize="16px"
-        text="Your shopping cart is empty!"
-      />
+      <Text fontSize="16px" text="Your shopping cart is empty!" />
     </StyledMessage>
   );
 };

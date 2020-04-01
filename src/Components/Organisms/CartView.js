@@ -39,20 +39,19 @@ export const CartView = () => {
   /*** Variable References ***/
   const cartItemQuantityString =
     numItemsInCart > 1 ? `${numItemsInCart} Items` : `1 Item`;
+
   const cartItemsExist = Object.keys(itemsCache).length > 0;
 
   return (
     <Column>
       <Column>
-        <Text margin="10px" fontSize="16px">
-          {"My Cart"}
-        </Text>
+        <Text margin="10px" fontSize="16px" text="My Cart" />
       </Column>
       {cartItemsExist ? (
         <Fragment>
           <Column>
             <Column margin="10px 50px">
-              <Text fontSize="16px">{cartItemQuantityString}</Text>
+              <Text fontSize="16px" text={cartItemQuantityString} />
               <CartItemsList cartItems={itemsCache} shoeIdCache={shoeIdCache} />
             </Column>
           </Column>

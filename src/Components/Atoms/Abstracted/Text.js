@@ -8,7 +8,7 @@ const StyledText = styled.div`
   word-wrap: break-word;
   align-items: ${({ alignItems }) => alignItems || "center"};
   text-align: ${({ textAlign }) => textAlign || "center"};
-  margin: ${({ margin }) => margin || "10px 0px 10px 0px"};
+  margin: ${({ margin }) => margin || "10px 0px"};
   padding: ${({ padding }) => padding || "0px"};
   width: ${({ width }) => width || "auto"};
   max-width: ${({ maxWidth }) => maxWidth || "none"};

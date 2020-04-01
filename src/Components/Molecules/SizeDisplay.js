@@ -15,12 +15,7 @@ export const SizeDisplay = ({ size, setSize }) => {
           direction="decrease"
           handleClick={() => incrementProductSize("decrease", size, setSize)}
         />
-        <Text
-          fontSize="18px"
-          width="40px"
-          textAlign="center"
-          text={String(size)}
-        />
+        <Text fontSize="18px" width="40px" text={String(size)} />
         <SizeIncrementer
           direction="increase"
           handleClick={() => incrementProductSize("increase", size, setSize)}

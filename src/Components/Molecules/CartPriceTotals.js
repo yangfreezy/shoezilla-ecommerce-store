@@ -18,7 +18,6 @@ export const CartPriceTotals = ({
       </Text>
       <Text
         margin="5px 0px"
-        textAlign="center"
         fontSize="12px"
       >{`Subtotal: ${cartTotalBeforeShipping}`}</Text>
     </Column>
