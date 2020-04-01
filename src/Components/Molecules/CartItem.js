@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import {
-  priceWithTax,
+  getPriceWithTax,
   editCartQuantity,
   removeFromCart
 } from "./../../Helpers";
@@ -55,7 +55,7 @@ export const CartItem = ({
   productSize
 }) => {
   const { cart, setCart, setNumItemsInCart } = useContext(StoreContext);
-  const { taxCost, totalCost } = priceWithTax(
+  const { taxCost, totalCost } = getPriceWithTax(
     product.price,
     0.065,
     productUnits

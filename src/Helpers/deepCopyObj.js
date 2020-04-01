@@ -4,6 +4,6 @@
  * @returns {Object} deep copy of the object
  **/
 
-export const deepCopy = obj => {
+export const deepCopyObj = obj => {
   return JSON.parse(JSON.stringify(obj));
 };

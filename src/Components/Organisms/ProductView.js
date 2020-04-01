@@ -4,10 +4,10 @@ import { Redirect, useParams } from "react-router-dom";
 import { StoreContext } from "./../../Context";
 import { getShoeDetails } from "./../../API";
 import {
-  deepCopy,
-  addToCart,
+  deepCopyObj,
+  createCartItem,
   getAndMapShoeData,
-  insertCache
+  insertIntoCache
 } from "./../../Helpers";
 
 import { SizeDisplay, ProductDetails, ProductItem } from "./../Molecules";
@@ -46,15 +46,15 @@ export const ProductView = () => {
         let idCache = shoeIdCache;
         if (!currentShoe) {
           const { rawDataList, mappedIdCache } = await getAndMapShoeData();
-          insertCache("shoes", rawDataList);
+          insertIntoCache("shoes", rawDataList);
           if (!mappedIdCache[productId]) return setToHome(true);
           idCache = mappedIdCache;
         }
         const details = await getShoeDetails(productId);
         if (!details) return setToHome(true);
-        const cacheWithDetails = await deepCopy(idCache);
+        const cacheWithDetails = await deepCopyObj(idCache);
         cacheWithDetails[productId]["details"] = details;
-        insertCache("shoeIdCache", cacheWithDetails);
+        insertIntoCache("shoeIdCache", cacheWithDetails);
         setShoeIdCache(cacheWithDetails);
       })();
     }
@@ -72,7 +72,7 @@ export const ProductView = () => {
           <SizeDisplay setSize={setSize} size={size} />
           <PrimaryButton
             value="Add to Cart"
-            handleClick={() => addToCart(cart, productId, size, setCart)}
+            handleClick={() => createCartItem(cart, productId, size, setCart)}
           />
         </Column>
         <Column justifyContent="flex-start" margin="25px 100px">

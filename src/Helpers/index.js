@@ -1,28 +1,28 @@
-import { getCache, insertCache } from "./cache";
+import { getCache, insertIntoCache } from "./cache";
 import {
-  generateCartId,
+  createCartId,
   getTotalPriceOfCart,
-  addToCart,
+  createCartItem,
   editCartQuantity,
   removeFromCart
 } from "./cart";
 import { getAndMapShoeData } from "./getAndMapShoeData";
-import { deepCopy } from "./objects";
-import { priceWithTax } from "./priceWithTax";
-import { incrementSize } from "./product";
+import { deepCopyObj } from "./deepCopyObj";
+import { getPriceWithTax } from "./getPriceWithTax";
+import { incrementProductSize } from "./incrementProductSize";
 import { removeLiTagsWithLinks } from "./removeLiTagsWithLinks";
 
 export {
   getCache,
-  deepCopy,
-  generateCartId,
-  addToCart,
+  deepCopyObj,
+  createCartId,
+  createCartItem,
   getTotalPriceOfCart,
   editCartQuantity,
   removeFromCart,
-  insertCache,
+  insertIntoCache,
   getAndMapShoeData,
-  priceWithTax,
-  incrementSize,
+  getPriceWithTax,
+  incrementProductSize,
   removeLiTagsWithLinks
 };

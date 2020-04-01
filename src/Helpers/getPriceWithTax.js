@@ -6,7 +6,7 @@
  * @returns {Object} totalPrice and taxCost
  **/
 
-export const priceWithTax = (price, taxRate = 0.065, units = 1) => {
+export const getPriceWithTax = (price, taxRate = 0.065, units = 1) => {
   const parsedPrice = parseInt(price.slice(1)) * units;
   const tax = parsedPrice * taxRate;
   const totalUnrounded = parsedPrice + tax;

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { incrementSize } from "./../../Helpers";
+import { incrementProductSize } from "./../../Helpers";
 import { SizeIncrementer } from "./../Atoms";
 import { Text } from "./../Atoms/Abstracted";
 import { Column, Row } from "./../Layouts";
@@ -13,7 +13,7 @@ export const SizeDisplay = ({ size, setSize }) => {
       <Row>
         <SizeIncrementer
           direction="decrease"
-          handleClick={() => incrementSize("decrease", size, setSize)}
+          handleClick={() => incrementProductSize("decrease", size, setSize)}
         />
         <Text
           fontSize="18px"
@@ -23,7 +23,7 @@ export const SizeDisplay = ({ size, setSize }) => {
         />
         <SizeIncrementer
           direction="increase"
-          handleClick={() => incrementSize("increase", size, setSize)}
+          handleClick={() => incrementProductSize("increase", size, setSize)}
         />
       </Row>
     </Column>

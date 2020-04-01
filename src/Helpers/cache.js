@@ -15,7 +15,7 @@ export const getCache = id => {
  * @returns undefined
  **/
 
-export const insertCache = (id, value) => {
+export const insertIntoCache = (id, value) => {
   localStorage.setItem(id, JSON.stringify(value));
   return;
 };

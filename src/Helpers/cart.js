@@ -1,4 +1,4 @@
-import { deepCopy, insertCache, priceWithTax } from ".";
+import { deepCopyObj, insertIntoCache, getPriceWithTax } from ".";
 
 /**
  * Makes a cart id for a product
@@ -7,7 +7,7 @@ import { deepCopy, insertCache, priceWithTax } from ".";
  * @returns {string} cartId
  **/
 
-export const generateCartId = (productId, size) => {
+export const createCartId = (productId, size) => {
   return productId + "/" + size;
 };
 
@@ -28,7 +28,7 @@ export const getTotalPriceOfCart = (cartItems, shoeIdCache) => {
     const [productId] = cartId.split("/");
     const numberOfUnits = cartItems[cartId];
     const taxRate = 0.065;
-    const { totalCost } = priceWithTax(
+    const { totalCost } = getPriceWithTax(
       shoeIdCache[productId].price,
       taxRate,
       numberOfUnits
@@ -54,15 +54,15 @@ export const getTotalPriceOfCart = (cartItems, shoeIdCache) => {
  * @returns undefined
  **/
 
-export const addToCart = (cart, productId, size, setCart) => {
-  const newCart = deepCopy(cart);
+export const createCartItem = (cart, productId, size, setCart) => {
+  const newCart = deepCopyObj(cart);
   const cartItems = newCart.itemsCache;
-  const cartId = generateCartId(productId, size);
+  const cartId = createCartId(productId, size);
   if (!cartItems[cartId]) cartItems[cartId] = {};
   if (~~cartItems[cartId] < 10) {
     cartItems[cartId] = ~~cartItems[cartId] + 1;
     newCart["numOfItems"]++;
-    insertCache("cart", newCart);
+    insertIntoCache("cart", newCart);
     setCart(newCart);
   }
   return;
@@ -85,14 +85,14 @@ export const editCartQuantity = (
   setCart,
   setNumItemsInCart
 ) => {
-  const theCart = deepCopy(cart);
+  const theCart = deepCopyObj(cart);
   const newQuantity = event.target.value;
   const changeInNumOfItems = newQuantity - theCart.itemsCache[cartId];
   theCart.itemsCache[cartId] = +newQuantity;
   if (theCart.itemsCache[cartId] === 0) delete theCart.itemsCache[cartId];
   theCart.numOfItems += changeInNumOfItems;
   setCart(theCart);
-  insertCache("cart", theCart);
+  insertIntoCache("cart", theCart);
   setNumItemsInCart(theCart.numOfItems);
   return;
 };
@@ -107,12 +107,12 @@ export const editCartQuantity = (
  **/
 
 export const removeFromCart = (cartId, cart, setCart, setNumItemsInCart) => {
-  const updatedCart = deepCopy(cart);
+  const updatedCart = deepCopyObj(cart);
   const numberOfItemsRemoved = updatedCart.itemsCache[cartId];
   delete updatedCart.itemsCache[cartId];
   updatedCart.numOfItems -= numberOfItemsRemoved;
   setCart(updatedCart);
-  insertCache("cart", updatedCart);
+  insertIntoCache("cart", updatedCart);
   setNumItemsInCart(updatedCart.numOfItems);
   return;
 };

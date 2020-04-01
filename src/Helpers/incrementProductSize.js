@@ -6,7 +6,7 @@
  * @returns undefined
  **/
 
-export const incrementSize = (direction, size, setSize) => {
+export const incrementProductSize = (direction, size, setSize) => {
   switch (direction) {
     case "decrease":
       if (+size === 6) return;
