@@ -50,8 +50,8 @@ export const CartView = () => {
       </Column>
       {cartItemsExist ? (
         <Fragment>
-          <Column alignItems="center">
-            <Column alignItems="center" margin="10px 50px">
+          <Column>
+            <Column margin="10px 50px">
               <Text textAlign="center" fontSize="16px">
                 {cartItemQuantityString}
               </Text>

@@ -26,7 +26,7 @@ export const ProductItem = ({ product, productId }) => {
         name={product.productName}
         productId={productId}
       />
-      <ProductBrandName fontSize="10px" brandName={product.brandName} />
+      <ProductBrandName brandName={product.brandName} />
       <ProductItemImage
         src={product.thumbnailImageUrl}
         alt={product.productName}

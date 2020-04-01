@@ -55,17 +55,12 @@ export const ProductDetails = ({ details }) => {
       </StyledDetails>
       {detailsExist && (
         <StyledDetails>
-          <Text fontSize="14px">{descriptionHTML}</Text>
+          <Text>{descriptionHTML}</Text>
           <ProductFitDetails details={details} />
         </StyledDetails>
       )}
       {!detailsExist && (
-        <Text
-          fontSize="14px"
-          fontWeight="normal"
-          textAlign="center"
-          text="Getting product details.."
-        />
+        <Text textAlign="center" text="Getting product details.." />
       )}
     </Column>
   );

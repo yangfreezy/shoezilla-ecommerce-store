@@ -39,7 +39,6 @@ const StyledCartItem = styled.div`
   @media only screen and (min-width: 620px) {
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
     > * > * {
       margin: 5px 60px;
     }

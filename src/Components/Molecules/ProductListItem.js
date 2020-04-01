@@ -38,7 +38,7 @@ export const ProductListItem = ({ product }) => {
             fontWeight="600"
             width="250px"
           />
-          <ProductBrandName fontSize="10px" brandName={product.brandName} />
+          <ProductBrandName brandName={product.brandName} />
           <ProductThumbnail
             src={product.thumbnailImageUrl}
             alt={product.productName}
@@ -49,7 +49,7 @@ export const ProductListItem = ({ product }) => {
             <Text
               fontSize="10px"
               textAlign="center"
-              margin="10px 10px 10px 10px"
+              margin="10px 10px"
               text="New"
             />
           )}

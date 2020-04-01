@@ -9,11 +9,7 @@ export const CartPriceTotals = ({
   cartTotalAfterShipping
 }) => {
   return (
-    <Column
-      justifyContent="center"
-      alignItems="flex-center"
-      margin="10px 100px"
-    >
+    <Column margin="10px 100px">
       <Text margin="5px 0px" textAlign="center" fontSize="16px">
         {`Total Cost: ${cartTotalAfterShipping}`}
       </Text>

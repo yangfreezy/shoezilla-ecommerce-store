@@ -53,11 +53,12 @@ export const CartIcon = () => {
   const {
     cart: { numOfItems }
   } = useContext(StoreContext);
+  const showCartItems = numOfItems >= 1;
   return (
     <StyledLink to="/cart">
       <StickyWrapper>
         <StyledIcon />
-        {numOfItems >= 1 && <StyledCartNumber>{numOfItems}</StyledCartNumber>}
+        {showCartItems && <StyledCartNumber>{numOfItems}</StyledCartNumber>}
       </StickyWrapper>
     </StyledLink>
   );

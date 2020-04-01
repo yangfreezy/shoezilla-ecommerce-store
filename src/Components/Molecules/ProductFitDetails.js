@@ -14,27 +14,15 @@ export const ProductFitDetails = ({ details }) => {
     <Column margin="10px" alignItems="flex-start">
       <Row justifyContent="flex-start">
         <Icon src={archFitIcon} width="16px" height="16px" />
-        <Text
-          fontSize="12px"
-          fontWeight="normal"
-          text={`Arch: ${archFit.text}.`}
-        />
+        <Text fontSize="12px" text={`Arch: ${archFit.text}.`} />
       </Row>
       <Row justifyContent="flex-start">
         <Icon src={widthFitIcon} width="16px" height="16px" />
-        <Text
-          fontSize="12px"
-          fontWeight="normal"
-          text={`Width: ${widthFit.text}.`}
-        />
+        <Text fontSize="12px" text={`Width: ${widthFit.text}.`} />
       </Row>
       <Row justifyContent="flex-start">
         <Icon src={sizeFitIcon} width="16px" height="16px" />
-        <Text
-          fontSize="12px"
-          fontWeight="normal"
-          text={`Size: ${sizeFit.text}.`}
-        />
+        <Text fontSize="12px" text={`Size: ${sizeFit.text}.`} />
       </Row>
     </Column>
   );
