@@ -5,11 +5,11 @@ import styled from "styled-components";
 const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: ${props => props.alignItems || "center"};
-  justify-content: ${props => props.justifyContent || "center"};
-  margin: ${props => props.margin || "0"};
-  padding: ${props => props.padding || "0"};
-  max-width: ${props => props.maxWidth || "100%"};
+  align-items: ${({ alignItems }) => alignItems || "center"};
+  justify-content: ${({ justifyContent }) => justifyContent || "center"};
+  margin: ${({ margin }) => margin || "0"};
+  padding: ${({ padding }) => padding || "0"};
+  max-width: ${({ maxWidth }) => maxWidth || "100%"};
 `;
 
 export const Column = ({
