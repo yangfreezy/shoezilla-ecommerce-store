@@ -55,13 +55,11 @@ export const ProductDetails = ({ details }) => {
       </StyledDetails>
       {detailsExist && (
         <StyledDetails>
-          <Text>{descriptionHTML}</Text>
+          <Text textAlign="left">{descriptionHTML}</Text>
           <ProductFitDetails details={details} />
         </StyledDetails>
       )}
-      {!detailsExist && (
-        <Text textAlign="center" text="Getting product details.." />
-      )}
+      {!detailsExist && <Text text="Getting product details.." />}
     </Column>
   );
 };

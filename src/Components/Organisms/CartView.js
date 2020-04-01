@@ -52,17 +52,11 @@ export const CartView = () => {
         <Fragment>
           <Column>
             <Column margin="10px 50px">
-              <Text textAlign="center" fontSize="16px">
-                {cartItemQuantityString}
-              </Text>
+              <Text fontSize="16px">{cartItemQuantityString}</Text>
               <CartItemsList cartItems={itemsCache} shoeIdCache={shoeIdCache} />
             </Column>
           </Column>
-          <Column
-            margin="0px 0px"
-            alignItems="center"
-            justifyContent="flex-start"
-          >
+          <Column justifyContent="flex-start">
             <LinkWrapper to="/purchase">
               <PrimaryButton
                 boxShadow

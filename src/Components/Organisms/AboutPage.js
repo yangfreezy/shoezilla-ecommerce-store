@@ -41,7 +41,7 @@ export const AboutPage = () => {
     <StyledBody>
       <BoxShadowWrapper>
         <Column margin="25px 0px">
-          <Text textAlign="center" fontWeight="bold" fontSize="16px">
+          <Text fontWeight="bold" fontSize="16px">
             {page}
           </Text>
           {pageSentences.map(sentence => {

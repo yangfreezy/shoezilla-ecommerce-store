@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledText = styled.div`
   align-items: ${props => props.alignItems || "center"};
-  text-align: ${props => props.textAlign || "left"};
+  text-align: ${props => props.textAlign || "center"};
   margin: ${props => props.margin || "10px 0px 10px 0px"};
   padding: ${props => props.padding || "0px"};
   width: ${props => props.width || "auto"};

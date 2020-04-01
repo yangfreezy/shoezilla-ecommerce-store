@@ -10,10 +10,10 @@ export const CartPriceTotals = ({
 }) => {
   return (
     <Column margin="10px 100px">
-      <Text margin="5px 0px" textAlign="center" fontSize="16px">
+      <Text margin="5px 0px" fontSize="16px">
         {`Total Cost: ${cartTotalAfterShipping}`}
       </Text>
-      <Text margin="5px 0px" textAlign="center" fontSize="12px">
+      <Text margin="5px 0px" fontSize="12px">
         {"Shipping: $5.99"}
       </Text>
       <Text

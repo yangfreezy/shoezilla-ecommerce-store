@@ -46,12 +46,7 @@ export const ProductListItem = ({ product }) => {
           />
           <Text>{product.price} </Text>
           {product.isNew && (
-            <Text
-              fontSize="10px"
-              textAlign="center"
-              margin="10px 10px"
-              text="New"
-            />
+            <Text fontSize="10px" margin="10px 10px" text="New" />
           )}
         </StyledProductListItem>
       </LinkWrapper>

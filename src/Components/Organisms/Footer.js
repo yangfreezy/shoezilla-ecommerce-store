@@ -13,7 +13,7 @@ export const Footer = () => {
           <Text
             color="white"
             fontSize="10px"
-            margin="5px 10px 5px 10px"
+            margin="5px 10px"
             fontWeight="bold"
             text="About"
           />
@@ -22,7 +22,7 @@ export const Footer = () => {
           <Text
             color="white"
             fontSize="10px"
-            margin="5px 10px 5px 10px"
+            margin="5px 10px"
             fontWeight="bold"
             text="Contact"
           />
