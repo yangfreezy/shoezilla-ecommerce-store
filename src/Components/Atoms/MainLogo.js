@@ -8,9 +8,9 @@ import mainLogo from "./../../Assets/main-logo.png";
 const StyledIcon = styled.img.attrs({
   src: mainLogo
 })`
-  width: ${props => props.width || "100px"};
   height: auto;
-  margin: ${props => props.margin || "0"};
+  width: ${({ width }) => width || "100px"};
+  margin: ${({ margin }) => margin || "0"};
   &:hover {
     cursor: pointer;
     box-shadow: 5px 5px 10px #888888;

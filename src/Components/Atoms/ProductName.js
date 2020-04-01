@@ -6,9 +6,9 @@ import he from "he";
 const StyledName = styled.div`
   width: 175px;
   max-width: 175px;
-  font-weight: ${({ fontWeight }) => fontWeight || "bolder"};
   font-size: 14px;
   text-align: center;
+  font-weight: ${({ fontWeight }) => fontWeight || "bolder"};
 
   @media only screen and (min-width: 620px) {
     width: ${({ width }) => width || "200px"};

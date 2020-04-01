@@ -27,7 +27,7 @@ const StyledBody = styled.div`
   }
 `;
 
-export const ContactPage = () => {
+export const ContactView = () => {
   const myEmail = "freezydreamin@gmail.com";
   const page = "Contact";
   return (

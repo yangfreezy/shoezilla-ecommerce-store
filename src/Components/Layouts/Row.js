@@ -4,14 +4,14 @@ import styled from "styled-components";
 
 const StyledRow = styled.div`
   display: flex;
-  align-items: ${props => props.alignItems || "center"};
-  justify-content: ${props => props.justifyContent || "center"};
-  margin: ${props => props.margin || "0"};
-  padding: ${props => props.padding || "0"};
-  width: ${props => props.width || "100%"};
-  max-width: ${props => props.maxWidth || "100%"};
-  height: ${props => props.height || "100%"};
   flex-wrap: wrap;
+  align-items: ${({ alignItems }) => alignItems || "center"};
+  justify-content: ${({ justifyContent }) => justifyContent || "center"};
+  margin: ${({ margin }) => margin || "0"};
+  padding: ${({ padding }) => padding || "0"};
+  width: ${({ width }) => width || "100%"};
+  max-width: ${({ maxWidth }) => maxWidth || "100%"};
+  height: ${({ height }) => height || "100%"};
 `;
 
 export const Row = ({

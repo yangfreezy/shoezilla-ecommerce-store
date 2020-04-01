@@ -10,11 +10,11 @@ const StyledImage = styled.img`
   height: auto;
 
   @media only screen and (min-width: 375px) {
-    width: ${props => props.width || "200px"};
+    width: ${({ width }) => width || "200px"};
   }
 
   @media only screen and (min-width: 620px) {
-    width: ${props => props.width || "225px"};
+    width: ${({ width }) => width || "225px"};
   }
 `;
 

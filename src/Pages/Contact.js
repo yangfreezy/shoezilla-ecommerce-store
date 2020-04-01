@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ContactPage, Nav, Footer } from "./../Components/Organisms";
+import { ContactView, Nav, Footer } from "./../Components/Organisms";
 import { Column, PageContainer, PageBody } from "./../Components/Layouts";
 
 export const Contact = () => {
@@ -9,7 +9,7 @@ export const Contact = () => {
       <PageBody>
         <Nav />
         <Column>
-          <ContactPage />
+          <ContactView />
         </Column>
       </PageBody>
       <Footer />

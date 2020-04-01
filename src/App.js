@@ -8,9 +8,9 @@ import {
   About,
   Cart,
   Contact,
-  Home,
   NotFound,
   Product,
+  ProductList,
   Purchase,
   PurchaseComplete
 } from "./Pages";
@@ -51,7 +51,7 @@ export const App = () => {
       <Router>
         <ScrollToTop>
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={ProductList} />
             <Route path="/about" exact component={About} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/cart" exact component={Cart} />

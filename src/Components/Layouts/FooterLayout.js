@@ -7,7 +7,7 @@ const StyledFooterLayout = styled.div`
   height: 100px;
   flex-direction: row;
   justify-content: space-between;
-  padding: 25px 25px 25px 25px;
+  padding: 25px 25px;
   background-color: black;
   color: white;
 `;

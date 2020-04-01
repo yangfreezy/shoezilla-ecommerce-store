@@ -1,15 +1,15 @@
 import React from "react";
 
-import { ProductList, Nav, Footer } from "./../Components/Organisms";
+import { ProductListView, Nav, Footer } from "./../Components/Organisms";
 import { Column, PageContainer, PageBody } from "./../Components/Layouts";
 
-export const Home = () => {
+export const ProductList = () => {
   return (
     <PageContainer>
       <PageBody>
         <Nav />
         <Column>
-          <ProductList />
+          <ProductListView />
         </Column>
       </PageBody>
       <Footer />

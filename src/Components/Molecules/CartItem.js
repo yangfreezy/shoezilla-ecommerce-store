@@ -17,9 +17,9 @@ import { BoxShadowWrapper, Column } from "./../Layouts";
 const StyledCartItem = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 10px 0px;
   justify-content: center;
   align-items: center;
+  margin: 10px 0px;
   width: 100%;
 
   > * {

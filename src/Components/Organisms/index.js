@@ -1,17 +1,17 @@
-import { AboutPage } from "./AboutPage";
+import { AboutView } from "./AboutView";
 import { CartView } from "./CartView";
-import { ContactPage } from "./ContactPage";
+import { ContactView } from "./ContactView";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
-import { ProductList } from "./ProductList";
+import { ProductListView } from "./ProductListView";
 import { ProductView } from "./ProductView";
 
 export {
-  AboutPage,
+  AboutView,
   CartView,
-  ContactPage,
+  ContactView,
   Footer,
   Nav,
-  ProductList,
+  ProductListView,
   ProductView
 };

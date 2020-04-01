@@ -3,20 +3,22 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledPrimaryButton = styled.div`
-  width: ${props => props.width || "auto"};
-  height: ${props => props.height || "auto"};
-  background-color: ${props => props.backgroundColor || "black"};
-  color: ${props => props.color || "white"};
-  font-size: ${props => props.fontSize || "12px"};
-  line-height: ${props => props.fontSize || "12px"};
-  margin: ${props => props.margin || "10px 10px 10px 10px"};
-  padding: ${props => props.padding || "15px 25px 15px 25px"};
-  box-shadow: ${props => (props.boxShadow ? "5px 5px 10px #888888" : "none")};
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   cursor: pointer;
+  width: ${({ width }) => width || "auto"};
+  height: ${({ height }) => height || "auto"};
+  background-color: ${({ backgroundColor }) => backgroundColor || "black"};
+  color: ${({ color }) => color || "white"};
+  font-size: ${({ fontSize }) => fontSize || "12px"};
+  line-height: ${({ fontSize }) => fontSize || "12px"};
+  margin: ${({ margin }) => margin || "10px 10px 10px 10px"};
+  padding: ${({ padding }) => padding || "15px 25px 15px 25px"};
+  // Box shadow is a boolean
+  box-shadow: ${({ boxShadow }) =>
+    boxShadow ? "5px 5px 10px #888888" : "none"};
   &:hover {
     box-shadow: 5px 5px 10px #888888;
     transition: box-shadow 0.2s ease-in-out;

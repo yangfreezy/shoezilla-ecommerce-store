@@ -11,12 +11,12 @@ const StyledIncrementer = styled.div`
   margin: 20px;
   display: flex;
   flex-direction: column;
-  color: white;
-  font-weight: bold;
-  width: 10px;
-  height: 10px;
   align-items: center;
   justify-content: center;
+  color: white;
+  width: 10px;
+  height: 10px;
+  font-weight: bold;
   text-align: center;
   cursor: pointer;
   border-radius: 50%;

@@ -27,13 +27,13 @@ const StyledBody = styled.div`
   }
 `;
 
-export const AboutPage = () => {
+export const AboutView = () => {
   const page = "About";
   const pageSentences = [
     "Thanks for taking the time to check out the project!",
     "Shoezilla is a React.js portfolio project built and designed by Yang Yu.",
     "Yang is a front-end developer with full-stack experience seeking front-end based junior to mid level roles in the United States.",
-    "You can reach him at freezydreamin@gmail.com.",
+    "You can reach him at freezydreamin@gmail.com",
     "www.github.com/yangfreezy/shoezilla-ecommerce-store",
     "www.freezydreamin.com"
   ];

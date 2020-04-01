@@ -1,6 +1,6 @@
 import React from "react";
 
-import { AboutPage, Nav, Footer } from "./../Components/Organisms";
+import { AboutView, Nav, Footer } from "./../Components/Organisms";
 import { Column, PageContainer, PageBody } from "./../Components/Layouts";
 
 export const About = () => {
@@ -9,7 +9,7 @@ export const About = () => {
       <PageBody>
         <Nav />
         <Column>
-          <AboutPage />
+          <AboutView />
         </Column>
       </PageBody>
       <Footer />

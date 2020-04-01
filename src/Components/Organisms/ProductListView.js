@@ -25,7 +25,7 @@ const StyledProductList = styled.div`
   }
 `;
 
-export const ProductList = () => {
+export const ProductListView = () => {
   const value = useContext(StoreContext);
   const { shoesList } = value;
   return (
