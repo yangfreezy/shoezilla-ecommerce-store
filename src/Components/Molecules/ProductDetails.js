@@ -40,11 +40,14 @@ const StyledDetails = styled.div`
 `;
 
 export const ProductDetails = ({ details }) => {
-  const description = details.description;
+  const { description } = details;
+  // Removes links that come from the Zappos API that point to endpoints we don't support
   const descriptionHTML = description
-    ? Parser(removeLiTagsWithLinks(details.description))
+    ? Parser(removeLiTagsWithLinks(description))
     : null;
+
   const detailsExist = Object.keys(details).length;
+
   return (
     <Column>
       <StyledDetails>

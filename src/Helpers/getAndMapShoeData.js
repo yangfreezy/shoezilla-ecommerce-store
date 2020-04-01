@@ -17,7 +17,7 @@ const mapProductListToCache = data => {
  * Gets all shoe data pertaining to the filters in getMensShoes
  * @param {Function} setShoesList sets shoe state
  * @param {Function} setShoeIdCache sets shoeIdCache
- * @returns nothing
+ * @returns { Object } rawDataList is the raw data from Zappos, mappedIdCache is an object of the data with the product id as keys
  **/
 
 export const getAndMapShoeData = async () => {

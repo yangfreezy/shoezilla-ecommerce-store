@@ -4,21 +4,21 @@ import PropTypes from "prop-types";
 import { Text } from "./../Atoms/Abstracted";
 import { Column } from "./../Layouts";
 
-export const QuantitySelection = ({ defaultValue, editQuantity }) => {
+export const QuantitySelection = ({ defaultValue, editCartQuantity }) => {
+  const options = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <Column margin="10px 0px">
       <Text text="Quantity" textAlign="center" fontSize="8px" />
-      <select id="Quantity" onChange={editQuantity} defaultValue={defaultValue}>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
+      <select
+        id="Quantity"
+        onChange={editCartQuantity}
+        defaultValue={defaultValue}
+      >
+        {options.map(option => (
+          <option key={option} value={String(option)}>
+            {option}
+          </option>
+        ))}
       </select>
     </Column>
   );
@@ -26,5 +26,5 @@ export const QuantitySelection = ({ defaultValue, editQuantity }) => {
 
 QuantitySelection.propTypes = {
   defaultValue: PropTypes.number,
-  editQuantity: PropTypes.func
+  editCartQuantity: PropTypes.func
 };

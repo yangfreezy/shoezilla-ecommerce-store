@@ -26,7 +26,10 @@ const StyledBody = styled.div`
     }
   }
 `;
-export const ContactDescription = () => {
+
+export const ContactPage = () => {
+  const myEmail = "freezydreamin@gmail.com";
+  const page = "Contact";
   return (
     <StyledBody>
       <BoxShadowWrapper>
@@ -38,7 +41,7 @@ export const ContactDescription = () => {
             fontSize="16px"
             margin="15px 0px"
           >
-            {"Contact"}
+            {page}
           </Text>
           <Text
             margin="15px 0px"
@@ -47,7 +50,7 @@ export const ContactDescription = () => {
             fontSize="14px"
             fontWeight="light"
           >
-            {"freezydreamin@gmail.com"}
+            {myEmail}
           </Text>
         </Column>
       </BoxShadowWrapper>

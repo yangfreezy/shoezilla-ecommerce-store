@@ -9,6 +9,7 @@ import sizeFitIcon from "./../../Assets/size-fit-icon.png";
 import archFitIcon from "./../../Assets/arch-fit-icon.png";
 
 export const ProductFitDetails = ({ details }) => {
+  const { widthFit, archFit, sizeFit } = details;
   return (
     <Column margin="10px" alignItems="flex-start">
       <Row justifyContent="flex-start">
@@ -16,7 +17,7 @@ export const ProductFitDetails = ({ details }) => {
         <Text
           fontSize="12px"
           fontWeight="normal"
-          text={`Arch: ${details.archFit.text}.`}
+          text={`Arch: ${archFit.text}.`}
         />
       </Row>
       <Row justifyContent="flex-start">
@@ -24,7 +25,7 @@ export const ProductFitDetails = ({ details }) => {
         <Text
           fontSize="12px"
           fontWeight="normal"
-          text={`Width: ${details.widthFit.text}.`}
+          text={`Width: ${widthFit.text}.`}
         />
       </Row>
       <Row justifyContent="flex-start">
@@ -32,7 +33,7 @@ export const ProductFitDetails = ({ details }) => {
         <Text
           fontSize="12px"
           fontWeight="normal"
-          text={`Size: ${details.sizeFit.text}.`}
+          text={`Size: ${sizeFit.text}.`}
         />
       </Row>
     </Column>

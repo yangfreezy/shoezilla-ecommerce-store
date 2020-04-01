@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { priceWithTax } from "./../../Helpers";
+import {
+  priceWithTax,
+  editCartQuantity,
+  removeFromCart
+} from "./../../Helpers";
+import { StoreContext } from "./../../Context";
 
 import { CartPriceDetails, QuantitySelection } from ".";
 import { ProductName, ProductBrandName, ProductItemImage } from "./../Atoms";
@@ -47,10 +52,14 @@ export const CartItem = ({
   productUnits,
   product,
   mostDetailedImage,
-  productSize,
-  editQuantity,
-  removeFromCart
+  productSize
 }) => {
+  const { cart, setCart, setNumItemsInCart } = useContext(StoreContext);
+  const { taxCost, totalCost } = priceWithTax(
+    product.price,
+    0.065,
+    productUnits
+  );
   return (
     <BoxShadowWrapper>
       <StyledCartItem>
@@ -78,23 +87,23 @@ export const CartItem = ({
             <CartPriceDetails
               productUnits={productUnits}
               initialPrice={product.price}
-              initialPriceWithTax={
-                priceWithTax(product.price, 0.065, productUnits).taxCost
-              }
-              totalPrice={
-                priceWithTax(product.price, 0.065, productUnits).total
-              }
+              taxCost={taxCost}
+              totalPrice={totalCost}
             />
           </Column>
           <Column>
             <QuantitySelection
-              editQuantity={e => editQuantity(e, cartId)}
+              editCartQuantity={e =>
+                editCartQuantity(e, cartId, cart, setCart, setNumItemsInCart)
+              }
               defaultValue={productUnits}
             />
             <PrimaryButton
               fontSize="10px"
               padding="12px 15px"
-              handleClick={e => removeFromCart(e, cartId)}
+              handleClick={() =>
+                removeFromCart(cartId, cart, setCart, setNumItemsInCart)
+              }
               value="Remove"
             />
           </Column>
@@ -110,7 +119,5 @@ CartItem.propTypes = {
   productUnits: PropTypes.number,
   product: PropTypes.object,
   mostDetailedImage: PropTypes.string,
-  productSize: PropTypes.string,
-  editQuantity: PropTypes.func,
-  removeFromCart: PropTypes.func
+  productSize: PropTypes.string
 };

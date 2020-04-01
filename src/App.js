@@ -21,6 +21,7 @@ export const App = () => {
   const [cart, setCart] = useState(
     getCache("cart") || { numOfItems: 0, itemsCache: {} }
   );
+  const [numItemsInCart, setNumItemsInCart] = useState(0);
 
   useEffect(() => {
     if (!shoesList.length) {
@@ -43,7 +44,9 @@ export const App = () => {
         shoeIdCache,
         setShoeIdCache,
         cart,
-        setCart
+        setCart,
+        numItemsInCart,
+        setNumItemsInCart
       }}
     >
       <Router>

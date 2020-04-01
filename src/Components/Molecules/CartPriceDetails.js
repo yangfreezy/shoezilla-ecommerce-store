@@ -17,14 +17,14 @@ const StyledDetails = styled.div`
 
 export const CartPriceDetails = ({
   initialPrice,
-  initialPriceWithTax,
+  taxCost,
   totalPrice,
   productUnits
 }) => {
   return (
     <StyledDetails>
       <Text fontSize="12px" text={productUnits + " x " + initialPrice} />
-      <Text text={"Tax: " + initialPriceWithTax} fontSize="10px" />
+      <Text text={"Tax: " + taxCost} fontSize="10px" />
       <Text text={"Total: " + totalPrice} fontSize="10px" />
     </StyledDetails>
   );
@@ -32,7 +32,7 @@ export const CartPriceDetails = ({
 
 CartPriceDetails.propTypes = {
   initialPrice: PropTypes.string,
-  initialPriceWithTax: PropTypes.string,
+  taxCost: PropTypes.string,
   totalPrice: PropTypes.string,
   productUnits: PropTypes.number
 };

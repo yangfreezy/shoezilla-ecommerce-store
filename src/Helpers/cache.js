@@ -12,9 +12,10 @@ export const getCache = id => {
  * Sets data to localStorage
  * @param {String} id id of item to get from localStorage
  * @param {Object} value data to store in localStorage
- * @returns nothing
+ * @returns undefined
  **/
 
 export const insertCache = (id, value) => {
   localStorage.setItem(id, JSON.stringify(value));
+  return;
 };

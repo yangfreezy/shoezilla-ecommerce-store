@@ -1,16 +1,35 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
+import styled from "styled-components";
 
 import { StoreContext } from "./../../Context";
 import { ProductListItem } from "./../Molecules";
 import { LoadingAnimation } from "./../Atoms";
-import { Row } from "./../Layouts";
+
+const StyledProductList = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 320px;
+
+  @media only screen and (min-width: 620px) {
+    max-width: 620px;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    max-width: 1000px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    max-width: 1200px;
+  }
+`;
 
 export const ProductList = () => {
   const value = useContext(StoreContext);
-  const { shoesList, setShoesList } = value;
-  useEffect(() => {}, [shoesList, setShoesList]);
+  const { shoesList } = value;
   return (
-    <Row maxWidth="1200px" alignItems="flex-start" justifyContent="center">
+    <StyledProductList>
       {shoesList && shoesList.length ? (
         shoesList.map(shoe => {
           const key = shoe.productId + "/" + shoe.colorId;
@@ -19,6 +38,6 @@ export const ProductList = () => {
       ) : (
         <LoadingAnimation />
       )}
-    </Row>
+    </StyledProductList>
   );
 };

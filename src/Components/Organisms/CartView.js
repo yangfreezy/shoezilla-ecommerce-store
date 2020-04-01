@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 
 import { StoreContext } from "./../../Context";
-import { deepCopy, insertCache, priceWithTax } from "./../../Helpers";
+import { getTotalPriceOfCart } from "./../../Helpers";
 
 import { CartItemsList, CartPriceTotals } from "./../Molecules";
 import { EmptyCartMessage } from "./../Atoms";
@@ -13,73 +13,33 @@ export const CartView = () => {
     cart,
     cart: { itemsCache },
     setCart,
-    shoeIdCache
+    shoeIdCache,
+    numItemsInCart,
+    setNumItemsInCart
   } = useContext(StoreContext);
 
-  const cartItemsExist = Object.keys(itemsCache).length > 0;
+  /*** State ***/
   const [cartTotalBeforeShipping, setCartTotalBeforeShipping] = useState("");
   const [cartTotalAfterShipping, setCartTotalAfterShipping] = useState("");
-  const [numItemsInCart, setNumItemsInCart] = useState(0);
 
-  // Get individual price details for the cart items: pre-tax price, tax, total price.
+  /*** Hooks ***/
+  // Retrieves price details of cart to render
   useEffect(() => {
     const {
       beforeShipping,
       afterShipping,
       numOfItemsInCart
-    } = getTotalPriceOfCart(itemsCache);
+    } = getTotalPriceOfCart(itemsCache, shoeIdCache);
     setCartTotalBeforeShipping(beforeShipping);
     setCartTotalAfterShipping(afterShipping);
     setNumItemsInCart(numOfItemsInCart);
     //eslint-disable-next-line
   }, [cart, setCart]);
 
-  // Gets sums up the total price of cart, accounts for shipping.
-  const getTotalPriceOfCart = cartItems => {
-    let totalBeforeShipping = 0;
-    let numOfItemsInCart = 0;
-    for (var cartId in cartItems) {
-      const [productId] = cartId.split("/");
-      const numberOfUnits = cartItems[cartId];
-      const taxRate = 0.065;
-      const costAfterTax = +priceWithTax(
-        shoeIdCache[productId].price,
-        taxRate,
-        numberOfUnits
-      ).total.slice(1);
-      totalBeforeShipping += costAfterTax;
-      numOfItemsInCart += numberOfUnits;
-    }
-    const totalAftershipping = totalBeforeShipping + 5.99;
-    return {
-      beforeShipping: "$" + totalBeforeShipping.toFixed(2),
-      afterShipping: "$" + totalAftershipping.toFixed(2),
-      numOfItemsInCart: numOfItemsInCart
-    };
-  };
-
-  // Handles changes in product quantity from the cart
-  const editQuantity = (event, cartId) => {
-    const theCart = deepCopy(cart);
-    const newQuantity = event.target.value;
-    const changeInNumOfItems = newQuantity - theCart.itemsCache[cartId];
-    theCart.itemsCache[cartId] = +newQuantity;
-    theCart.numOfItems += changeInNumOfItems;
-    setCart(theCart);
-    insertCache("cart", theCart);
-    setNumItemsInCart(theCart.numOfItems);
-  };
-
-  // Removes an individual product entirely from the cart
-  const removeFromCart = (event, cartId) => {
-    const updatedCart = deepCopy(cart);
-    const numberOfItemsRemoved = updatedCart.itemsCache[cartId];
-    delete updatedCart.itemsCache[cartId];
-    updatedCart.numOfItems -= numberOfItemsRemoved;
-    setCart(updatedCart);
-    insertCache("cart", updatedCart);
-    setNumItemsInCart(updatedCart.numOfItems);
-  };
+  /*** Variable References ***/
+  const cartItemQuantityString =
+    numItemsInCart > 1 ? `${numItemsInCart} Items` : `${numItemsInCart} Item`;
+  const cartItemsExist = Object.keys(itemsCache).length > 0;
 
   return (
     <Column>
@@ -93,14 +53,9 @@ export const CartView = () => {
           <Column alignItems="center">
             <Column alignItems="center" margin="10px 50px">
               <Text textAlign="center" fontSize="16px">
-                {numItemsInCart > 1 ? `${numItemsInCart} Items` : `1 Item`}
+                {cartItemQuantityString}
               </Text>
-              <CartItemsList
-                removeFromCart={removeFromCart}
-                editQuantity={editQuantity}
-                cartItems={itemsCache}
-                shoeIdCache={shoeIdCache}
-              />
+              <CartItemsList cartItems={itemsCache} shoeIdCache={shoeIdCache} />
             </Column>
           </Column>
           <Column

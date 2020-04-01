@@ -12,5 +12,5 @@ export const priceWithTax = (price, taxRate = 0.065, units = 1) => {
   const totalUnrounded = parsedPrice + tax;
   const totalPrice = (Math.round(totalUnrounded * 100) / 100).toFixed(2);
   const taxCost = (Math.round(tax * 100) / 100).toFixed(2);
-  return { total: "$" + totalPrice, taxCost: "$" + taxCost };
+  return { totalCost: "$" + totalPrice, taxCost: "$" + taxCost };
 };

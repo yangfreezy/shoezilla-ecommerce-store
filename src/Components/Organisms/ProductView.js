@@ -5,7 +5,7 @@ import { StoreContext } from "./../../Context";
 import { getShoeDetails } from "./../../API";
 import {
   deepCopy,
-  generateCartId,
+  addToCart,
   getAndMapShoeData,
   insertCache
 } from "./../../Helpers";
@@ -16,10 +16,15 @@ import { PrimaryButton, Text } from "./../Atoms/Abstracted";
 import { Row, Column } from "./../Layouts";
 
 export const ProductView = () => {
+  /*** Parameters ***/
   const { productId } = useParams();
+
+  /*** Context ***/
   const { shoeIdCache, setShoeIdCache, cart, setCart } = useContext(
     StoreContext
   );
+
+  /*** Variable References ***/
   const currentShoe = shoeIdCache[productId];
   const shoeDetails = currentShoe
     ? currentShoe.details
@@ -27,11 +32,13 @@ export const ProductView = () => {
       : null
     : null;
 
+  /*** State ***/
   // Default shoe size
   const [size, setSize] = useState(String(9));
   // Boolean to redirect on invalid productId's
   const [toHome, setToHome] = useState(false);
 
+  /*** Hooks ***/
   // Gets all shoe data and gets shoe details if neither exist
   useEffect(() => {
     if (!currentShoe || !shoeDetails) {
@@ -54,20 +61,6 @@ export const ProductView = () => {
     //eslint-disable-next-line
   }, []);
 
-  // Adds one item to the cart
-  const addToCart = () => {
-    const newCart = deepCopy(cart);
-    const cartItems = newCart.itemsCache;
-    const cartId = generateCartId(productId, size);
-    if (!cartItems[cartId]) cartItems[cartId] = {};
-    if (~~cartItems[cartId] < 10) {
-      cartItems[cartId] = ~~cartItems[cartId] + 1;
-      newCart["numOfItems"]++;
-      insertCache("cart", newCart);
-      return setCart(newCart);
-    }
-  };
-
   if (toHome) return <Redirect to="/" />;
   else if (!currentShoe || !shoeDetails) return <LoadingAnimation />;
   else {
@@ -77,7 +70,10 @@ export const ProductView = () => {
           <ProductItem product={currentShoe} productId={productId} />
           <Text text={currentShoe.price} />
           <SizeDisplay setSize={setSize} size={size} />
-          <PrimaryButton value="Add to Cart" handleClick={addToCart} />
+          <PrimaryButton
+            value="Add to Cart"
+            handleClick={() => addToCart(cart, productId, size, setCart)}
+          />
         </Column>
         <Column justifyContent="flex-start" margin="25px 100px">
           <ProductDetails details={shoeDetails} />

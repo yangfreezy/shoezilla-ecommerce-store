@@ -1,35 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { incrementSize } from "./../../Helpers";
 import { SizeIncrementer } from "./../Atoms";
 import { Text } from "./../Atoms/Abstracted";
 import { Column, Row } from "./../Layouts";
 
 export const SizeDisplay = ({ size, setSize }) => {
-  const handleIncrement = (direction, currentSize) => {
-    switch (direction) {
-      case "decrease":
-        if (+size === 6) return;
-        return setSize(String(+size - 0.5));
-      case "increase":
-        if (+size === 12.5) return;
-        return setSize(String(+size + 0.5));
-      default:
-        return;
-    }
-  };
   return (
     <Column>
       <Text fontSize="12px" fontWeight="light" text="Size: Men's U.S." />
       <Row>
-        <SizeIncrementer direction="decrease" handleClick={handleIncrement} />
+        <SizeIncrementer
+          direction="decrease"
+          handleClick={() => incrementSize("decrease", size, setSize)}
+        />
         <Text
           fontSize="18px"
           width="40px"
           textAlign="center"
           text={String(size)}
         />
-        <SizeIncrementer direction="increase" handleClick={handleIncrement} />
+        <SizeIncrementer
+          direction="increase"
+          handleClick={() => incrementSize("increase", size, setSize)}
+        />
       </Row>
     </Column>
   );

@@ -7,7 +7,7 @@ export const Nav = () => {
   return (
     <NavLayout>
       <HomeButton />
-      <MainLogo width={"115px"} />
+      <MainLogo width="115px" />
       <CartIcon />
     </NavLayout>
   );
