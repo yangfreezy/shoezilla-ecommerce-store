@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import he from "he";
 
 const StyledName = styled.div`
   font-style: italic;
@@ -12,7 +13,7 @@ const StyledName = styled.div`
 export const ProductBrandName = ({ brandName, fontSize, textAlign }) => {
   return (
     <StyledName fontSize={fontSize} textAlign={textAlign}>
-      {brandName}
+      {he.decode(brandName)}
     </StyledName>
   );
 };
