@@ -38,7 +38,7 @@ export const CartView = () => {
 
   /*** Variable References ***/
   const cartItemQuantityString =
-    numItemsInCart > 1 ? `${numItemsInCart} Items` : `${numItemsInCart} Item`;
+    numItemsInCart > 1 ? `${numItemsInCart} Items` : `1 Item`;
   const cartItemsExist = Object.keys(itemsCache).length > 0;
 
   return (
