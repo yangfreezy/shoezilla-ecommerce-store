@@ -15,20 +15,17 @@ const StyledDetails = styled.div`
   }
 `;
 
-export const CartPriceDetails = ({
-  initialPrice,
-  taxCost,
-  totalPrice,
-  productUnits
-}) => {
-  return (
-    <StyledDetails>
-      <Text fontSize="12px" text={productUnits + " x " + initialPrice} />
-      <Text text={"Tax: " + taxCost} fontSize="10px" />
-      <Text text={"Total: " + totalPrice} fontSize="10px" />
-    </StyledDetails>
-  );
-};
+export const CartPriceDetails = React.memo(
+  ({ initialPrice, taxCost, totalPrice, productUnits }) => {
+    return (
+      <StyledDetails>
+        <Text fontSize="12px" text={productUnits + " x " + initialPrice} />
+        <Text text={"Tax: " + taxCost} fontSize="10px" />
+        <Text text={"Total: " + totalPrice} fontSize="10px" />
+      </StyledDetails>
+    );
+  }
+);
 
 CartPriceDetails.propTypes = {
   initialPrice: PropTypes.string,

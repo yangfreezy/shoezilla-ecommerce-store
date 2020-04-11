@@ -27,7 +27,7 @@ const StyledProductListItem = styled.div`
   }
 `;
 
-export const ProductListItem = ({ product }) => {
+export const ProductListItem = React.memo(({ product }) => {
   return (
     <HoverWrapper>
       <LinkWrapper to={`/product/${product.productId}`}>
@@ -52,7 +52,7 @@ export const ProductListItem = ({ product }) => {
       </LinkWrapper>
     </HoverWrapper>
   );
-};
+});
 
 ProductListItem.propTypes = {
   product: PropTypes.object

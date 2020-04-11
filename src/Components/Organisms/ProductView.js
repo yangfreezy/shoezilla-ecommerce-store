@@ -15,7 +15,7 @@ import { LoadingAnimation } from "./../Atoms";
 import { PrimaryButton, Text } from "./../Atoms/Abstracted";
 import { Row, Column } from "./../Layouts";
 
-export const ProductView = () => {
+export const ProductView = React.memo(() => {
   /*** Parameters ***/
   const { productId } = useParams();
 
@@ -81,4 +81,4 @@ export const ProductView = () => {
       </Row>
     );
   }
-};
+});

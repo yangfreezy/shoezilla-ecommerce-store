@@ -45,72 +45,74 @@ const StyledCartItem = styled.div`
   }
 `;
 
-export const CartItem = ({
-  cartId,
-  productId,
-  productUnits,
-  product,
-  mostDetailedImage,
-  productSize
-}) => {
-  const { cart, setCart, setNumItemsInCart } = useContext(StoreContext);
-  const { taxCost, totalCost } = getPriceWithTax(
-    product.price,
-    0.065,
-    productUnits
-  );
-  return (
-    <BoxShadowWrapper>
-      <StyledCartItem>
-        <Column>
-          <LinkWrapper to={`/product/${productId}`}>
-            <ProductName
-              name={product.productName}
-              productId={productId}
-              width="150px"
-            />
-          </LinkWrapper>
-          <ProductBrandName brandName={product.brandName} fontSize="10px" />
-          <Text fontSize="10px"> {"Size: Men's " + productSize}</Text>
-          <LinkWrapper to={`/product/${productId}`}>
-            <ProductItemImage
-              src={mostDetailedImage}
-              alt={mostDetailedImage}
-              id={productId}
-              width="150px"
-            />
-          </LinkWrapper>
-        </Column>
-        <Column width="150px">
+export const CartItem = React.memo(
+  ({
+    cartId,
+    productId,
+    productUnits,
+    product,
+    mostDetailedImage,
+    productSize
+  }) => {
+    const { cart, setCart, setNumItemsInCart } = useContext(StoreContext);
+    const { taxCost, totalCost } = getPriceWithTax(
+      product.price,
+      0.065,
+      productUnits
+    );
+    return (
+      <BoxShadowWrapper>
+        <StyledCartItem>
           <Column>
-            <CartPriceDetails
-              productUnits={productUnits}
-              initialPrice={product.price}
-              taxCost={taxCost}
-              totalPrice={totalCost}
-            />
+            <LinkWrapper to={`/product/${productId}`}>
+              <ProductName
+                name={product.productName}
+                productId={productId}
+                width="150px"
+              />
+            </LinkWrapper>
+            <ProductBrandName brandName={product.brandName} fontSize="10px" />
+            <Text fontSize="10px"> {"Size: Men's " + productSize}</Text>
+            <LinkWrapper to={`/product/${productId}`}>
+              <ProductItemImage
+                src={mostDetailedImage}
+                alt={mostDetailedImage}
+                id={productId}
+                width="150px"
+              />
+            </LinkWrapper>
           </Column>
-          <Column>
-            <QuantitySelection
-              editCartQuantity={e =>
-                editCartQuantity(e, cartId, cart, setCart, setNumItemsInCart)
-              }
-              defaultValue={productUnits}
-            />
-            <PrimaryButton
-              fontSize="10px"
-              padding="12px 15px"
-              handleClick={() =>
-                removeFromCart(cartId, cart, setCart, setNumItemsInCart)
-              }
-              value="Remove"
-            />
+          <Column width="150px">
+            <Column>
+              <CartPriceDetails
+                productUnits={productUnits}
+                initialPrice={product.price}
+                taxCost={taxCost}
+                totalPrice={totalCost}
+              />
+            </Column>
+            <Column>
+              <QuantitySelection
+                editCartQuantity={e =>
+                  editCartQuantity(e, cartId, cart, setCart, setNumItemsInCart)
+                }
+                defaultValue={productUnits}
+              />
+              <PrimaryButton
+                fontSize="10px"
+                padding="12px 15px"
+                handleClick={() =>
+                  removeFromCart(cartId, cart, setCart, setNumItemsInCart)
+                }
+                value="Remove"
+              />
+            </Column>
           </Column>
-        </Column>
-      </StyledCartItem>
-    </BoxShadowWrapper>
-  );
-};
+        </StyledCartItem>
+      </BoxShadowWrapper>
+    );
+  }
+);
 
 CartItem.propTypes = {
   cartId: PropTypes.string,

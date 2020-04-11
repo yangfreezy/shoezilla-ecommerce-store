@@ -27,7 +27,7 @@ const StyledBody = styled.div`
   }
 `;
 
-export const AboutView = () => {
+export const AboutView = React.memo(() => {
   const page = "About";
   const pageSentences = [
     "Thanks for taking the time to check out the project!",
@@ -51,4 +51,4 @@ export const AboutView = () => {
       </BoxShadowWrapper>
     </StyledBody>
   );
-};
+});

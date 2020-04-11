@@ -8,7 +8,7 @@ import widthFitIcon from "./../../Assets/width-fit-icon.png";
 import sizeFitIcon from "./../../Assets/size-fit-icon.png";
 import archFitIcon from "./../../Assets/arch-fit-icon.png";
 
-export const ProductFitDetails = ({ details }) => {
+export const ProductFitDetails = React.memo(({ details }) => {
   const { widthFit, archFit, sizeFit } = details;
   return (
     <Column margin="10px" alignItems="flex-start">
@@ -26,7 +26,7 @@ export const ProductFitDetails = ({ details }) => {
       </Row>
     </Column>
   );
-};
+});
 
 ProductFitDetails.propTypes = {
   details: PropTypes.object

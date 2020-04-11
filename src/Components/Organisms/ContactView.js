@@ -27,7 +27,7 @@ const StyledBody = styled.div`
   }
 `;
 
-export const ContactView = () => {
+export const ContactView = React.memo(() => {
   const myEmail = "freezydreamin@gmail.com";
   const page = "Contact";
   return (
@@ -49,4 +49,4 @@ export const ContactView = () => {
       </BoxShadowWrapper>
     </StyledBody>
   );
-};
+});

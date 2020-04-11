@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { CartItem } from ".";
 import { Column } from "./../Layouts";
 
-export const CartItemsList = ({ cartItems, shoeIdCache }) => {
+export const CartItemsList = React.memo(({ cartItems, shoeIdCache }) => {
   return (
     <Column margin="25px 0px">
       {Object.keys(cartItems).map(cartId => {
@@ -31,7 +31,7 @@ export const CartItemsList = ({ cartItems, shoeIdCache }) => {
       })}
     </Column>
   );
-};
+});
 
 CartItemsList.propTypes = {
   cartItems: PropTypes.object,

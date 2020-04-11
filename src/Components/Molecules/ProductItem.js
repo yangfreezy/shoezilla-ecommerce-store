@@ -18,7 +18,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-export const ProductItem = ({ product, productId }) => {
+export const ProductItem = React.memo(({ product, productId }) => {
   return (
     <StyledContainer>
       <ProductName
@@ -33,7 +33,7 @@ export const ProductItem = ({ product, productId }) => {
       />
     </StyledContainer>
   );
-};
+});
 
 ProductItem.propTypes = {
   product: PropTypes.object,

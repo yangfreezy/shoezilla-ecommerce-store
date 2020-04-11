@@ -4,7 +4,7 @@ import { MainLogo } from "./../Atoms";
 import { LinkWrapper, Text } from "./../Atoms/Abstracted";
 import { Column, FooterLayout } from "./../Layouts";
 
-export const Footer = () => {
+export const Footer = React.memo(() => {
   const links = [
     { path: "/about", name: "About" },
     { path: "/contact", name: "Contact" }
@@ -27,4 +27,4 @@ export const Footer = () => {
       </Column>
     </FooterLayout>
   );
-};
+});

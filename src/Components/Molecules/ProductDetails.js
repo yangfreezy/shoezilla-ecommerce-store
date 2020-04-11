@@ -39,7 +39,7 @@ const StyledDetails = styled.div`
   }
 `;
 
-export const ProductDetails = ({ details }) => {
+export const ProductDetails = React.memo(({ details }) => {
   const { description } = details;
   // Removes links that come from the Zappos API that point to endpoints we don't support
   const descriptionHTML = description
@@ -62,7 +62,7 @@ export const ProductDetails = ({ details }) => {
       {!detailsExist && <Text text="Getting product details.." />}
     </Column>
   );
-};
+});
 
 ProductDetails.propTypes = {
   details: PropTypes.object

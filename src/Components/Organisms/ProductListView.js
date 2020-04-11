@@ -25,7 +25,7 @@ const StyledProductList = styled.div`
   }
 `;
 
-export const ProductListView = () => {
+export const ProductListView = React.memo(() => {
   const value = useContext(StoreContext);
   const { shoesList } = value;
   return (
@@ -40,4 +40,4 @@ export const ProductListView = () => {
       )}
     </StyledProductList>
   );
-};
+});
