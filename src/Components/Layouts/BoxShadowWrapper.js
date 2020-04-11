@@ -6,7 +6,7 @@ const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 25px;
+  padding: 25px 25px;
   @media only screen and (min-width: 620px) {
     box-shadow: 5px 5px 10px #888888;
     padding: 20px 50px;

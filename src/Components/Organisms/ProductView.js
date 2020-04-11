@@ -44,25 +44,26 @@ export const ProductView = React.memo(() => {
     if (!currentShoe || !shoeDetails) {
       (async () => {
         let idCache = shoeIdCache;
-        if (!currentShoe) {
-          const { rawDataList, mappedIdCache } = await getAndMapShoeData();
-          insertIntoCache("shoes", rawDataList);
-          if (!mappedIdCache[productId]) return setToHome(true);
-          idCache = mappedIdCache;
-        }
         const details = await getShoeDetails(productId);
         if (!details) return setToHome(true);
         const cacheWithDetails = await deepCopyObj(idCache);
         cacheWithDetails[productId]["details"] = details;
         insertIntoCache("shoeIdCache", cacheWithDetails);
         setShoeIdCache(cacheWithDetails);
+
+        if (!currentShoe) {
+          const { rawDataList, mappedIdCache } = await getAndMapShoeData();
+          insertIntoCache("shoes", rawDataList);
+          if (!mappedIdCache[productId]) return setToHome(true);
+          idCache = mappedIdCache;
+        }
       })();
     }
     //eslint-disable-next-line
   }, []);
 
   if (toHome) return <Redirect to="/" />;
-  else if (!currentShoe || !shoeDetails) return <LoadingAnimation />;
+  else if (!shoeDetails) return <LoadingAnimation />;
   else {
     return (
       <Row>
