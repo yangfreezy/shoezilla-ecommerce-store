@@ -25,11 +25,15 @@ export const App = () => {
   useEffect(() => {
     if (!shoesList.length) {
       const loadData = async () => {
-        const { rawDataList, mappedIdCache } = await getAndMapShoeData();
-        setShoesList(rawDataList);
-        setShoeIdCache(mappedIdCache);
-        insertIntoCache("shoes", rawDataList);
-        insertIntoCache("shoeIdCache", mappedIdCache);
+        try {
+          const { rawDataList, mappedIdCache } = await getAndMapShoeData();
+          setShoesList(rawDataList);
+          setShoeIdCache(mappedIdCache);
+          insertIntoCache("shoes", rawDataList);
+          insertIntoCache("shoeIdCache", mappedIdCache);
+        } catch (e) {
+          window.alert('Something went wrong!')
+        }
       };
       loadData();
     }

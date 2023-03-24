@@ -12,7 +12,6 @@ export const getMensShoes = async () => {
           "x-rapidapi-key": process.env.REACT_APP_ZAPPOS_API_KEY,
           "content-type": "application/json",
           accept: "application/json",
-          "Set-Cookie": "third_party_var=value; SameSite=None; Secure"
         },
         data: [
           {
@@ -35,7 +34,7 @@ export const getMensShoes = async () => {
       }
     );
     if (!res.data) {
-      return console.err(res.response);
+      return console.err(res);
     }
     return res.data.results;
   } catch (err) {
